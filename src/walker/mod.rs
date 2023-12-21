@@ -54,8 +54,9 @@ struct Node {
   modified: SystemTime,
   accessed: SystemTime,
   sha256: Option<String>,
-  parent_uuid: Option<Uuid>,
-  parent_path: Option<String>,
+  parent_uuid: Uuid,
+  // parent_node: Option<DirEntry>,
+  parent_path: String,
   notes: Option<String>,
 }
 
@@ -77,8 +78,11 @@ pub fn process_dirs(args: &Args) -> Result<()> {
     .sort_by_file_name()
     .into_iter();
   // TODO:
-  let parent: DirEntry;
   for entry in walker.filter_entry(|e| !is_hidden(e)) {
+    let uuid = Uuid::new_v4();
+    // must initialize parent_uuid from first uuid
+    let mut parent_uuid: Uuid = uuid;
+    let mut parent_path = String::from("root");
     match entry {
       Ok(v) => {
         let name = v.path().display().to_string().replace(&args.path, "");
@@ -86,14 +90,20 @@ pub fn process_dirs(args: &Args) -> Result<()> {
         // if name.eq("") {
         //   break;
         // };
-
-        // let metadata: Metadata = fs::metadata(v.path())?;
+        let uuid = Uuid::new_v4();
         let metadata = fs::symlink_metadata(v.path())?;
-        // let node_type: NodeType = metadata.clone().into();
-
-        // if let Some(i) = input{
-        //     passInput = PreUpdateInput{channel: i.channel.clone()};
-        //   };
+        // let metadata: Metadata = fs::metadata(v.path())?;
+        let node_type: NodeType = metadata.clone().into();
+        // first dir is always a dir, we assin it the first uuid
+        match node_type {
+          NodeType::Unknown => {}
+          NodeType::Dir => {
+            parent_uuid = uuid;
+            parent_path = v.path().display().to_string();
+          }
+          NodeType::File => {}
+          NodeType::Symlink => {}
+        }
 
         let input = Path::new(v.path());
         let sha256 = match try_digest(input) {
@@ -102,14 +112,14 @@ pub fn process_dirs(args: &Args) -> Result<()> {
         };
         let node = Node {
           uuid: Uuid::new_v4(),
-          node_type: metadata.clone().into(),
+          node_type,
           name,
           size: 1,
           created: metadata.created().unwrap(),
           modified: metadata.modified().unwrap(),
           accessed: metadata.accessed().unwrap(),
           sha256,
-          parent_uuid: None,
+          parent_uuid,
           parent_path: None,
           notes: None,
         };
