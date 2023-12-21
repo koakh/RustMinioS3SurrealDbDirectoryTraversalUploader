@@ -9,3 +9,5 @@
 
 - [clap - Rust](https://docs.rs/clap/latest/clap/)
   - [Clap basic Parse : command line arguments - Cook Book](https://rust-lang-nursery.github.io/rust-cookbook/cli/arguments.html)
+
+- [Struct std::fs::Metadata](https://doc.rust-lang.org/std/fs/struct.Metadata.html)

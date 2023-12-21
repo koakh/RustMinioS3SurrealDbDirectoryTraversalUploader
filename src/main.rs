@@ -1,7 +1,7 @@
 use clap::Parser;
-use walker::process_dirs;
-use std::result;
 use std::error::Error;
+use std::result;
+use walker::process_dirs;
 
 mod walker;
 
@@ -20,8 +20,14 @@ pub struct Args {
     count: u8,
 }
 
-fn main() {
+fn main() -> std::io::Result<()> {
     let args = Args::parse();
-
-    let _ = process_dirs(&args);
+    // process directories
+    match process_dirs(&args) {
+        Ok(_) => Ok(()),
+        Err(e) => {
+            eprint!("Error: {}", e);
+            Ok(())
+        }
+    }
 }

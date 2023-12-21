@@ -7,5 +7,13 @@ edition = "2021"
 
 [dependencies]
 clap = { version = "4.4.11", features = ["derive"] }
-sqlx = { version = "0.7", features = [ "runtime-tokio" ] }
+sqlx = { version = "0.7", features = ["runtime-tokio"] }
 walkdir = "2.4.0"
+chrono = "0.4.31"
+uuid = { version = "1.6.1", features = [
+  "v4",                # Lets you generate random UUIDs
+  "fast-rng",          # Use a faster (but still sufficiently random) RNG
+  "macro-diagnostics", # Enable better diagnostics for compile-time UUIDs
+] }
+getrandom = "0.2.11"
+sha256 = "1.4.0"
