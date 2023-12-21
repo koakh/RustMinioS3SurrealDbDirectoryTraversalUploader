@@ -448,6 +448,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "from-os-str"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cf591fec55cc461d5ba1c7ea5884b475f4f1723d8ef113718fd5e43434143dbe"
+
+[[package]]
 name = "futures-channel"
 version = "0.3.29"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1026,6 +1032,7 @@ version = "0.1.0"
 dependencies = [
  "chrono",
  "clap",
+ "from-os-str",
  "getrandom",
  "sha256",
  "sqlx",

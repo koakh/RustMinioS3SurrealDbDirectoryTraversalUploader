@@ -1,2 +1,2 @@
 run:
-	cargo run -- -p ./walkdir
+	cargo run -- -p root > root.txt
