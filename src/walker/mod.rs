@@ -1,9 +1,10 @@
+use chrono::{DateTime, Utc};
 use from_os_str::try_from_os_str;
 use sha256::try_digest;
 use std::{
   collections::HashMap,
   fmt::Display,
-  fs::{self, Metadata},
+  fs::{self, Metadata, read_link},
   path::Path,
   time::SystemTime,
 };
@@ -58,30 +59,18 @@ struct Node {
   node_type: NodeType,
   name: String,
   path: String,
+  // used to get real path from symlink
+  canonical_path: Option<String>,
   size: u64,
-  created: SystemTime,
-  modified: SystemTime,
-  accessed: SystemTime,
+  created: DateTime<Utc>,
+  modified: DateTime<Utc>,
+  accessed: DateTime<Utc>,
   sha256: Option<String>,
   parent_uuid: Uuid,
-  // parent_node: Option<DirEntry>,
-  // parent_path: String,
   notes: Option<String>,
 }
 
-// https://doc.rust-lang.org/std/collections/struct.HashMap.html
-// #[derive(Hash, Eq, PartialEq, Debug)]
-// struct ParentPath {
-//   key: String,
-//   value: Uuid,
-// }
-
-// impl ParentPath {
-//   fn new(key: String, value: Uuid) -> Self {
-//     Self { key, value }
-//   }
-// }
-
+/// check if dirEntry is hidden
 fn is_hidden(entry: &DirEntry) -> bool {
   entry
     .file_name()
@@ -90,9 +79,19 @@ fn is_hidden(entry: &DirEntry) -> bool {
     .unwrap_or(false)
 }
 
-// TODO: know if is dir, file or link
-// std::fs::read_link seems what you want.
+// https://stackoverflow.com/questions/64146345/how-do-i-convert-a-systemtime-to-iso-8601-in-rust
+fn iso8601_to_string(st: &std::time::SystemTime) -> String {
+  let dt: DateTime<Utc> = st.clone().into();
+  format!("{}", dt.format("%+"))
+  // formats like "2001-07-08T00:34:60.026490+09:30"
+}
 
+fn iso8601(st: &std::time::SystemTime) -> DateTime<Utc> {
+  let dt: DateTime<Utc> = st.clone().into();
+  dt
+}
+
+/// init walker traverse directory
 pub fn process_dirs(args: &Args) -> Result<()> {
   // println!("traverse paths {}", &args.path);
   let mut nodes = 0;
@@ -101,43 +100,31 @@ pub fn process_dirs(args: &Args) -> Result<()> {
     .follow_links(true)
     .sort_by_file_name()
     .into_iter();
-  // TODO:
   for entry in walker.filter_entry(|e| !is_hidden(e)) {
     nodes += 1;
-    // let mut uuid = Uuid::new_v4();
-    // must initialize parent_uuid from first uuid
-    //let mut parent_uuid = Uuid::new_v4();
-    // let mut parent_path = String::from("root");
     match entry {
       Ok(v) => {
-        // let path = v.path().display().to_string().replace(&args.path, "");
-        // return if is source dir
-        // if name.eq("") {
-        //   break;
-        // };
         let uuid = Uuid::new_v4();
         let metadata = fs::symlink_metadata(v.path())?;
-        // let metadata: Metadata = fs::metadata(v.path())?;
         let node_type: NodeType = metadata.clone().into();
         let input_path = Path::new(v.path());
-        // the name from input path
-        // let name = input_path.file_stem().unwrap().to_owned().to_owned().to_str().unwrap().to_string();
-        // let name = v.file_name();
-        // let os_str = OsStr::new("123");
         let os_str = v.file_name();
+        // filename or directory name
         let name = try_from_os_str!(os_str as &Path)
           .unwrap()
           .display()
           .to_string();
         // the path without filename from input path
         let input_path_parent = input_path.parent().unwrap().display().to_string();
+        // this will work with paths with a middle dir symlink ex `root/dir2/dir1.2.1.link/dir1.2.1.file`, else this path will be "/" and not "root/dir2/dir1.2.1.link"
+        // let input_path_parent = input_path.parent().unwrap().display().to_string().replace(name.as_str(), "");
+        let mut canonical_path: Option<String> = None;
         let sha256 = match try_digest(input_path) {
           Ok(v) => Some(v),
           Err(_) => None,
         };
 
         // first dir is always a dir, we assign it the first uuid
-        let mut parent_uuid = Uuid::default();
         match node_type {
           NodeType::Unknown => {}
           NodeType::Dir => {
@@ -145,65 +132,47 @@ pub fn process_dirs(args: &Args) -> Result<()> {
             parent_path_hash_map
               .entry(v.path().display().to_string())
               .or_insert(uuid);
-            // parent_uuid = match parent_path_hash_map.get(&input_path_parent) {
-            //   Some(v) => {
-            //     print!("skip insert path {} into parent_path_hash_map", &input_path_parent);
-            //     *v
-            //   }
-            //   None => {
-            //     // if don't have key None is returned
-            //     match parent_path_hash_map.insert(input_path_parent.clone(), uuid) {
-            //       Some(_) => {
-            //         print!("some: create path {} into parent_path_hash_map", &input_path_parent);
-            //         uuid
-            //       },
-            //       None => {
-            //         print!("none: create path {} into parent_path_hash_map", &input_path_parent);
-            //         uuid
-            //       },
-            //     }
-            //   }
-            // };
           }
           NodeType::File => {}
-          NodeType::Symlink => {}
+          NodeType::Symlink => {
+            canonical_path = Some(read_link(v.path()).unwrap().display().to_string())
+          }
         }
 
         // always get path from hashmap, to use it with same uuid and path
-        // let current_parent_from_hash_map: (&String, &Uuid);
-        println!("&input_path_parent: {}", &input_path_parent);
         let mut current_parent_from_hash_path: String = String::default();
         let mut current_parent_from_hash_uuid: Uuid = Uuid::default();
         if let Some(v) = parent_path_hash_map.get_key_value(&input_path_parent) {
           current_parent_from_hash_path = (*v.0.clone()).to_string();
           current_parent_from_hash_uuid = *v.1;
         }
+        // if !current_parent_from_hash_path.starts_with("/") {
+        //   current_parent_from_hash_path = current_parent_from_hash_path.replace(&args.path, "/")
+        // }
 
-        // if let Some(i) = input{
-        //     passInput = PreUpdateInput{channel: i.channel.clone()};
-        //   };
         let node = Node {
           uuid: Uuid::new_v4(),
           node_type,
           name,
-          path: current_parent_from_hash_path,
+          canonical_path,
+          path: format!("/{current_parent_from_hash_path}"),
           size: metadata.len(),
-          created: metadata.created().unwrap(),
-          modified: metadata.modified().unwrap(),
-          accessed: metadata.accessed().unwrap(),
+          created:  iso8601(&metadata.created().unwrap()),
+          modified: iso8601(&metadata.modified().unwrap()),
+          accessed: iso8601(&metadata.accessed().unwrap()),
           sha256,
           parent_uuid: current_parent_from_hash_uuid,
-          // parent_path,
           notes: None,
         };
         // exclude root node
-        if nodes > 0 {
-          println!("path: {}", v.path().display());
+        if nodes > 1 {
+          println!("#{} path: {}", nodes, v.path().display());
           println!("\tname: {}, path: {}, node_type: {}, parent_uuid: {}\n", node.name, node.path, node.node_type, node.parent_uuid);
-          println!("----------------------------------------------------------------------------------------------------------------");
-          // println!("\t\tinput_path_parent: {}", input_path_parent);
+          println!(
+            "{:#?}\n----------------------------------------------------------------------------------------------------------------------------------",
+            node
+          );
         }
-        // println!("{:#?}", node);
       }
       Err(e) => println!("Error: {}", e),
     }
