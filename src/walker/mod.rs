@@ -2,10 +2,8 @@ use from_os_str::try_from_os_str;
 use sha256::try_digest;
 use std::{
   collections::HashMap,
-  ffi::OsStr,
   fmt::Display,
   fs::{self, Metadata},
-  ops::Deref,
   path::Path,
   time::SystemTime,
 };
@@ -16,6 +14,9 @@ use from_os_str::Wrap;
 use from_os_str::*;
 
 use crate::{Args, Result};
+
+/// stores directory paths, used to get node parent path <path, uuid>
+type ParentPathHashMap = HashMap<String, Uuid>;
 
 #[derive(Debug)]
 enum NodeType {
@@ -68,9 +69,6 @@ struct Node {
   notes: Option<String>,
 }
 
-/// stores directory paths, used to get node parent path <path, uuid>
-type ParentPathHashMap = HashMap<Uuid, String>;
-
 // https://doc.rust-lang.org/std/collections/struct.HashMap.html
 // #[derive(Hash, Eq, PartialEq, Debug)]
 // struct ParentPath {
@@ -108,7 +106,7 @@ pub fn process_dirs(args: &Args) -> Result<()> {
     nodes += 1;
     // let mut uuid = Uuid::new_v4();
     // must initialize parent_uuid from first uuid
-    let mut parent_uuid = Uuid::new_v4();
+    //let mut parent_uuid = Uuid::new_v4();
     // let mut parent_path = String::from("root");
     match entry {
       Ok(v) => {
@@ -138,14 +136,34 @@ pub fn process_dirs(args: &Args) -> Result<()> {
           Err(_) => None,
         };
 
-        // first dir is always a dir, we assin it the first uuid
+        // first dir is always a dir, we assign it the first uuid
+        let mut parent_uuid = Uuid::default();
         match node_type {
           NodeType::Unknown => {}
           NodeType::Dir => {
             // insert a key only if it doesn't already exist
             parent_path_hash_map
-              .entry(uuid)
-              .or_insert(input_path_parent.clone());
+              .entry(v.path().display().to_string())
+              .or_insert(uuid);
+            // parent_uuid = match parent_path_hash_map.get(&input_path_parent) {
+            //   Some(v) => {
+            //     print!("skip insert path {} into parent_path_hash_map", &input_path_parent);
+            //     *v
+            //   }
+            //   None => {
+            //     // if don't have key None is returned
+            //     match parent_path_hash_map.insert(input_path_parent.clone(), uuid) {
+            //       Some(_) => {
+            //         print!("some: create path {} into parent_path_hash_map", &input_path_parent);
+            //         uuid
+            //       },
+            //       None => {
+            //         print!("none: create path {} into parent_path_hash_map", &input_path_parent);
+            //         uuid
+            //       },
+            //     }
+            //   }
+            // };
           }
           NodeType::File => {}
           NodeType::Symlink => {}
@@ -153,11 +171,12 @@ pub fn process_dirs(args: &Args) -> Result<()> {
 
         // always get path from hashmap, to use it with same uuid and path
         // let current_parent_from_hash_map: (&String, &Uuid);
-        let mut current_parent_from_hash_uuid: Uuid = Uuid::default();
+        println!("&input_path_parent: {}", &input_path_parent);
         let mut current_parent_from_hash_path: String = String::default();
-        if let Some(v) = parent_path_hash_map.get_key_value(&uuid) {
-          current_parent_from_hash_uuid = *v.0;
-          current_parent_from_hash_path = (*v.1.clone()).to_string();
+        let mut current_parent_from_hash_uuid: Uuid = Uuid::default();
+        if let Some(v) = parent_path_hash_map.get_key_value(&input_path_parent) {
+          current_parent_from_hash_path = (*v.0.clone()).to_string();
+          current_parent_from_hash_uuid = *v.1;
         }
 
         // if let Some(i) = input{
@@ -181,6 +200,7 @@ pub fn process_dirs(args: &Args) -> Result<()> {
         if nodes > 0 {
           println!("path: {}", v.path().display());
           println!("\tname: {}, path: {}, node_type: {}, parent_uuid: {}\n", node.name, node.path, node.node_type, node.parent_uuid);
+          println!("----------------------------------------------------------------------------------------------------------------");
           // println!("\t\tinput_path_parent: {}", input_path_parent);
         }
         // println!("{:#?}", node);
@@ -188,5 +208,7 @@ pub fn process_dirs(args: &Args) -> Result<()> {
       Err(e) => println!("Error: {}", e),
     }
   }
+  // debug final parent_path_hash_map
+  // println!("parent_path_hash_map: {:#?}\n", parent_path_hash_map);
   Ok(())
 }
