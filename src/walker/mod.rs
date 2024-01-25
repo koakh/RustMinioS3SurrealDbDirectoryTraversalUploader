@@ -1,12 +1,13 @@
 use chrono::{DateTime, Utc};
 use from_os_str::try_from_os_str;
+use serde::{Deserialize, Serialize};
 use sha256::try_digest;
+use sqlx::FromRow;
 use std::{
   collections::HashMap,
   fmt::Display,
-  fs::{self, Metadata, read_link},
+  fs::{self, read_link, Metadata},
   path::Path,
-  time::SystemTime,
 };
 use uuid::Uuid;
 use walkdir::{DirEntry, WalkDir};
@@ -19,7 +20,7 @@ use crate::{Args, Result};
 /// stores directory paths, used to get node parent path <path, uuid>
 type ParentPathHashMap = HashMap<String, Uuid>;
 
-#[derive(Debug)]
+#[derive(Debug, Serialize, Deserialize)]
 enum NodeType {
   Unknown,
   Dir,
@@ -53,7 +54,7 @@ impl From<Metadata> for NodeType {
 }
 
 #[allow(dead_code)]
-#[derive(Debug)]
+#[derive(Debug, FromRow, Deserialize, Serialize)]
 struct Node {
   uuid: Uuid,
   node_type: NodeType,
@@ -80,7 +81,7 @@ fn is_hidden(entry: &DirEntry) -> bool {
 }
 
 // https://stackoverflow.com/questions/64146345/how-do-i-convert-a-systemtime-to-iso-8601-in-rust
-fn iso8601_to_string(st: &std::time::SystemTime) -> String {
+fn _iso8601_to_string(st: &std::time::SystemTime) -> String {
   let dt: DateTime<Utc> = st.clone().into();
   format!("{}", dt.format("%+"))
   // formats like "2001-07-08T00:34:60.026490+09:30"
@@ -134,9 +135,7 @@ pub fn process_dirs(args: &Args) -> Result<()> {
               .or_insert(uuid);
           }
           NodeType::File => {}
-          NodeType::Symlink => {
-            canonical_path = Some(read_link(v.path()).unwrap().display().to_string())
-          }
+          NodeType::Symlink => canonical_path = Some(read_link(v.path()).unwrap().display().to_string()),
         }
 
         // always get path from hashmap, to use it with same uuid and path
@@ -157,7 +156,7 @@ pub fn process_dirs(args: &Args) -> Result<()> {
           canonical_path,
           path: format!("/{current_parent_from_hash_path}"),
           size: metadata.len(),
-          created:  iso8601(&metadata.created().unwrap()),
+          created: iso8601(&metadata.created().unwrap()),
           modified: iso8601(&metadata.modified().unwrap()),
           accessed: iso8601(&metadata.accessed().unwrap()),
           sha256,
@@ -166,7 +165,7 @@ pub fn process_dirs(args: &Args) -> Result<()> {
         };
         // exclude root node
         if nodes > 1 {
-          println!("#{} path: {}", nodes, v.path().display());
+          println!("#{} path: {}", nodes - 1, v.path().display());
           println!("\tname: {}, path: {}, node_type: {}, parent_uuid: {}\n", node.name, node.path, node.node_type, node.parent_uuid);
           println!(
             "{:#?}\n---------------------------------------------------------------------------------------------------------------------------------------------------",
@@ -178,6 +177,6 @@ pub fn process_dirs(args: &Args) -> Result<()> {
     }
   }
   // debug final parent_path_hash_map
-  // println!("parent_path_hash_map: {:#?}\n", parent_path_hash_map);
+  println!("parent_path_hash_map: {:#?}\n", parent_path_hash_map);
   Ok(())
 }

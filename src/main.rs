@@ -3,6 +3,7 @@ use std::error::Error;
 use std::result;
 use walker::process_dirs;
 
+mod db;
 mod walker;
 
 // declare a generic result tye
