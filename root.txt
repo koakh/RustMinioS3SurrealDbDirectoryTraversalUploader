@@ -1,0 +1,616 @@
+#1 path: root/dir1
+	name: dir1, path: /root, node_type: dir, parent_id: 863478a6-749b-4d86-b158-bd3e501afb81
+
+Node {
+    uuid: d7afaf32-dc57-45d5-a031-e2051ec97c4a,
+    node_type: Dir,
+    name: "dir1",
+    path: "/root",
+    canonical_path: None,
+    size: 4096,
+    created: 2024-01-29T23:02:01.598768726Z,
+    modified: 2023-12-21T18:28:59Z,
+    accessed: 2024-01-29T23:02:26.079401960Z,
+    sha256: None,
+    parent_id: 863478a6-749b-4d86-b158-bd3e501afb81,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#2 path: root/dir1/dir1.1
+	name: dir1.1, path: /root/dir1, node_type: dir, parent_id: f7b2c30e-162e-4780-aea8-dbf7e3e6270e
+
+Node {
+    uuid: c7bdecaf-4cf0-4e24-98ad-27be0c3c38f6,
+    node_type: Dir,
+    name: "dir1.1",
+    path: "/root/dir1",
+    canonical_path: None,
+    size: 4096,
+    created: 2024-01-29T23:02:01.598768726Z,
+    modified: 2023-12-21T18:29:39Z,
+    accessed: 2024-01-29T23:02:26.079401960Z,
+    sha256: None,
+    parent_id: f7b2c30e-162e-4780-aea8-dbf7e3e6270e,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#3 path: root/dir1/dir1.1/dir1.1.1
+	name: dir1.1.1, path: /root/dir1/dir1.1, node_type: dir, parent_id: 3c3dcb6d-da04-4cf0-b466-6b2905af0ab4
+
+Node {
+    uuid: 90c25aaf-52bb-410e-aef8-0329e37d06c4,
+    node_type: Dir,
+    name: "dir1.1.1",
+    path: "/root/dir1/dir1.1",
+    canonical_path: None,
+    size: 4096,
+    created: 2024-01-29T23:02:01.598768726Z,
+    modified: 2023-12-21T22:07:26Z,
+    accessed: 2024-01-29T23:02:26.079401960Z,
+    sha256: None,
+    parent_id: 3c3dcb6d-da04-4cf0-b466-6b2905af0ab4,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#4 path: root/dir1/dir1.1/dir1.1.1/dir1.1.1-1.file
+	name: dir1.1.1-1.file, path: /root/dir1/dir1.1/dir1.1.1, node_type: file, parent_id: 5b65276f-bf66-4fe4-826f-c816a5060c54
+
+Node {
+    uuid: 2693eb68-82ff-483a-9610-a582a1dddf3d,
+    node_type: File,
+    name: "dir1.1.1-1.file",
+    path: "/root/dir1/dir1.1/dir1.1.1",
+    canonical_path: None,
+    size: 1470,
+    created: 2024-01-29T23:02:01.598768726Z,
+    modified: 2023-12-21T19:38:27Z,
+    accessed: 2024-01-29T23:04:25.278137024Z,
+    sha256: Some(
+        "2d8755f1c04699ad432549bc98dc712ab3b30300f5c485ed0585c6ee3084567c",
+    ),
+    parent_id: 5b65276f-bf66-4fe4-826f-c816a5060c54,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#5 path: root/dir1/dir1.1/dir1.1.1/dir1.1.1-2.file
+	name: dir1.1.1-2.file, path: /root/dir1/dir1.1/dir1.1.1, node_type: file, parent_id: 5b65276f-bf66-4fe4-826f-c816a5060c54
+
+Node {
+    uuid: 75a219e1-0620-4ccf-81a9-8b19e17d836a,
+    node_type: File,
+    name: "dir1.1.1-2.file",
+    path: "/root/dir1/dir1.1/dir1.1.1",
+    canonical_path: None,
+    size: 1470,
+    created: 2024-01-29T23:02:01.598768726Z,
+    modified: 2023-12-21T22:06:44Z,
+    accessed: 2024-01-29T23:04:25.282137107Z,
+    sha256: Some(
+        "2d8755f1c04699ad432549bc98dc712ab3b30300f5c485ed0585c6ee3084567c",
+    ),
+    parent_id: 5b65276f-bf66-4fe4-826f-c816a5060c54,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#6 path: root/dir1/dir1.1/dir1.1.1/dir1.1.1-3.file
+	name: dir1.1.1-3.file, path: /root/dir1/dir1.1/dir1.1.1, node_type: file, parent_id: 5b65276f-bf66-4fe4-826f-c816a5060c54
+
+Node {
+    uuid: 04c64914-4d6b-46e5-a6b4-fab865369b92,
+    node_type: File,
+    name: "dir1.1.1-3.file",
+    path: "/root/dir1/dir1.1/dir1.1.1",
+    canonical_path: None,
+    size: 1470,
+    created: 2024-01-29T23:02:01.602768831Z,
+    modified: 2023-12-21T22:06:46Z,
+    accessed: 2024-01-29T23:04:25.282137107Z,
+    sha256: Some(
+        "2d8755f1c04699ad432549bc98dc712ab3b30300f5c485ed0585c6ee3084567c",
+    ),
+    parent_id: 5b65276f-bf66-4fe4-826f-c816a5060c54,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#7 path: root/dir1/dir1.1/dir1.1.1/dir1.1.1-4.file
+	name: dir1.1.1-4.file, path: /root/dir1/dir1.1/dir1.1.1, node_type: file, parent_id: 5b65276f-bf66-4fe4-826f-c816a5060c54
+
+Node {
+    uuid: a736fbf7-a8dc-4b06-85dd-a220cee5d9ca,
+    node_type: File,
+    name: "dir1.1.1-4.file",
+    path: "/root/dir1/dir1.1/dir1.1.1",
+    canonical_path: None,
+    size: 1470,
+    created: 2024-01-29T23:02:01.602768831Z,
+    modified: 2023-12-21T22:06:45Z,
+    accessed: 2024-01-29T23:04:25.282137107Z,
+    sha256: Some(
+        "2d8755f1c04699ad432549bc98dc712ab3b30300f5c485ed0585c6ee3084567c",
+    ),
+    parent_id: 5b65276f-bf66-4fe4-826f-c816a5060c54,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#8 path: root/dir1/dir1.1/dir1.1.1/dir1.1.1-5.file
+	name: dir1.1.1-5.file, path: /root/dir1/dir1.1/dir1.1.1, node_type: file, parent_id: 5b65276f-bf66-4fe4-826f-c816a5060c54
+
+Node {
+    uuid: 0eebefb0-a213-49bd-a05e-db4910e5c2de,
+    node_type: File,
+    name: "dir1.1.1-5.file",
+    path: "/root/dir1/dir1.1/dir1.1.1",
+    canonical_path: None,
+    size: 1470,
+    created: 2024-01-29T23:02:01.602768831Z,
+    modified: 2023-12-21T22:06:45Z,
+    accessed: 2024-01-29T23:04:25.282137107Z,
+    sha256: Some(
+        "2d8755f1c04699ad432549bc98dc712ab3b30300f5c485ed0585c6ee3084567c",
+    ),
+    parent_id: 5b65276f-bf66-4fe4-826f-c816a5060c54,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#9 path: root/dir1/dir1.1/dir1.1.file
+	name: dir1.1.file, path: /root/dir1/dir1.1, node_type: file, parent_id: 3c3dcb6d-da04-4cf0-b466-6b2905af0ab4
+
+Node {
+    uuid: 506979bf-b616-477a-bf14-6ccde21ee9d4,
+    node_type: File,
+    name: "dir1.1.file",
+    path: "/root/dir1/dir1.1",
+    canonical_path: None,
+    size: 1489,
+    created: 2024-01-29T23:02:01.598768726Z,
+    modified: 2023-12-21T19:37:54Z,
+    accessed: 2024-01-29T23:04:25.286137190Z,
+    sha256: Some(
+        "aed5c8a89de1dbfdedb2621869ee7da9d0b5cdca7c94bfcf8521383866ab1d9e",
+    ),
+    parent_id: 3c3dcb6d-da04-4cf0-b466-6b2905af0ab4,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#10 path: root/dir1/dir1.2
+	name: dir1.2, path: /root/dir1, node_type: dir, parent_id: f7b2c30e-162e-4780-aea8-dbf7e3e6270e
+
+Node {
+    uuid: 9d4ad27d-25f5-4e6d-8169-e176fd050536,
+    node_type: Dir,
+    name: "dir1.2",
+    path: "/root/dir1",
+    canonical_path: None,
+    size: 4096,
+    created: 2024-01-29T23:02:01.598768726Z,
+    modified: 2023-12-21T19:39:55Z,
+    accessed: 2024-01-29T23:02:26.079401960Z,
+    sha256: None,
+    parent_id: f7b2c30e-162e-4780-aea8-dbf7e3e6270e,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#11 path: root/dir1/dir1.2/dir1.2.1
+	name: dir1.2.1, path: /root/dir1/dir1.2, node_type: dir, parent_id: 5a71463d-1256-489d-897f-bac71e5d710a
+
+Node {
+    uuid: 720c8bf5-06f0-45b7-8380-8e2527ddad2f,
+    node_type: Dir,
+    name: "dir1.2.1",
+    path: "/root/dir1/dir1.2",
+    canonical_path: None,
+    size: 4096,
+    created: 2024-01-29T23:02:01.598768726Z,
+    modified: 2023-12-21T18:31:13Z,
+    accessed: 2024-01-29T23:02:26.079401960Z,
+    sha256: None,
+    parent_id: 5a71463d-1256-489d-897f-bac71e5d710a,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#12 path: root/dir1/dir1.2/dir1.2.1/dir1.2.1.file
+	name: dir1.2.1.file, path: /root/dir1/dir1.2/dir1.2.1, node_type: file, parent_id: 7e644bb8-dcf5-4440-be05-824029b4cfb4
+
+Node {
+    uuid: 5c34c77c-8b88-450a-a30b-deeb79fa7cb9,
+    node_type: File,
+    name: "dir1.2.1.file",
+    path: "/root/dir1/dir1.2/dir1.2.1",
+    canonical_path: None,
+    size: 1012,
+    created: 2024-01-29T23:02:01.598768726Z,
+    modified: 2023-12-21T19:38:10Z,
+    accessed: 2024-01-29T23:04:25.286137190Z,
+    sha256: Some(
+        "04e242774fa10304e57f040746f84a2cad9291707bf38241491f26a221562ed9",
+    ),
+    parent_id: 7e644bb8-dcf5-4440-be05-824029b4cfb4,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#13 path: root/dir1/dir1.2/dir1.2.2
+	name: dir1.2.2, path: /root/dir1/dir1.2, node_type: dir, parent_id: 5a71463d-1256-489d-897f-bac71e5d710a
+
+Node {
+    uuid: db9cbeb8-5a36-492f-aaca-a742adf92eb5,
+    node_type: Dir,
+    name: "dir1.2.2",
+    path: "/root/dir1/dir1.2",
+    canonical_path: None,
+    size: 4096,
+    created: 2024-01-29T23:02:01.598768726Z,
+    modified: 2023-12-21T19:39:21Z,
+    accessed: 2024-01-29T23:02:26.079401960Z,
+    sha256: None,
+    parent_id: 5a71463d-1256-489d-897f-bac71e5d710a,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#14 path: root/dir1/dir1.2/dir1.2.2/dir1.2.2.file
+	name: dir1.2.2.file, path: /root/dir1/dir1.2/dir1.2.2, node_type: file, parent_id: d4b8cc79-9d66-42ea-9ea1-e557ded4510b
+
+Node {
+    uuid: 9f0e10c6-705f-47fc-bf37-7f37fd6c6791,
+    node_type: File,
+    name: "dir1.2.2.file",
+    path: "/root/dir1/dir1.2/dir1.2.2",
+    canonical_path: None,
+    size: 1470,
+    created: 2024-01-29T23:02:01.598768726Z,
+    modified: 2023-12-21T19:39:10Z,
+    accessed: 2024-01-29T23:04:25.290137273Z,
+    sha256: Some(
+        "2d8755f1c04699ad432549bc98dc712ab3b30300f5c485ed0585c6ee3084567c",
+    ),
+    parent_id: d4b8cc79-9d66-42ea-9ea1-e557ded4510b,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#15 path: root/dir1/dir1.2/dir1.2.file
+	name: dir1.2.file, path: /root/dir1/dir1.2, node_type: file, parent_id: 5a71463d-1256-489d-897f-bac71e5d710a
+
+Node {
+    uuid: 5ce5f7af-d712-4604-b7ad-d9bb3f5d2462,
+    node_type: File,
+    name: "dir1.2.file",
+    path: "/root/dir1/dir1.2",
+    canonical_path: None,
+    size: 1382,
+    created: 2024-01-29T23:02:01.598768726Z,
+    modified: 2023-12-21T19:38:17Z,
+    accessed: 2024-01-29T23:04:25.290137273Z,
+    sha256: Some(
+        "78f4ad2b5c121c8d603de873a096da90e3ea3b8631cfd16dc4a49635e282b43c",
+    ),
+    parent_id: 5a71463d-1256-489d-897f-bac71e5d710a,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#16 path: root/dir1/dir1.3
+	name: dir1.3, path: /root/dir1, node_type: dir, parent_id: f7b2c30e-162e-4780-aea8-dbf7e3e6270e
+
+Node {
+    uuid: 5a1d4118-ecfc-445e-b666-f499398eb285,
+    node_type: Dir,
+    name: "dir1.3",
+    path: "/root/dir1",
+    canonical_path: None,
+    size: 4096,
+    created: 2024-01-29T23:02:01.598768726Z,
+    modified: 2023-12-21T18:29:58Z,
+    accessed: 2024-01-29T23:02:26.079401960Z,
+    sha256: None,
+    parent_id: f7b2c30e-162e-4780-aea8-dbf7e3e6270e,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#17 path: root/dir1/dir1.3/dir1.3.1
+	name: dir1.3.1, path: /root/dir1/dir1.3, node_type: dir, parent_id: 28910a99-852a-4dac-9fa3-ff2596d3668c
+
+Node {
+    uuid: 813cf463-2048-4c93-b394-5a8138f4d4aa,
+    node_type: Dir,
+    name: "dir1.3.1",
+    path: "/root/dir1/dir1.3",
+    canonical_path: None,
+    size: 4096,
+    created: 2024-01-29T23:02:01.598768726Z,
+    modified: 2023-12-21T18:31:19Z,
+    accessed: 2024-01-29T23:02:26.079401960Z,
+    sha256: None,
+    parent_id: 28910a99-852a-4dac-9fa3-ff2596d3668c,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#18 path: root/dir1/dir1.3/dir1.3.1/dir1.3.1.file
+	name: dir1.3.1.file, path: /root/dir1/dir1.3/dir1.3.1, node_type: file, parent_id: 0fb64ed3-649a-448c-91c1-df859d28cfcb
+
+Node {
+    uuid: 2cac4116-48b1-4139-acf0-dfc2eb65e44d,
+    node_type: File,
+    name: "dir1.3.1.file",
+    path: "/root/dir1/dir1.3/dir1.3.1",
+    canonical_path: None,
+    size: 1229,
+    created: 2024-01-29T23:02:01.598768726Z,
+    modified: 2023-12-21T19:40:17Z,
+    accessed: 2024-01-29T23:04:25.290137273Z,
+    sha256: Some(
+        "ec2bcf3b4c305009698da1ac46b16b45bf7e645762595841e6e4e40b005d5f52",
+    ),
+    parent_id: 0fb64ed3-649a-448c-91c1-df859d28cfcb,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#19 path: root/dir1/dir1.3/dir1.3.2
+	name: dir1.3.2, path: /root/dir1/dir1.3, node_type: dir, parent_id: 28910a99-852a-4dac-9fa3-ff2596d3668c
+
+Node {
+    uuid: a26bfa90-41d9-49ac-a4f9-a36f61c1ceb0,
+    node_type: Dir,
+    name: "dir1.3.2",
+    path: "/root/dir1/dir1.3",
+    canonical_path: None,
+    size: 4096,
+    created: 2024-01-29T23:02:01.598768726Z,
+    modified: 2023-12-21T18:31:38Z,
+    accessed: 2024-01-29T23:02:26.079401960Z,
+    sha256: None,
+    parent_id: 28910a99-852a-4dac-9fa3-ff2596d3668c,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#20 path: root/dir1/dir1.3/dir1.3.2/dir1.3.2.file
+	name: dir1.3.2.file, path: /root/dir1/dir1.3/dir1.3.2, node_type: file, parent_id: de25aacf-f3d3-4a1c-a0a0-48abb5c3b3d5
+
+Node {
+    uuid: 1380cd47-d303-44dc-b121-53da8e0012fc,
+    node_type: File,
+    name: "dir1.3.2.file",
+    path: "/root/dir1/dir1.3/dir1.3.2",
+    canonical_path: None,
+    size: 1189,
+    created: 2024-01-29T23:02:01.598768726Z,
+    modified: 2023-12-21T19:40:25Z,
+    accessed: 2024-01-29T23:04:25.294137356Z,
+    sha256: Some(
+        "d908e1a15b8dfa070987e58ecaa0755ae21fb62569a88647e29786ed291ee185",
+    ),
+    parent_id: de25aacf-f3d3-4a1c-a0a0-48abb5c3b3d5,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#21 path: root/dir1/dir1.3/dir1.3.3
+	name: dir1.3.3, path: /root/dir1/dir1.3, node_type: dir, parent_id: 28910a99-852a-4dac-9fa3-ff2596d3668c
+
+Node {
+    uuid: 89f717d3-2f1a-4785-83a0-c7863fc4af1e,
+    node_type: Dir,
+    name: "dir1.3.3",
+    path: "/root/dir1/dir1.3",
+    canonical_path: None,
+    size: 4096,
+    created: 2024-01-29T23:02:01.598768726Z,
+    modified: 2023-12-21T18:31:43Z,
+    accessed: 2024-01-29T23:02:26.079401960Z,
+    sha256: None,
+    parent_id: 28910a99-852a-4dac-9fa3-ff2596d3668c,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#22 path: root/dir1/dir1.3/dir1.3.3/dir1.3.3.file
+	name: dir1.3.3.file, path: /root/dir1/dir1.3/dir1.3.3, node_type: file, parent_id: 3953a693-e05e-4863-8893-d03085441f7a
+
+Node {
+    uuid: a40de0e1-e0e2-4102-8cf4-878c7411477b,
+    node_type: File,
+    name: "dir1.3.3.file",
+    path: "/root/dir1/dir1.3/dir1.3.3",
+    canonical_path: None,
+    size: 1094,
+    created: 2024-01-29T23:02:01.598768726Z,
+    modified: 2023-12-21T19:40:30Z,
+    accessed: 2024-01-29T23:04:25.294137356Z,
+    sha256: Some(
+        "2a1d86b1f6592605fd68db71559155ba007394afda4879d36991a830b4843d48",
+    ),
+    parent_id: 3953a693-e05e-4863-8893-d03085441f7a,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#23 path: root/dir1/dir1.3/dir1.3.file
+	name: dir1.3.file, path: /root/dir1/dir1.3, node_type: file, parent_id: 28910a99-852a-4dac-9fa3-ff2596d3668c
+
+Node {
+    uuid: 596a7358-f044-481e-9d2e-44f6286fb337,
+    node_type: File,
+    name: "dir1.3.file",
+    path: "/root/dir1/dir1.3",
+    canonical_path: None,
+    size: 1018,
+    created: 2024-01-29T23:02:01.598768726Z,
+    modified: 2023-12-21T19:40:38Z,
+    accessed: 2024-01-29T23:04:25.294137356Z,
+    sha256: Some(
+        "d8048958ceb19152cbe3aff5119c5ea1b449d6a2926f1ed7b55e3f7502d3113b",
+    ),
+    parent_id: 28910a99-852a-4dac-9fa3-ff2596d3668c,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#24 path: root/dir1/dir1.file
+	name: dir1.file, path: /root/dir1, node_type: file, parent_id: f7b2c30e-162e-4780-aea8-dbf7e3e6270e
+
+Node {
+    uuid: 8dca6fee-65b5-4d79-aa09-4b70a619a824,
+    node_type: File,
+    name: "dir1.file",
+    path: "/root/dir1",
+    canonical_path: None,
+    size: 1031,
+    created: 2024-01-29T23:02:01.598768726Z,
+    modified: 2023-12-21T19:41:51Z,
+    accessed: 2024-01-29T23:04:25.298137439Z,
+    sha256: Some(
+        "d984ba6fa08df01433836ab44abce31ddcba5aafe9ff2c4585e6d87885c95351",
+    ),
+    parent_id: f7b2c30e-162e-4780-aea8-dbf7e3e6270e,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#25 path: root/dir2
+	name: dir2, path: /root, node_type: dir, parent_id: 863478a6-749b-4d86-b158-bd3e501afb81
+
+Node {
+    uuid: 527e7a17-4483-45ea-87a9-2b0d1dacdc4d,
+    node_type: Dir,
+    name: "dir2",
+    path: "/root",
+    canonical_path: None,
+    size: 4096,
+    created: 2024-01-29T23:02:01.602768831Z,
+    modified: 2023-12-22T00:47:46Z,
+    accessed: 2024-01-29T23:02:26.079401960Z,
+    sha256: None,
+    parent_id: 863478a6-749b-4d86-b158-bd3e501afb81,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#26 path: root/dir2/dir1.2.1.file.link
+	name: dir1.2.1.file.link, path: /root/dir2, node_type: symlink, parent_id: 5f5cd041-9354-47bb-a3b7-72ecdac1ce81
+
+Node {
+    uuid: d8c42fde-988e-4b5a-95d9-6f7606b0c475,
+    node_type: Symlink,
+    name: "dir1.2.1.file.link",
+    path: "/root/dir2",
+    canonical_path: Some(
+        "../dir1/dir1.2/dir1.2.1/dir1.2.1.file",
+    ),
+    size: 37,
+    created: 2024-01-29T23:02:01.602768831Z,
+    modified: 2023-12-21T18:46:18Z,
+    accessed: 2024-01-29T23:02:26.539413603Z,
+    sha256: Some(
+        "04e242774fa10304e57f040746f84a2cad9291707bf38241491f26a221562ed9",
+    ),
+    parent_id: 5f5cd041-9354-47bb-a3b7-72ecdac1ce81,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#27 path: root/dir2/dir2.file
+	name: dir2.file, path: /root/dir2, node_type: file, parent_id: 5f5cd041-9354-47bb-a3b7-72ecdac1ce81
+
+Node {
+    uuid: b1835159-7110-43e0-85cf-a0b6f8041922,
+    node_type: File,
+    name: "dir2.file",
+    path: "/root/dir2",
+    canonical_path: None,
+    size: 0,
+    created: 2024-01-29T23:02:01.602768831Z,
+    modified: 2023-12-21T18:35:22Z,
+    accessed: 2024-01-29T23:04:25.298137439Z,
+    sha256: Some(
+        "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ),
+    parent_id: 5f5cd041-9354-47bb-a3b7-72ecdac1ce81,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#28 path: root/dir3
+	name: dir3, path: /root, node_type: dir, parent_id: 863478a6-749b-4d86-b158-bd3e501afb81
+
+Node {
+    uuid: 3b3272a4-88fb-4fad-94a8-51a6692137cf,
+    node_type: Dir,
+    name: "dir3",
+    path: "/root",
+    canonical_path: None,
+    size: 4096,
+    created: 2024-01-29T23:02:01.602768831Z,
+    modified: 2023-12-22T00:47:50Z,
+    accessed: 2024-01-29T23:02:26.079401960Z,
+    sha256: None,
+    parent_id: 863478a6-749b-4d86-b158-bd3e501afb81,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#29 path: root/dir3/dir1.3.1.file.link
+	name: dir1.3.1.file.link, path: /root/dir3, node_type: symlink, parent_id: de47bfe5-da8e-41cc-8ea7-908724f7345a
+
+Node {
+    uuid: d340c2d9-87f4-48a9-999a-600c1067ad46,
+    node_type: Symlink,
+    name: "dir1.3.1.file.link",
+    path: "/root/dir3",
+    canonical_path: Some(
+        "../dir1/dir1.3/dir1.3.1/dir1.3.1.file",
+    ),
+    size: 37,
+    created: 2024-01-29T23:02:01.602768831Z,
+    modified: 2023-12-21T18:46:46Z,
+    accessed: 2024-01-29T23:02:26.539413603Z,
+    sha256: Some(
+        "ec2bcf3b4c305009698da1ac46b16b45bf7e645762595841e6e4e40b005d5f52",
+    ),
+    parent_id: de47bfe5-da8e-41cc-8ea7-908724f7345a,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#30 path: root/dir3/dir3.file
+	name: dir3.file, path: /root/dir3, node_type: file, parent_id: de47bfe5-da8e-41cc-8ea7-908724f7345a
+
+Node {
+    uuid: 60e12968-b4ae-46a8-8305-091f1bb39f95,
+    node_type: File,
+    name: "dir3.file",
+    path: "/root/dir3",
+    canonical_path: None,
+    size: 0,
+    created: 2024-01-29T23:02:01.602768831Z,
+    modified: 2023-12-21T18:35:28Z,
+    accessed: 2024-01-29T23:04:25.302137521Z,
+    sha256: Some(
+        "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ),
+    parent_id: de47bfe5-da8e-41cc-8ea7-908724f7345a,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#31 path: root/root.file
+	name: root.file, path: /root, node_type: file, parent_id: 863478a6-749b-4d86-b158-bd3e501afb81
+
+Node {
+    uuid: 54012f2e-60e7-4eb6-91b2-16d0c86c66d6,
+    node_type: File,
+    name: "root.file",
+    path: "/root",
+    canonical_path: None,
+    size: 1234,
+    created: 2024-01-29T23:02:01.602768831Z,
+    modified: 2023-12-22T00:50:19Z,
+    accessed: 2024-01-29T23:04:25.302137521Z,
+    sha256: Some(
+        "9abbd92033b49215e66f241b9a98e7e3a44aef509cea323bb9d8021e34d23ad5",
+    ),
+    parent_id: 863478a6-749b-4d86-b158-bd3e501afb81,
+    notes: None,
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+parent_path_hash_map: {
+    "root/dir1/dir1.3/dir1.3.2": de25aacf-f3d3-4a1c-a0a0-48abb5c3b3d5,
+    "root/dir1/dir1.3/dir1.3.1": 0fb64ed3-649a-448c-91c1-df859d28cfcb,
+    "root/dir2": 5f5cd041-9354-47bb-a3b7-72ecdac1ce81,
+    "root/dir1/dir1.2": 5a71463d-1256-489d-897f-bac71e5d710a,
+    "root/dir1/dir1.3/dir1.3.3": 3953a693-e05e-4863-8893-d03085441f7a,
+    "root/dir1": f7b2c30e-162e-4780-aea8-dbf7e3e6270e,
+    "root/dir1/dir1.3": 28910a99-852a-4dac-9fa3-ff2596d3668c,
+    "root/dir1/dir1.2/dir1.2.2": d4b8cc79-9d66-42ea-9ea1-e557ded4510b,
+    "root/dir3": de47bfe5-da8e-41cc-8ea7-908724f7345a,
+    "root/dir1/dir1.1": 3c3dcb6d-da04-4cf0-b466-6b2905af0ab4,
+    "root/dir1/dir1.1/dir1.1.1": 5b65276f-bf66-4fe4-826f-c816a5060c54,
+    "root/dir1/dir1.2/dir1.2.1": 7e644bb8-dcf5-4440-be05-824029b4cfb4,
+    "root": 863478a6-749b-4d86-b158-bd3e501afb81,
+}
+

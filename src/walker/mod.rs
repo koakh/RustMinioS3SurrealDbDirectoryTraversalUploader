@@ -2,12 +2,10 @@ use chrono::{DateTime, Utc};
 use from_os_str::try_from_os_str;
 use serde::{Deserialize, Serialize};
 use sha256::try_digest;
+use surrealdb::sql::Thing;
 // use sqlx::FromRow;
 use std::{
-  collections::HashMap,
-  fmt::Display,
-  fs::{self, read_link, Metadata},
-  path::Path,
+  collections::HashMap, fmt::Display, fs::{self, read_link, Metadata}, path::Path, process::id
 };
 use uuid::Uuid;
 use walkdir::{DirEntry, WalkDir};
@@ -15,7 +13,7 @@ use walkdir::{DirEntry, WalkDir};
 use from_os_str::Wrap;
 use from_os_str::*;
 
-use crate::{Args, Result, surrealdb::Database};
+use crate::{surrealdb::Database, Args, Result};
 
 /// stores directory paths, used to get node parent path <path, uuid>
 type ParentPathHashMap = HashMap<String, Uuid>;
@@ -57,7 +55,7 @@ impl From<Metadata> for NodeType {
 // #[derive(Debug, FromRow, Deserialize, Serialize)]
 #[derive(Debug, Deserialize, Serialize)]
 struct Node {
-  id: Uuid,
+  uuid: Uuid,
   node_type: NodeType,
   name: String,
   path: String,
@@ -77,8 +75,14 @@ impl Node {
     // println!("Node: {:#?}", &self);
     // println!("Node.id: {}", &self.id);
 
+    let id: Thing = Thing{
+      tb: "nodes".into(),
+      id: surrealdb::sql::Id::String(self.uuid.to_string()),
+    };
+
     // let sql = "CREATE type::table($table) CONTENT { title: $title, name: $name, marketing: $marketing };";
-    // id: $id,
+    // uuid: $uuid,
+    // uuid: $uuid,
     let sql = "CREATE type::table($table) CONTENT {
       node_type: $node_type,
       name: $name,
@@ -94,14 +98,18 @@ impl Node {
       published: $published,
       createdAt: $createdAt
     };";
-    let mut response = db.client
-        .query(sql)
-        .bind(("table", "nodes"))
-        .bind(&self)
-        .bind(("id", surrealdb::sql::Uuid(self.id)))
-        .await?;
-    let errors = response.take_errors();
-    eprintln!("errors: {:#?}", errors);
+    let mut response = db
+      .client
+      .query(sql)
+      .bind(("table", "nodes"))
+      // .bind(("id", surrealdb::sql::Uuid(self.uuid)))
+      // .bind(("id", surrealdb::sql::Uuid(uuid::Uuid::parse_str(self.uuid.to_string().as_str()).unwrap())))
+      // .bind(("id", surrealdb::sql::Uuid(uuid::Uuid::parse_str("95f88347-02d0-472e-9851-7e67be5081c9").unwrap())))
+      // .bind(("id", id))
+      .bind(&self)
+      .await?;
+    // let errors = response.take_errors();
+    // eprintln!("errors: {:#?}", errors);
     let record: Option<Node> = response.take(0)?;
     println!("record: {:#?}", record);
     Ok(response)
@@ -189,7 +197,7 @@ pub async fn process_dirs(args: &Args, db: &Database) -> Result<()> {
         // }
 
         let node = Node {
-          id: Uuid::new_v4(),
+          uuid: Uuid::new_v4(),
           node_type,
           name,
           canonical_path,
@@ -204,8 +212,8 @@ pub async fn process_dirs(args: &Args, db: &Database) -> Result<()> {
         };
 
         match node.save(&db).await {
-            Ok(n) => println!("node saved: {:?}", n),
-            Err(e) => {eprint!("error saving node: {}", e)},
+          Ok(n) => println!("node saved: {:?}", n),
+          Err(e) => eprintln!("error saving node: {:#?}", e)
         };
 
         // exclude root node
