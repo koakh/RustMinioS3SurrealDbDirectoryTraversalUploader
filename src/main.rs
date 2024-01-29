@@ -1,30 +1,42 @@
 use clap::Parser;
+use surrealdb::Database;
 use std::error::Error;
 use std::result;
 use walker::process_dirs;
+use dotenv::dotenv;
 
-mod db;
 mod walker;
+mod surrealdb;
+// mod sqlx;
 
 // declare a generic result tye
 pub type Result<T> = result::Result<T, Box<dyn Error>>;
 
-/// Simple program to greet a person
+/// simple program to greet a person
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
 pub struct Args {
-    /// Name of the person to greet
+    /// name of the person to greet
     #[arg(short, long)]
     path: String,
-    /// Number of times to greet
+    /// number of times to greet
     #[arg(short, long, default_value_t = 1)]
     count: u8,
 }
 
-fn main() -> std::io::Result<()> {
+#[tokio::main]
+async fn main() -> std::io::Result<()> {
     let args = Args::parse();
+    // read .env
+    dotenv().ok();
+
+    // init datastore
+    let db = Database::init()
+        .await
+        .expect("error connecting to database");
+
     // process directories
-    match process_dirs(&args) {
+    match process_dirs(&args, &db).await {
         Ok(_) => Ok(()),
         Err(e) => {
             eprint!("Error: {}", e);
