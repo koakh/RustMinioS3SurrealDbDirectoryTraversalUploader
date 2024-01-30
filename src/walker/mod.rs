@@ -65,9 +65,9 @@ struct Node {
   // used to get real path from symlink
   canonical_path: Option<String>,
   size: u64,
-  created: Datetime,//DateTime<Utc>,
-  modified: Datetime,//DateTime<Utc>,
-  accessed: Datetime,//DateTime<Utc>,
+  created: Datetime,  //DateTime<Utc>,
+  modified: Datetime, //DateTime<Utc>,
+  accessed: Datetime, //DateTime<Utc>,
   sha256: Option<String>,
   parent_id: Thing,
   notes: Option<String>,
@@ -225,11 +225,11 @@ pub async fn process_dirs(args: &Args, db: &Database) -> Result<()> {
         // always get path from hashmap, to use it with same id and path
         let mut current_parent_from_hash_path: String = String::default();
         // let mut current_parent_from_hash_id: Uuid = Uuid::default();
-        let id: Thing = Thing {
+        let mut current_parent_from_hash_id: Thing = Thing {
           tb: "nodes".into(),
           id: surrealdb::sql::Id::rand(),
         };
-        let mut current_parent_from_hash_id: Thing = id;
+        // override defaults
         if let Some(v) = parent_path_hash_map.get_key_value(&input_path_parent) {
           current_parent_from_hash_path = (*v.0.clone()).to_string();
           current_parent_from_hash_id = v.1.clone();

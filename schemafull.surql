@@ -1,3 +1,7 @@
+-- surreal import --conn http://localhost:8000 --user root --pass root --ns test --db test ./schemafull.surql
+
+OPTION IMPORT;
+
 -- table nodes
 DEFINE TABLE nodes SCHEMALESS PERMISSIONS NONE;
 -- fields table nodes
