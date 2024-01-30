@@ -2,12 +2,14 @@ use chrono::{DateTime, Utc};
 use from_os_str::try_from_os_str;
 use serde::{Deserialize, Serialize};
 use sha256::try_digest;
-use surrealdb::sql::Thing;
+use surrealdb::sql::{Datetime, Thing};
 // use sqlx::FromRow;
 use std::{
-  collections::HashMap, fmt::Display, fs::{self, read_link, Metadata}, path::Path, process::id
+  collections::HashMap,
+  fmt::Display,
+  fs::{self, read_link, Metadata},
+  path::Path,
 };
-use uuid::Uuid;
 use walkdir::{DirEntry, WalkDir};
 
 use from_os_str::Wrap;
@@ -16,7 +18,8 @@ use from_os_str::*;
 use crate::{surrealdb::Database, Args, Result};
 
 /// stores directory paths, used to get node parent path <path, uuid>
-type ParentPathHashMap = HashMap<String, Uuid>;
+// type ParentPathHashMap = HashMap<String, Uuid>;
+type ParentPathHashMap = HashMap<String, Thing>;
 
 #[derive(Debug, Serialize, Deserialize)]
 enum NodeType {
@@ -55,34 +58,67 @@ impl From<Metadata> for NodeType {
 // #[derive(Debug, FromRow, Deserialize, Serialize)]
 #[derive(Debug, Deserialize, Serialize)]
 struct Node {
-  uuid: Uuid,
+  id: Thing,
   node_type: NodeType,
   name: String,
   path: String,
   // used to get real path from symlink
   canonical_path: Option<String>,
   size: u64,
-  created: DateTime<Utc>,
-  modified: DateTime<Utc>,
-  accessed: DateTime<Utc>,
+  created: Datetime,//DateTime<Utc>,
+  modified: Datetime,//DateTime<Utc>,
+  accessed: Datetime,//DateTime<Utc>,
   sha256: Option<String>,
-  parent_id: Uuid,
+  parent_id: Thing,
   notes: Option<String>,
 }
 
+// impl Node {
+//   async fn save(&self, db: &Database) -> Result<surrealdb::Response> {
+//     // println!("Node: {:#?}", &self);
+//     // println!("Node.id: {}", &self.id);
+//     let sql = "CREATE type::table($table) CONTENT {
+//       node_type: $node_type,
+//       name: $name,
+//       path: $path,
+//       canonical_path: $canonical_path,
+//       size: $size,
+//       created: $created,
+//       modified: $modified,
+//       accessed: $accessed,
+//       sha256: $sha256,
+//       parent_id: $parent_id,
+//       notes: $notes,
+//       published: $published,
+//       created_at: $created_at,
+//     };";
+//     let mut response = db
+//       .client
+//       .query(sql)
+//       .bind(("table", "nodes"))
+//       // WIP:
+//       // .bind(("id", id))
+//       // .bind(("id", surrealdb::sql::Uuid(self.uuid)))
+//       // .bind(("id", surrealdb::sql::Uuid(uuid::Uuid::parse_str(self.uuid.to_string().as_str()).unwrap())))
+//       // .bind(("id", surrealdb::sql::Uuid(uuid::Uuid::parse_str("95f88347-02d0-472e-9851-7e67be5081c9").unwrap())))
+//       .bind(&self)
+//       .await?;
+//     Ok(response.check()?)
+//     // let errors = response.take_errors();
+//     // if errors.len() > 0 {
+//     //   eprintln!("errors: {:#?}", errors);
+//     //   Err(format!("errors: {:#?}", errors).into())
+//     // } else {
+//     //   Ok(response)
+//     // }
+//     // WIP:
+//     // let record: Option<Node> = response.take(0)?;
+//     // println!("record: {:#?}", record);
+//   }
+// }
+
 impl Node {
   async fn save(&self, db: &Database) -> Result<surrealdb::Response> {
-    // println!("Node: {:#?}", &self);
-    // println!("Node.id: {}", &self.id);
-
-    let id: Thing = Thing{
-      tb: "nodes".into(),
-      id: surrealdb::sql::Id::String(self.uuid.to_string()),
-    };
-
-    // let sql = "CREATE type::table($table) CONTENT { title: $title, name: $name, marketing: $marketing };";
-    // uuid: $uuid,
-    // uuid: $uuid,
     let sql = "CREATE type::table($table) CONTENT {
       node_type: $node_type,
       name: $name,
@@ -93,25 +129,19 @@ impl Node {
       modified: $modified,
       accessed: $accessed,
       sha256: $sha256,
-      parent: $parent,
+      parent_id: $parent_id,
       notes: $notes,
       published: $published,
-      createdAt: $createdAt
+      created_at: $created_at
     };";
-    let mut response = db
+    let response = db
       .client
       .query(sql)
       .bind(("table", "nodes"))
-      // .bind(("id", surrealdb::sql::Uuid(self.uuid)))
-      // .bind(("id", surrealdb::sql::Uuid(uuid::Uuid::parse_str(self.uuid.to_string().as_str()).unwrap())))
-      // .bind(("id", surrealdb::sql::Uuid(uuid::Uuid::parse_str("95f88347-02d0-472e-9851-7e67be5081c9").unwrap())))
-      // .bind(("id", id))
       .bind(&self)
-      .await?;
-    // let errors = response.take_errors();
-    // eprintln!("errors: {:#?}", errors);
-    let record: Option<Node> = response.take(0)?;
-    println!("record: {:#?}", record);
+      .await?
+      // check if have errors
+      .check()?;
     Ok(response)
   }
 }
@@ -136,7 +166,11 @@ fn _iso8601_to_string(st: &std::time::SystemTime) -> String {
 // TODO: move to utils
 fn iso8601(st: &std::time::SystemTime) -> DateTime<Utc> {
   let dt: DateTime<Utc> = st.clone().into();
+  // output 2024-01-29T23:04:25.302137521Z
   dt
+  // output 2022-07-03T07:18:52.841147Z (surrealdb format)
+  // let formatted_date = dt.format("%Y-%m-%dT%H:%M:%S%.6fZ");
+  // formatted_date
 }
 
 /// init walker traverse directory
@@ -152,7 +186,10 @@ pub async fn process_dirs(args: &Args, db: &Database) -> Result<()> {
     nodes += 1;
     match entry {
       Ok(v) => {
-        let id = Uuid::new_v4();
+        let id: Thing = Thing {
+          tb: "nodes".into(),
+          id: surrealdb::sql::Id::rand(),
+        };
         let metadata = fs::symlink_metadata(v.path())?;
         let node_type: NodeType = metadata.clone().into();
         let input_path = Path::new(v.path());
@@ -187,25 +224,33 @@ pub async fn process_dirs(args: &Args, db: &Database) -> Result<()> {
 
         // always get path from hashmap, to use it with same id and path
         let mut current_parent_from_hash_path: String = String::default();
-        let mut current_parent_from_hash_id: Uuid = Uuid::default();
+        // let mut current_parent_from_hash_id: Uuid = Uuid::default();
+        let id: Thing = Thing {
+          tb: "nodes".into(),
+          id: surrealdb::sql::Id::rand(),
+        };
+        let mut current_parent_from_hash_id: Thing = id;
         if let Some(v) = parent_path_hash_map.get_key_value(&input_path_parent) {
           current_parent_from_hash_path = (*v.0.clone()).to_string();
-          current_parent_from_hash_id = *v.1;
+          current_parent_from_hash_id = v.1.clone();
         }
         // if !current_parent_from_hash_path.starts_with("/") {
         //   current_parent_from_hash_path = current_parent_from_hash_path.replace(&args.path, "/")
         // }
-
+        let id: Thing = Thing {
+          tb: "nodes".into(),
+          id: surrealdb::sql::Id::rand(),
+        };
         let node = Node {
-          uuid: Uuid::new_v4(),
+          id,
           node_type,
           name,
           canonical_path,
           path: format!("/{current_parent_from_hash_path}"),
           size: metadata.len(),
-          created: iso8601(&metadata.created().unwrap()),
-          modified: iso8601(&metadata.modified().unwrap()),
-          accessed: iso8601(&metadata.accessed().unwrap()),
+          created: surrealdb::sql::Datetime(iso8601(&metadata.created().unwrap())),
+          modified: surrealdb::sql::Datetime(iso8601(&metadata.modified().unwrap())),
+          accessed: surrealdb::sql::Datetime(iso8601(&metadata.accessed().unwrap())),
           sha256,
           parent_id: current_parent_from_hash_id,
           notes: None,
@@ -213,7 +258,7 @@ pub async fn process_dirs(args: &Args, db: &Database) -> Result<()> {
 
         match node.save(&db).await {
           Ok(n) => println!("node saved: {:?}", n),
-          Err(e) => eprintln!("error saving node: {:#?}", e)
+          Err(e) => eprintln!("error saving node: {:#?}", e),
         };
 
         // exclude root node

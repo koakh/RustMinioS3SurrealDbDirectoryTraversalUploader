@@ -1,486 +1,918 @@
+node saved: Response({0: (Stats { execution_time: Some(194.45µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.487820240Z)), "id": Thing(Thing { tb: "nodes", id: String("ksyjilcrhfdolbog702x") }), "modified": Datetime(Datetime(2023-12-21T18:28:29Z)), "name": Strand(Strand("root")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("45r78ezosd45yktwrtb1") }), "path": Strand(Strand("/")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
+node saved: Response({0: (Stats { execution_time: Some(90.85µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.489434041Z)), "id": Thing(Thing { tb: "nodes", id: String("zig5rzy6cjl3ceurl9co") }), "modified": Datetime(Datetime(2023-12-21T18:28:59Z)), "name": Strand(Strand("dir1")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("usufovpuprtm6rzit4ex") }), "path": Strand(Strand("/root")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
 #1 path: root/dir1
-	name: dir1, path: /root, node_type: dir, parent_id: 863478a6-749b-4d86-b158-bd3e501afb81
+	name: dir1, path: /root, node_type: dir, parent_id: nodes:usufovpuprtm6rzit4ex
 
 Node {
-    uuid: d7afaf32-dc57-45d5-a031-e2051ec97c4a,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "lm4izp41253vf5qtdicv",
+        ),
+    },
     node_type: Dir,
     name: "dir1",
     path: "/root",
     canonical_path: None,
     size: 4096,
-    created: 2024-01-29T23:02:01.598768726Z,
-    modified: 2023-12-21T18:28:59Z,
-    accessed: 2024-01-29T23:02:26.079401960Z,
+    created: Datetime(
+        2024-01-29T23:02:01.598768726Z,
+    ),
+    modified: Datetime(
+        2023-12-21T18:28:59Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:02:26.079401960Z,
+    ),
     sha256: None,
-    parent_id: 863478a6-749b-4d86-b158-bd3e501afb81,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "usufovpuprtm6rzit4ex",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(102.45µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.490990432Z)), "id": Thing(Thing { tb: "nodes", id: String("q7bwrmrnwtmok0no7d0c") }), "modified": Datetime(Datetime(2023-12-21T18:29:39Z)), "name": Strand(Strand("dir1.1")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("hfks6t5ol8o6a2opx11t") }), "path": Strand(Strand("/root/dir1")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
 #2 path: root/dir1/dir1.1
-	name: dir1.1, path: /root/dir1, node_type: dir, parent_id: f7b2c30e-162e-4780-aea8-dbf7e3e6270e
+	name: dir1.1, path: /root/dir1, node_type: dir, parent_id: nodes:hfks6t5ol8o6a2opx11t
 
 Node {
-    uuid: c7bdecaf-4cf0-4e24-98ad-27be0c3c38f6,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "4f8hhumvy5a2esigwn8k",
+        ),
+    },
     node_type: Dir,
     name: "dir1.1",
     path: "/root/dir1",
     canonical_path: None,
     size: 4096,
-    created: 2024-01-29T23:02:01.598768726Z,
-    modified: 2023-12-21T18:29:39Z,
-    accessed: 2024-01-29T23:02:26.079401960Z,
+    created: Datetime(
+        2024-01-29T23:02:01.598768726Z,
+    ),
+    modified: Datetime(
+        2023-12-21T18:29:39Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:02:26.079401960Z,
+    ),
     sha256: None,
-    parent_id: f7b2c30e-162e-4780-aea8-dbf7e3e6270e,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "hfks6t5ol8o6a2opx11t",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(100.16µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.492601333Z)), "id": Thing(Thing { tb: "nodes", id: String("p1ln2cjrsk5vxe3plgxn") }), "modified": Datetime(Datetime(2023-12-21T22:07:26Z)), "name": Strand(Strand("dir1.1.1")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("t9p5wtrwcrwu6lqq6ss5") }), "path": Strand(Strand("/root/dir1/dir1.1")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
 #3 path: root/dir1/dir1.1/dir1.1.1
-	name: dir1.1.1, path: /root/dir1/dir1.1, node_type: dir, parent_id: 3c3dcb6d-da04-4cf0-b466-6b2905af0ab4
+	name: dir1.1.1, path: /root/dir1/dir1.1, node_type: dir, parent_id: nodes:t9p5wtrwcrwu6lqq6ss5
 
 Node {
-    uuid: 90c25aaf-52bb-410e-aef8-0329e37d06c4,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "i9qol0s1jfhaktky9jfh",
+        ),
+    },
     node_type: Dir,
     name: "dir1.1.1",
     path: "/root/dir1/dir1.1",
     canonical_path: None,
     size: 4096,
-    created: 2024-01-29T23:02:01.598768726Z,
-    modified: 2023-12-21T22:07:26Z,
-    accessed: 2024-01-29T23:02:26.079401960Z,
+    created: Datetime(
+        2024-01-29T23:02:01.598768726Z,
+    ),
+    modified: Datetime(
+        2023-12-21T22:07:26Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:02:26.079401960Z,
+    ),
     sha256: None,
-    parent_id: 3c3dcb6d-da04-4cf0-b466-6b2905af0ab4,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "t9p5wtrwcrwu6lqq6ss5",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(99.19µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.278137024Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.494311794Z)), "id": Thing(Thing { tb: "nodes", id: String("x3r906p105643dgxw6zu") }), "modified": Datetime(Datetime(2023-12-21T19:38:27Z)), "name": Strand(Strand("dir1.1.1-1.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("8tozmvw75n30t9rb5rle") }), "path": Strand(Strand("/root/dir1/dir1.1/dir1.1.1")), "published": Bool(false), "sha256": Strand(Strand("2d8755f1c04699ad432549bc98dc712ab3b30300f5c485ed0585c6ee3084567c")), "size": Number(Int(1470))}))]))))})
 #4 path: root/dir1/dir1.1/dir1.1.1/dir1.1.1-1.file
-	name: dir1.1.1-1.file, path: /root/dir1/dir1.1/dir1.1.1, node_type: file, parent_id: 5b65276f-bf66-4fe4-826f-c816a5060c54
+	name: dir1.1.1-1.file, path: /root/dir1/dir1.1/dir1.1.1, node_type: file, parent_id: nodes:8tozmvw75n30t9rb5rle
 
 Node {
-    uuid: 2693eb68-82ff-483a-9610-a582a1dddf3d,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "6qi82tob6l9616j1w0wg",
+        ),
+    },
     node_type: File,
     name: "dir1.1.1-1.file",
     path: "/root/dir1/dir1.1/dir1.1.1",
     canonical_path: None,
     size: 1470,
-    created: 2024-01-29T23:02:01.598768726Z,
-    modified: 2023-12-21T19:38:27Z,
-    accessed: 2024-01-29T23:04:25.278137024Z,
+    created: Datetime(
+        2024-01-29T23:02:01.598768726Z,
+    ),
+    modified: Datetime(
+        2023-12-21T19:38:27Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:04:25.278137024Z,
+    ),
     sha256: Some(
         "2d8755f1c04699ad432549bc98dc712ab3b30300f5c485ed0585c6ee3084567c",
     ),
-    parent_id: 5b65276f-bf66-4fe4-826f-c816a5060c54,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "8tozmvw75n30t9rb5rle",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(90.62µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.282137107Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.495983985Z)), "id": Thing(Thing { tb: "nodes", id: String("w4rkpcdl78kyubz1vd2h") }), "modified": Datetime(Datetime(2023-12-21T22:06:44Z)), "name": Strand(Strand("dir1.1.1-2.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("8tozmvw75n30t9rb5rle") }), "path": Strand(Strand("/root/dir1/dir1.1/dir1.1.1")), "published": Bool(false), "sha256": Strand(Strand("2d8755f1c04699ad432549bc98dc712ab3b30300f5c485ed0585c6ee3084567c")), "size": Number(Int(1470))}))]))))})
 #5 path: root/dir1/dir1.1/dir1.1.1/dir1.1.1-2.file
-	name: dir1.1.1-2.file, path: /root/dir1/dir1.1/dir1.1.1, node_type: file, parent_id: 5b65276f-bf66-4fe4-826f-c816a5060c54
+	name: dir1.1.1-2.file, path: /root/dir1/dir1.1/dir1.1.1, node_type: file, parent_id: nodes:8tozmvw75n30t9rb5rle
 
 Node {
-    uuid: 75a219e1-0620-4ccf-81a9-8b19e17d836a,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "zj2nazh032kuyp8rvmfr",
+        ),
+    },
     node_type: File,
     name: "dir1.1.1-2.file",
     path: "/root/dir1/dir1.1/dir1.1.1",
     canonical_path: None,
     size: 1470,
-    created: 2024-01-29T23:02:01.598768726Z,
-    modified: 2023-12-21T22:06:44Z,
-    accessed: 2024-01-29T23:04:25.282137107Z,
+    created: Datetime(
+        2024-01-29T23:02:01.598768726Z,
+    ),
+    modified: Datetime(
+        2023-12-21T22:06:44Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:04:25.282137107Z,
+    ),
     sha256: Some(
         "2d8755f1c04699ad432549bc98dc712ab3b30300f5c485ed0585c6ee3084567c",
     ),
-    parent_id: 5b65276f-bf66-4fe4-826f-c816a5060c54,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "8tozmvw75n30t9rb5rle",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(78.83µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.282137107Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.602768831Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.497547956Z)), "id": Thing(Thing { tb: "nodes", id: String("bwok53f4gpyf9xhrypmv") }), "modified": Datetime(Datetime(2023-12-21T22:06:46Z)), "name": Strand(Strand("dir1.1.1-3.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("8tozmvw75n30t9rb5rle") }), "path": Strand(Strand("/root/dir1/dir1.1/dir1.1.1")), "published": Bool(false), "sha256": Strand(Strand("2d8755f1c04699ad432549bc98dc712ab3b30300f5c485ed0585c6ee3084567c")), "size": Number(Int(1470))}))]))))})
 #6 path: root/dir1/dir1.1/dir1.1.1/dir1.1.1-3.file
-	name: dir1.1.1-3.file, path: /root/dir1/dir1.1/dir1.1.1, node_type: file, parent_id: 5b65276f-bf66-4fe4-826f-c816a5060c54
+	name: dir1.1.1-3.file, path: /root/dir1/dir1.1/dir1.1.1, node_type: file, parent_id: nodes:8tozmvw75n30t9rb5rle
 
 Node {
-    uuid: 04c64914-4d6b-46e5-a6b4-fab865369b92,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "9c2wxs8lwslbb4nbtgos",
+        ),
+    },
     node_type: File,
     name: "dir1.1.1-3.file",
     path: "/root/dir1/dir1.1/dir1.1.1",
     canonical_path: None,
     size: 1470,
-    created: 2024-01-29T23:02:01.602768831Z,
-    modified: 2023-12-21T22:06:46Z,
-    accessed: 2024-01-29T23:04:25.282137107Z,
+    created: Datetime(
+        2024-01-29T23:02:01.602768831Z,
+    ),
+    modified: Datetime(
+        2023-12-21T22:06:46Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:04:25.282137107Z,
+    ),
     sha256: Some(
         "2d8755f1c04699ad432549bc98dc712ab3b30300f5c485ed0585c6ee3084567c",
     ),
-    parent_id: 5b65276f-bf66-4fe4-826f-c816a5060c54,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "8tozmvw75n30t9rb5rle",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(96.251µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.282137107Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.602768831Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.499091626Z)), "id": Thing(Thing { tb: "nodes", id: String("shw84o8xdj39ug85die4") }), "modified": Datetime(Datetime(2023-12-21T22:06:45Z)), "name": Strand(Strand("dir1.1.1-4.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("8tozmvw75n30t9rb5rle") }), "path": Strand(Strand("/root/dir1/dir1.1/dir1.1.1")), "published": Bool(false), "sha256": Strand(Strand("2d8755f1c04699ad432549bc98dc712ab3b30300f5c485ed0585c6ee3084567c")), "size": Number(Int(1470))}))]))))})
 #7 path: root/dir1/dir1.1/dir1.1.1/dir1.1.1-4.file
-	name: dir1.1.1-4.file, path: /root/dir1/dir1.1/dir1.1.1, node_type: file, parent_id: 5b65276f-bf66-4fe4-826f-c816a5060c54
+	name: dir1.1.1-4.file, path: /root/dir1/dir1.1/dir1.1.1, node_type: file, parent_id: nodes:8tozmvw75n30t9rb5rle
 
 Node {
-    uuid: a736fbf7-a8dc-4b06-85dd-a220cee5d9ca,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "mdine0g5w1yuau87j100",
+        ),
+    },
     node_type: File,
     name: "dir1.1.1-4.file",
     path: "/root/dir1/dir1.1/dir1.1.1",
     canonical_path: None,
     size: 1470,
-    created: 2024-01-29T23:02:01.602768831Z,
-    modified: 2023-12-21T22:06:45Z,
-    accessed: 2024-01-29T23:04:25.282137107Z,
+    created: Datetime(
+        2024-01-29T23:02:01.602768831Z,
+    ),
+    modified: Datetime(
+        2023-12-21T22:06:45Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:04:25.282137107Z,
+    ),
     sha256: Some(
         "2d8755f1c04699ad432549bc98dc712ab3b30300f5c485ed0585c6ee3084567c",
     ),
-    parent_id: 5b65276f-bf66-4fe4-826f-c816a5060c54,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "8tozmvw75n30t9rb5rle",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(93.32µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.282137107Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.602768831Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.500673078Z)), "id": Thing(Thing { tb: "nodes", id: String("o7q1flgqsiu8z2zqs25h") }), "modified": Datetime(Datetime(2023-12-21T22:06:45Z)), "name": Strand(Strand("dir1.1.1-5.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("8tozmvw75n30t9rb5rle") }), "path": Strand(Strand("/root/dir1/dir1.1/dir1.1.1")), "published": Bool(false), "sha256": Strand(Strand("2d8755f1c04699ad432549bc98dc712ab3b30300f5c485ed0585c6ee3084567c")), "size": Number(Int(1470))}))]))))})
 #8 path: root/dir1/dir1.1/dir1.1.1/dir1.1.1-5.file
-	name: dir1.1.1-5.file, path: /root/dir1/dir1.1/dir1.1.1, node_type: file, parent_id: 5b65276f-bf66-4fe4-826f-c816a5060c54
+	name: dir1.1.1-5.file, path: /root/dir1/dir1.1/dir1.1.1, node_type: file, parent_id: nodes:8tozmvw75n30t9rb5rle
 
 Node {
-    uuid: 0eebefb0-a213-49bd-a05e-db4910e5c2de,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "f3pw9pdwoa2ha51v6s2k",
+        ),
+    },
     node_type: File,
     name: "dir1.1.1-5.file",
     path: "/root/dir1/dir1.1/dir1.1.1",
     canonical_path: None,
     size: 1470,
-    created: 2024-01-29T23:02:01.602768831Z,
-    modified: 2023-12-21T22:06:45Z,
-    accessed: 2024-01-29T23:04:25.282137107Z,
+    created: Datetime(
+        2024-01-29T23:02:01.602768831Z,
+    ),
+    modified: Datetime(
+        2023-12-21T22:06:45Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:04:25.282137107Z,
+    ),
     sha256: Some(
         "2d8755f1c04699ad432549bc98dc712ab3b30300f5c485ed0585c6ee3084567c",
     ),
-    parent_id: 5b65276f-bf66-4fe4-826f-c816a5060c54,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "8tozmvw75n30t9rb5rle",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(87.7µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.286137190Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.502253729Z)), "id": Thing(Thing { tb: "nodes", id: String("y4e6qdocwjq5ubyj0aup") }), "modified": Datetime(Datetime(2023-12-21T19:37:54Z)), "name": Strand(Strand("dir1.1.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("t9p5wtrwcrwu6lqq6ss5") }), "path": Strand(Strand("/root/dir1/dir1.1")), "published": Bool(false), "sha256": Strand(Strand("aed5c8a89de1dbfdedb2621869ee7da9d0b5cdca7c94bfcf8521383866ab1d9e")), "size": Number(Int(1489))}))]))))})
 #9 path: root/dir1/dir1.1/dir1.1.file
-	name: dir1.1.file, path: /root/dir1/dir1.1, node_type: file, parent_id: 3c3dcb6d-da04-4cf0-b466-6b2905af0ab4
+	name: dir1.1.file, path: /root/dir1/dir1.1, node_type: file, parent_id: nodes:t9p5wtrwcrwu6lqq6ss5
 
 Node {
-    uuid: 506979bf-b616-477a-bf14-6ccde21ee9d4,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "zgsjtac6c0wnpnaoseov",
+        ),
+    },
     node_type: File,
     name: "dir1.1.file",
     path: "/root/dir1/dir1.1",
     canonical_path: None,
     size: 1489,
-    created: 2024-01-29T23:02:01.598768726Z,
-    modified: 2023-12-21T19:37:54Z,
-    accessed: 2024-01-29T23:04:25.286137190Z,
+    created: Datetime(
+        2024-01-29T23:02:01.598768726Z,
+    ),
+    modified: Datetime(
+        2023-12-21T19:37:54Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:04:25.286137190Z,
+    ),
     sha256: Some(
         "aed5c8a89de1dbfdedb2621869ee7da9d0b5cdca7c94bfcf8521383866ab1d9e",
     ),
-    parent_id: 3c3dcb6d-da04-4cf0-b466-6b2905af0ab4,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "t9p5wtrwcrwu6lqq6ss5",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(91.05µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.503787180Z)), "id": Thing(Thing { tb: "nodes", id: String("j89r8s0pu23x0titaggz") }), "modified": Datetime(Datetime(2023-12-21T19:39:55Z)), "name": Strand(Strand("dir1.2")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("hfks6t5ol8o6a2opx11t") }), "path": Strand(Strand("/root/dir1")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
 #10 path: root/dir1/dir1.2
-	name: dir1.2, path: /root/dir1, node_type: dir, parent_id: f7b2c30e-162e-4780-aea8-dbf7e3e6270e
+	name: dir1.2, path: /root/dir1, node_type: dir, parent_id: nodes:hfks6t5ol8o6a2opx11t
 
 Node {
-    uuid: 9d4ad27d-25f5-4e6d-8169-e176fd050536,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "5jlx1g2gg6a6frcdgijl",
+        ),
+    },
     node_type: Dir,
     name: "dir1.2",
     path: "/root/dir1",
     canonical_path: None,
     size: 4096,
-    created: 2024-01-29T23:02:01.598768726Z,
-    modified: 2023-12-21T19:39:55Z,
-    accessed: 2024-01-29T23:02:26.079401960Z,
+    created: Datetime(
+        2024-01-29T23:02:01.598768726Z,
+    ),
+    modified: Datetime(
+        2023-12-21T19:39:55Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:02:26.079401960Z,
+    ),
     sha256: None,
-    parent_id: f7b2c30e-162e-4780-aea8-dbf7e3e6270e,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "hfks6t5ol8o6a2opx11t",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(83.37µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.505286331Z)), "id": Thing(Thing { tb: "nodes", id: String("0ku7moq2sldb8a2v7wvm") }), "modified": Datetime(Datetime(2023-12-21T18:31:13Z)), "name": Strand(Strand("dir1.2.1")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("unjrj3yra7385ubmhvws") }), "path": Strand(Strand("/root/dir1/dir1.2")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
 #11 path: root/dir1/dir1.2/dir1.2.1
-	name: dir1.2.1, path: /root/dir1/dir1.2, node_type: dir, parent_id: 5a71463d-1256-489d-897f-bac71e5d710a
+	name: dir1.2.1, path: /root/dir1/dir1.2, node_type: dir, parent_id: nodes:unjrj3yra7385ubmhvws
 
 Node {
-    uuid: 720c8bf5-06f0-45b7-8380-8e2527ddad2f,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "g586k2cen2mc32rf1mu1",
+        ),
+    },
     node_type: Dir,
     name: "dir1.2.1",
     path: "/root/dir1/dir1.2",
     canonical_path: None,
     size: 4096,
-    created: 2024-01-29T23:02:01.598768726Z,
-    modified: 2023-12-21T18:31:13Z,
-    accessed: 2024-01-29T23:02:26.079401960Z,
+    created: Datetime(
+        2024-01-29T23:02:01.598768726Z,
+    ),
+    modified: Datetime(
+        2023-12-21T18:31:13Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:02:26.079401960Z,
+    ),
     sha256: None,
-    parent_id: 5a71463d-1256-489d-897f-bac71e5d710a,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "unjrj3yra7385ubmhvws",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(89.39µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.286137190Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.506820262Z)), "id": Thing(Thing { tb: "nodes", id: String("ntb4rd3bzzb966a7yehj") }), "modified": Datetime(Datetime(2023-12-21T19:38:10Z)), "name": Strand(Strand("dir1.2.1.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("dw9bcab1bm2r56xczo8b") }), "path": Strand(Strand("/root/dir1/dir1.2/dir1.2.1")), "published": Bool(false), "sha256": Strand(Strand("04e242774fa10304e57f040746f84a2cad9291707bf38241491f26a221562ed9")), "size": Number(Int(1012))}))]))))})
 #12 path: root/dir1/dir1.2/dir1.2.1/dir1.2.1.file
-	name: dir1.2.1.file, path: /root/dir1/dir1.2/dir1.2.1, node_type: file, parent_id: 7e644bb8-dcf5-4440-be05-824029b4cfb4
+	name: dir1.2.1.file, path: /root/dir1/dir1.2/dir1.2.1, node_type: file, parent_id: nodes:dw9bcab1bm2r56xczo8b
 
 Node {
-    uuid: 5c34c77c-8b88-450a-a30b-deeb79fa7cb9,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "l81z3vq2tvbu7k2w6lk7",
+        ),
+    },
     node_type: File,
     name: "dir1.2.1.file",
     path: "/root/dir1/dir1.2/dir1.2.1",
     canonical_path: None,
     size: 1012,
-    created: 2024-01-29T23:02:01.598768726Z,
-    modified: 2023-12-21T19:38:10Z,
-    accessed: 2024-01-29T23:04:25.286137190Z,
+    created: Datetime(
+        2024-01-29T23:02:01.598768726Z,
+    ),
+    modified: Datetime(
+        2023-12-21T19:38:10Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:04:25.286137190Z,
+    ),
     sha256: Some(
         "04e242774fa10304e57f040746f84a2cad9291707bf38241491f26a221562ed9",
     ),
-    parent_id: 7e644bb8-dcf5-4440-be05-824029b4cfb4,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "dw9bcab1bm2r56xczo8b",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(76.51µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.508374243Z)), "id": Thing(Thing { tb: "nodes", id: String("59bbw6vqk2sxi9tevs4z") }), "modified": Datetime(Datetime(2023-12-21T19:39:21Z)), "name": Strand(Strand("dir1.2.2")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("unjrj3yra7385ubmhvws") }), "path": Strand(Strand("/root/dir1/dir1.2")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
 #13 path: root/dir1/dir1.2/dir1.2.2
-	name: dir1.2.2, path: /root/dir1/dir1.2, node_type: dir, parent_id: 5a71463d-1256-489d-897f-bac71e5d710a
+	name: dir1.2.2, path: /root/dir1/dir1.2, node_type: dir, parent_id: nodes:unjrj3yra7385ubmhvws
 
 Node {
-    uuid: db9cbeb8-5a36-492f-aaca-a742adf92eb5,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "qyavan3kqyef847kr57p",
+        ),
+    },
     node_type: Dir,
     name: "dir1.2.2",
     path: "/root/dir1/dir1.2",
     canonical_path: None,
     size: 4096,
-    created: 2024-01-29T23:02:01.598768726Z,
-    modified: 2023-12-21T19:39:21Z,
-    accessed: 2024-01-29T23:02:26.079401960Z,
+    created: Datetime(
+        2024-01-29T23:02:01.598768726Z,
+    ),
+    modified: Datetime(
+        2023-12-21T19:39:21Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:02:26.079401960Z,
+    ),
     sha256: None,
-    parent_id: 5a71463d-1256-489d-897f-bac71e5d710a,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "unjrj3yra7385ubmhvws",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(89.99µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.290137273Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.509973524Z)), "id": Thing(Thing { tb: "nodes", id: String("bglf3hfw6ammfts1xofc") }), "modified": Datetime(Datetime(2023-12-21T19:39:10Z)), "name": Strand(Strand("dir1.2.2.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("wm7ijzkyb7okgooruwks") }), "path": Strand(Strand("/root/dir1/dir1.2/dir1.2.2")), "published": Bool(false), "sha256": Strand(Strand("2d8755f1c04699ad432549bc98dc712ab3b30300f5c485ed0585c6ee3084567c")), "size": Number(Int(1470))}))]))))})
 #14 path: root/dir1/dir1.2/dir1.2.2/dir1.2.2.file
-	name: dir1.2.2.file, path: /root/dir1/dir1.2/dir1.2.2, node_type: file, parent_id: d4b8cc79-9d66-42ea-9ea1-e557ded4510b
+	name: dir1.2.2.file, path: /root/dir1/dir1.2/dir1.2.2, node_type: file, parent_id: nodes:wm7ijzkyb7okgooruwks
 
 Node {
-    uuid: 9f0e10c6-705f-47fc-bf37-7f37fd6c6791,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "819as5tdptsarivarmpj",
+        ),
+    },
     node_type: File,
     name: "dir1.2.2.file",
     path: "/root/dir1/dir1.2/dir1.2.2",
     canonical_path: None,
     size: 1470,
-    created: 2024-01-29T23:02:01.598768726Z,
-    modified: 2023-12-21T19:39:10Z,
-    accessed: 2024-01-29T23:04:25.290137273Z,
+    created: Datetime(
+        2024-01-29T23:02:01.598768726Z,
+    ),
+    modified: Datetime(
+        2023-12-21T19:39:10Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:04:25.290137273Z,
+    ),
     sha256: Some(
         "2d8755f1c04699ad432549bc98dc712ab3b30300f5c485ed0585c6ee3084567c",
     ),
-    parent_id: d4b8cc79-9d66-42ea-9ea1-e557ded4510b,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "wm7ijzkyb7okgooruwks",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(95µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.290137273Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.511596045Z)), "id": Thing(Thing { tb: "nodes", id: String("8c6h4qazxiar4gn9jd9q") }), "modified": Datetime(Datetime(2023-12-21T19:38:17Z)), "name": Strand(Strand("dir1.2.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("unjrj3yra7385ubmhvws") }), "path": Strand(Strand("/root/dir1/dir1.2")), "published": Bool(false), "sha256": Strand(Strand("78f4ad2b5c121c8d603de873a096da90e3ea3b8631cfd16dc4a49635e282b43c")), "size": Number(Int(1382))}))]))))})
 #15 path: root/dir1/dir1.2/dir1.2.file
-	name: dir1.2.file, path: /root/dir1/dir1.2, node_type: file, parent_id: 5a71463d-1256-489d-897f-bac71e5d710a
+	name: dir1.2.file, path: /root/dir1/dir1.2, node_type: file, parent_id: nodes:unjrj3yra7385ubmhvws
 
 Node {
-    uuid: 5ce5f7af-d712-4604-b7ad-d9bb3f5d2462,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "4jhcw2acrpcl8obq6216",
+        ),
+    },
     node_type: File,
     name: "dir1.2.file",
     path: "/root/dir1/dir1.2",
     canonical_path: None,
     size: 1382,
-    created: 2024-01-29T23:02:01.598768726Z,
-    modified: 2023-12-21T19:38:17Z,
-    accessed: 2024-01-29T23:04:25.290137273Z,
+    created: Datetime(
+        2024-01-29T23:02:01.598768726Z,
+    ),
+    modified: Datetime(
+        2023-12-21T19:38:17Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:04:25.290137273Z,
+    ),
     sha256: Some(
         "78f4ad2b5c121c8d603de873a096da90e3ea3b8631cfd16dc4a49635e282b43c",
     ),
-    parent_id: 5a71463d-1256-489d-897f-bac71e5d710a,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "unjrj3yra7385ubmhvws",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(87.98µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.513156986Z)), "id": Thing(Thing { tb: "nodes", id: String("5ahxss3x6nqx7kc3kih6") }), "modified": Datetime(Datetime(2023-12-21T18:29:58Z)), "name": Strand(Strand("dir1.3")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("hfks6t5ol8o6a2opx11t") }), "path": Strand(Strand("/root/dir1")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
 #16 path: root/dir1/dir1.3
-	name: dir1.3, path: /root/dir1, node_type: dir, parent_id: f7b2c30e-162e-4780-aea8-dbf7e3e6270e
+	name: dir1.3, path: /root/dir1, node_type: dir, parent_id: nodes:hfks6t5ol8o6a2opx11t
 
 Node {
-    uuid: 5a1d4118-ecfc-445e-b666-f499398eb285,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "u4bnsb27oz6mj1yz3ahp",
+        ),
+    },
     node_type: Dir,
     name: "dir1.3",
     path: "/root/dir1",
     canonical_path: None,
     size: 4096,
-    created: 2024-01-29T23:02:01.598768726Z,
-    modified: 2023-12-21T18:29:58Z,
-    accessed: 2024-01-29T23:02:26.079401960Z,
+    created: Datetime(
+        2024-01-29T23:02:01.598768726Z,
+    ),
+    modified: Datetime(
+        2023-12-21T18:29:58Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:02:26.079401960Z,
+    ),
     sha256: None,
-    parent_id: f7b2c30e-162e-4780-aea8-dbf7e3e6270e,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "hfks6t5ol8o6a2opx11t",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(89.27µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.514682277Z)), "id": Thing(Thing { tb: "nodes", id: String("b0qpol0i78a3r9otmn4e") }), "modified": Datetime(Datetime(2023-12-21T18:31:19Z)), "name": Strand(Strand("dir1.3.1")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("fdjjo19qrqfbhlxqbtzh") }), "path": Strand(Strand("/root/dir1/dir1.3")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
 #17 path: root/dir1/dir1.3/dir1.3.1
-	name: dir1.3.1, path: /root/dir1/dir1.3, node_type: dir, parent_id: 28910a99-852a-4dac-9fa3-ff2596d3668c
+	name: dir1.3.1, path: /root/dir1/dir1.3, node_type: dir, parent_id: nodes:fdjjo19qrqfbhlxqbtzh
 
 Node {
-    uuid: 813cf463-2048-4c93-b394-5a8138f4d4aa,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "p7ozj1d63052us68o1dx",
+        ),
+    },
     node_type: Dir,
     name: "dir1.3.1",
     path: "/root/dir1/dir1.3",
     canonical_path: None,
     size: 4096,
-    created: 2024-01-29T23:02:01.598768726Z,
-    modified: 2023-12-21T18:31:19Z,
-    accessed: 2024-01-29T23:02:26.079401960Z,
+    created: Datetime(
+        2024-01-29T23:02:01.598768726Z,
+    ),
+    modified: Datetime(
+        2023-12-21T18:31:19Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:02:26.079401960Z,
+    ),
     sha256: None,
-    parent_id: 28910a99-852a-4dac-9fa3-ff2596d3668c,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "fdjjo19qrqfbhlxqbtzh",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(97.24µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.290137273Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.516274748Z)), "id": Thing(Thing { tb: "nodes", id: String("khugbzgx9p2qv9alw7rt") }), "modified": Datetime(Datetime(2023-12-21T19:40:17Z)), "name": Strand(Strand("dir1.3.1.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("8n4mk9o4nqotjnsu2myt") }), "path": Strand(Strand("/root/dir1/dir1.3/dir1.3.1")), "published": Bool(false), "sha256": Strand(Strand("ec2bcf3b4c305009698da1ac46b16b45bf7e645762595841e6e4e40b005d5f52")), "size": Number(Int(1229))}))]))))})
 #18 path: root/dir1/dir1.3/dir1.3.1/dir1.3.1.file
-	name: dir1.3.1.file, path: /root/dir1/dir1.3/dir1.3.1, node_type: file, parent_id: 0fb64ed3-649a-448c-91c1-df859d28cfcb
+	name: dir1.3.1.file, path: /root/dir1/dir1.3/dir1.3.1, node_type: file, parent_id: nodes:8n4mk9o4nqotjnsu2myt
 
 Node {
-    uuid: 2cac4116-48b1-4139-acf0-dfc2eb65e44d,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "ilr7b4xdwn36hguqav4b",
+        ),
+    },
     node_type: File,
     name: "dir1.3.1.file",
     path: "/root/dir1/dir1.3/dir1.3.1",
     canonical_path: None,
     size: 1229,
-    created: 2024-01-29T23:02:01.598768726Z,
-    modified: 2023-12-21T19:40:17Z,
-    accessed: 2024-01-29T23:04:25.290137273Z,
+    created: Datetime(
+        2024-01-29T23:02:01.598768726Z,
+    ),
+    modified: Datetime(
+        2023-12-21T19:40:17Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:04:25.290137273Z,
+    ),
     sha256: Some(
         "ec2bcf3b4c305009698da1ac46b16b45bf7e645762595841e6e4e40b005d5f52",
     ),
-    parent_id: 0fb64ed3-649a-448c-91c1-df859d28cfcb,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "8n4mk9o4nqotjnsu2myt",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(85.781µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.517786649Z)), "id": Thing(Thing { tb: "nodes", id: String("2pc1s0ul6g1rr3geqsrh") }), "modified": Datetime(Datetime(2023-12-21T18:31:38Z)), "name": Strand(Strand("dir1.3.2")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("fdjjo19qrqfbhlxqbtzh") }), "path": Strand(Strand("/root/dir1/dir1.3")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
 #19 path: root/dir1/dir1.3/dir1.3.2
-	name: dir1.3.2, path: /root/dir1/dir1.3, node_type: dir, parent_id: 28910a99-852a-4dac-9fa3-ff2596d3668c
+	name: dir1.3.2, path: /root/dir1/dir1.3, node_type: dir, parent_id: nodes:fdjjo19qrqfbhlxqbtzh
 
 Node {
-    uuid: a26bfa90-41d9-49ac-a4f9-a36f61c1ceb0,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "5ov69yogcosdcqlkie9a",
+        ),
+    },
     node_type: Dir,
     name: "dir1.3.2",
     path: "/root/dir1/dir1.3",
     canonical_path: None,
     size: 4096,
-    created: 2024-01-29T23:02:01.598768726Z,
-    modified: 2023-12-21T18:31:38Z,
-    accessed: 2024-01-29T23:02:26.079401960Z,
+    created: Datetime(
+        2024-01-29T23:02:01.598768726Z,
+    ),
+    modified: Datetime(
+        2023-12-21T18:31:38Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:02:26.079401960Z,
+    ),
     sha256: None,
-    parent_id: 28910a99-852a-4dac-9fa3-ff2596d3668c,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "fdjjo19qrqfbhlxqbtzh",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(84.68µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.294137356Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.519364740Z)), "id": Thing(Thing { tb: "nodes", id: String("mua5x2rt3i8f1m1y3yqj") }), "modified": Datetime(Datetime(2023-12-21T19:40:25Z)), "name": Strand(Strand("dir1.3.2.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("t8hdu4xtvsvo5mbkndqv") }), "path": Strand(Strand("/root/dir1/dir1.3/dir1.3.2")), "published": Bool(false), "sha256": Strand(Strand("d908e1a15b8dfa070987e58ecaa0755ae21fb62569a88647e29786ed291ee185")), "size": Number(Int(1189))}))]))))})
 #20 path: root/dir1/dir1.3/dir1.3.2/dir1.3.2.file
-	name: dir1.3.2.file, path: /root/dir1/dir1.3/dir1.3.2, node_type: file, parent_id: de25aacf-f3d3-4a1c-a0a0-48abb5c3b3d5
+	name: dir1.3.2.file, path: /root/dir1/dir1.3/dir1.3.2, node_type: file, parent_id: nodes:t8hdu4xtvsvo5mbkndqv
 
 Node {
-    uuid: 1380cd47-d303-44dc-b121-53da8e0012fc,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "hivqbrr7u2qpw5817oy9",
+        ),
+    },
     node_type: File,
     name: "dir1.3.2.file",
     path: "/root/dir1/dir1.3/dir1.3.2",
     canonical_path: None,
     size: 1189,
-    created: 2024-01-29T23:02:01.598768726Z,
-    modified: 2023-12-21T19:40:25Z,
-    accessed: 2024-01-29T23:04:25.294137356Z,
+    created: Datetime(
+        2024-01-29T23:02:01.598768726Z,
+    ),
+    modified: Datetime(
+        2023-12-21T19:40:25Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:04:25.294137356Z,
+    ),
     sha256: Some(
         "d908e1a15b8dfa070987e58ecaa0755ae21fb62569a88647e29786ed291ee185",
     ),
-    parent_id: de25aacf-f3d3-4a1c-a0a0-48abb5c3b3d5,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "t8hdu4xtvsvo5mbkndqv",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(83.64µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.520907771Z)), "id": Thing(Thing { tb: "nodes", id: String("71yca1pnk5ijie4gjp08") }), "modified": Datetime(Datetime(2023-12-21T18:31:43Z)), "name": Strand(Strand("dir1.3.3")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("fdjjo19qrqfbhlxqbtzh") }), "path": Strand(Strand("/root/dir1/dir1.3")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
 #21 path: root/dir1/dir1.3/dir1.3.3
-	name: dir1.3.3, path: /root/dir1/dir1.3, node_type: dir, parent_id: 28910a99-852a-4dac-9fa3-ff2596d3668c
+	name: dir1.3.3, path: /root/dir1/dir1.3, node_type: dir, parent_id: nodes:fdjjo19qrqfbhlxqbtzh
 
 Node {
-    uuid: 89f717d3-2f1a-4785-83a0-c7863fc4af1e,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "0liwjtl05mu56y9nwuzx",
+        ),
+    },
     node_type: Dir,
     name: "dir1.3.3",
     path: "/root/dir1/dir1.3",
     canonical_path: None,
     size: 4096,
-    created: 2024-01-29T23:02:01.598768726Z,
-    modified: 2023-12-21T18:31:43Z,
-    accessed: 2024-01-29T23:02:26.079401960Z,
+    created: Datetime(
+        2024-01-29T23:02:01.598768726Z,
+    ),
+    modified: Datetime(
+        2023-12-21T18:31:43Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:02:26.079401960Z,
+    ),
     sha256: None,
-    parent_id: 28910a99-852a-4dac-9fa3-ff2596d3668c,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "fdjjo19qrqfbhlxqbtzh",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(85.93µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.294137356Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.522462822Z)), "id": Thing(Thing { tb: "nodes", id: String("ybjmz3zdowow0qb5du0k") }), "modified": Datetime(Datetime(2023-12-21T19:40:30Z)), "name": Strand(Strand("dir1.3.3.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("e6c54qm9ruyvf7fny3qr") }), "path": Strand(Strand("/root/dir1/dir1.3/dir1.3.3")), "published": Bool(false), "sha256": Strand(Strand("2a1d86b1f6592605fd68db71559155ba007394afda4879d36991a830b4843d48")), "size": Number(Int(1094))}))]))))})
 #22 path: root/dir1/dir1.3/dir1.3.3/dir1.3.3.file
-	name: dir1.3.3.file, path: /root/dir1/dir1.3/dir1.3.3, node_type: file, parent_id: 3953a693-e05e-4863-8893-d03085441f7a
+	name: dir1.3.3.file, path: /root/dir1/dir1.3/dir1.3.3, node_type: file, parent_id: nodes:e6c54qm9ruyvf7fny3qr
 
 Node {
-    uuid: a40de0e1-e0e2-4102-8cf4-878c7411477b,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "0clxjiwhx11y3urhsfbe",
+        ),
+    },
     node_type: File,
     name: "dir1.3.3.file",
     path: "/root/dir1/dir1.3/dir1.3.3",
     canonical_path: None,
     size: 1094,
-    created: 2024-01-29T23:02:01.598768726Z,
-    modified: 2023-12-21T19:40:30Z,
-    accessed: 2024-01-29T23:04:25.294137356Z,
+    created: Datetime(
+        2024-01-29T23:02:01.598768726Z,
+    ),
+    modified: Datetime(
+        2023-12-21T19:40:30Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:04:25.294137356Z,
+    ),
     sha256: Some(
         "2a1d86b1f6592605fd68db71559155ba007394afda4879d36991a830b4843d48",
     ),
-    parent_id: 3953a693-e05e-4863-8893-d03085441f7a,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "e6c54qm9ruyvf7fny3qr",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(88.14µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.294137356Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.524082673Z)), "id": Thing(Thing { tb: "nodes", id: String("k1nc3r5krd6k8o13a05z") }), "modified": Datetime(Datetime(2023-12-21T19:40:38Z)), "name": Strand(Strand("dir1.3.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("fdjjo19qrqfbhlxqbtzh") }), "path": Strand(Strand("/root/dir1/dir1.3")), "published": Bool(false), "sha256": Strand(Strand("d8048958ceb19152cbe3aff5119c5ea1b449d6a2926f1ed7b55e3f7502d3113b")), "size": Number(Int(1018))}))]))))})
 #23 path: root/dir1/dir1.3/dir1.3.file
-	name: dir1.3.file, path: /root/dir1/dir1.3, node_type: file, parent_id: 28910a99-852a-4dac-9fa3-ff2596d3668c
+	name: dir1.3.file, path: /root/dir1/dir1.3, node_type: file, parent_id: nodes:fdjjo19qrqfbhlxqbtzh
 
 Node {
-    uuid: 596a7358-f044-481e-9d2e-44f6286fb337,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "5dulrq1zw0w4g376qyp9",
+        ),
+    },
     node_type: File,
     name: "dir1.3.file",
     path: "/root/dir1/dir1.3",
     canonical_path: None,
     size: 1018,
-    created: 2024-01-29T23:02:01.598768726Z,
-    modified: 2023-12-21T19:40:38Z,
-    accessed: 2024-01-29T23:04:25.294137356Z,
+    created: Datetime(
+        2024-01-29T23:02:01.598768726Z,
+    ),
+    modified: Datetime(
+        2023-12-21T19:40:38Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:04:25.294137356Z,
+    ),
     sha256: Some(
         "d8048958ceb19152cbe3aff5119c5ea1b449d6a2926f1ed7b55e3f7502d3113b",
     ),
-    parent_id: 28910a99-852a-4dac-9fa3-ff2596d3668c,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "fdjjo19qrqfbhlxqbtzh",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(85.44µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.298137439Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.525660294Z)), "id": Thing(Thing { tb: "nodes", id: String("kab9krs12o8ecd2l6te5") }), "modified": Datetime(Datetime(2023-12-21T19:41:51Z)), "name": Strand(Strand("dir1.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("hfks6t5ol8o6a2opx11t") }), "path": Strand(Strand("/root/dir1")), "published": Bool(false), "sha256": Strand(Strand("d984ba6fa08df01433836ab44abce31ddcba5aafe9ff2c4585e6d87885c95351")), "size": Number(Int(1031))}))]))))})
 #24 path: root/dir1/dir1.file
-	name: dir1.file, path: /root/dir1, node_type: file, parent_id: f7b2c30e-162e-4780-aea8-dbf7e3e6270e
+	name: dir1.file, path: /root/dir1, node_type: file, parent_id: nodes:hfks6t5ol8o6a2opx11t
 
 Node {
-    uuid: 8dca6fee-65b5-4d79-aa09-4b70a619a824,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "cbjck7di0d13971s168u",
+        ),
+    },
     node_type: File,
     name: "dir1.file",
     path: "/root/dir1",
     canonical_path: None,
     size: 1031,
-    created: 2024-01-29T23:02:01.598768726Z,
-    modified: 2023-12-21T19:41:51Z,
-    accessed: 2024-01-29T23:04:25.298137439Z,
+    created: Datetime(
+        2024-01-29T23:02:01.598768726Z,
+    ),
+    modified: Datetime(
+        2023-12-21T19:41:51Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:04:25.298137439Z,
+    ),
     sha256: Some(
         "d984ba6fa08df01433836ab44abce31ddcba5aafe9ff2c4585e6d87885c95351",
     ),
-    parent_id: f7b2c30e-162e-4780-aea8-dbf7e3e6270e,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "hfks6t5ol8o6a2opx11t",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(89.99µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.602768831Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.527184185Z)), "id": Thing(Thing { tb: "nodes", id: String("91vv0m8cxnqwgli68ynr") }), "modified": Datetime(Datetime(2023-12-22T00:47:46Z)), "name": Strand(Strand("dir2")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("usufovpuprtm6rzit4ex") }), "path": Strand(Strand("/root")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
 #25 path: root/dir2
-	name: dir2, path: /root, node_type: dir, parent_id: 863478a6-749b-4d86-b158-bd3e501afb81
+	name: dir2, path: /root, node_type: dir, parent_id: nodes:usufovpuprtm6rzit4ex
 
 Node {
-    uuid: 527e7a17-4483-45ea-87a9-2b0d1dacdc4d,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "838yhksaubdj4ke3lbdy",
+        ),
+    },
     node_type: Dir,
     name: "dir2",
     path: "/root",
     canonical_path: None,
     size: 4096,
-    created: 2024-01-29T23:02:01.602768831Z,
-    modified: 2023-12-22T00:47:46Z,
-    accessed: 2024-01-29T23:02:26.079401960Z,
+    created: Datetime(
+        2024-01-29T23:02:01.602768831Z,
+    ),
+    modified: Datetime(
+        2023-12-22T00:47:46Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:02:26.079401960Z,
+    ),
     sha256: None,
-    parent_id: 863478a6-749b-4d86-b158-bd3e501afb81,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "usufovpuprtm6rzit4ex",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(97.68µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.539413603Z)), "canonical_path": Strand(Strand("../dir1/dir1.2/dir1.2.1/dir1.2.1.file")), "created": Datetime(Datetime(2024-01-29T23:02:01.602768831Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.528971596Z)), "id": Thing(Thing { tb: "nodes", id: String("cpbvyi4kecqz1ir0vy7e") }), "modified": Datetime(Datetime(2023-12-21T18:46:18Z)), "name": Strand(Strand("dir1.2.1.file.link")), "node_type": Strand(Strand("Symlink")), "parent_id": Thing(Thing { tb: "nodes", id: String("fihhm7m2bb98ghgnrbbp") }), "path": Strand(Strand("/root/dir2")), "published": Bool(false), "sha256": Strand(Strand("04e242774fa10304e57f040746f84a2cad9291707bf38241491f26a221562ed9")), "size": Number(Int(37))}))]))))})
 #26 path: root/dir2/dir1.2.1.file.link
-	name: dir1.2.1.file.link, path: /root/dir2, node_type: symlink, parent_id: 5f5cd041-9354-47bb-a3b7-72ecdac1ce81
+	name: dir1.2.1.file.link, path: /root/dir2, node_type: symlink, parent_id: nodes:fihhm7m2bb98ghgnrbbp
 
 Node {
-    uuid: d8c42fde-988e-4b5a-95d9-6f7606b0c475,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "5dgw28aiiark3pw0ldwj",
+        ),
+    },
     node_type: Symlink,
     name: "dir1.2.1.file.link",
     path: "/root/dir2",
@@ -488,59 +920,110 @@ Node {
         "../dir1/dir1.2/dir1.2.1/dir1.2.1.file",
     ),
     size: 37,
-    created: 2024-01-29T23:02:01.602768831Z,
-    modified: 2023-12-21T18:46:18Z,
-    accessed: 2024-01-29T23:02:26.539413603Z,
+    created: Datetime(
+        2024-01-29T23:02:01.602768831Z,
+    ),
+    modified: Datetime(
+        2023-12-21T18:46:18Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:02:26.539413603Z,
+    ),
     sha256: Some(
         "04e242774fa10304e57f040746f84a2cad9291707bf38241491f26a221562ed9",
     ),
-    parent_id: 5f5cd041-9354-47bb-a3b7-72ecdac1ce81,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "fihhm7m2bb98ghgnrbbp",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(86.04µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.298137439Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.602768831Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.530486907Z)), "id": Thing(Thing { tb: "nodes", id: String("fv1o1z3httztxvz7d2ea") }), "modified": Datetime(Datetime(2023-12-21T18:35:22Z)), "name": Strand(Strand("dir2.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("fihhm7m2bb98ghgnrbbp") }), "path": Strand(Strand("/root/dir2")), "published": Bool(false), "sha256": Strand(Strand("e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855")), "size": Number(Int(0))}))]))))})
 #27 path: root/dir2/dir2.file
-	name: dir2.file, path: /root/dir2, node_type: file, parent_id: 5f5cd041-9354-47bb-a3b7-72ecdac1ce81
+	name: dir2.file, path: /root/dir2, node_type: file, parent_id: nodes:fihhm7m2bb98ghgnrbbp
 
 Node {
-    uuid: b1835159-7110-43e0-85cf-a0b6f8041922,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "nsfuoytlkuqabsbuemac",
+        ),
+    },
     node_type: File,
     name: "dir2.file",
     path: "/root/dir2",
     canonical_path: None,
     size: 0,
-    created: 2024-01-29T23:02:01.602768831Z,
-    modified: 2023-12-21T18:35:22Z,
-    accessed: 2024-01-29T23:04:25.298137439Z,
+    created: Datetime(
+        2024-01-29T23:02:01.602768831Z,
+    ),
+    modified: Datetime(
+        2023-12-21T18:35:22Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:04:25.298137439Z,
+    ),
     sha256: Some(
         "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     ),
-    parent_id: 5f5cd041-9354-47bb-a3b7-72ecdac1ce81,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "fihhm7m2bb98ghgnrbbp",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(87.19µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.602768831Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.532099248Z)), "id": Thing(Thing { tb: "nodes", id: String("jm9m881av92ux3j998ld") }), "modified": Datetime(Datetime(2023-12-22T00:47:50Z)), "name": Strand(Strand("dir3")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("usufovpuprtm6rzit4ex") }), "path": Strand(Strand("/root")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
 #28 path: root/dir3
-	name: dir3, path: /root, node_type: dir, parent_id: 863478a6-749b-4d86-b158-bd3e501afb81
+	name: dir3, path: /root, node_type: dir, parent_id: nodes:usufovpuprtm6rzit4ex
 
 Node {
-    uuid: 3b3272a4-88fb-4fad-94a8-51a6692137cf,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "3g1v6agio2nytvfrpd0k",
+        ),
+    },
     node_type: Dir,
     name: "dir3",
     path: "/root",
     canonical_path: None,
     size: 4096,
-    created: 2024-01-29T23:02:01.602768831Z,
-    modified: 2023-12-22T00:47:50Z,
-    accessed: 2024-01-29T23:02:26.079401960Z,
+    created: Datetime(
+        2024-01-29T23:02:01.602768831Z,
+    ),
+    modified: Datetime(
+        2023-12-22T00:47:50Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:02:26.079401960Z,
+    ),
     sha256: None,
-    parent_id: 863478a6-749b-4d86-b158-bd3e501afb81,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "usufovpuprtm6rzit4ex",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(86.91µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.539413603Z)), "canonical_path": Strand(Strand("../dir1/dir1.3/dir1.3.1/dir1.3.1.file")), "created": Datetime(Datetime(2024-01-29T23:02:01.602768831Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.533647139Z)), "id": Thing(Thing { tb: "nodes", id: String("8ci2jvnp4dijpjkzu0md") }), "modified": Datetime(Datetime(2023-12-21T18:46:46Z)), "name": Strand(Strand("dir1.3.1.file.link")), "node_type": Strand(Strand("Symlink")), "parent_id": Thing(Thing { tb: "nodes", id: String("kpwg9lwk6uh3l30jypar") }), "path": Strand(Strand("/root/dir3")), "published": Bool(false), "sha256": Strand(Strand("ec2bcf3b4c305009698da1ac46b16b45bf7e645762595841e6e4e40b005d5f52")), "size": Number(Int(37))}))]))))})
 #29 path: root/dir3/dir1.3.1.file.link
-	name: dir1.3.1.file.link, path: /root/dir3, node_type: symlink, parent_id: de47bfe5-da8e-41cc-8ea7-908724f7345a
+	name: dir1.3.1.file.link, path: /root/dir3, node_type: symlink, parent_id: nodes:kpwg9lwk6uh3l30jypar
 
 Node {
-    uuid: d340c2d9-87f4-48a9-999a-600c1067ad46,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "2myvtxu2qrgh4zvi5fz7",
+        ),
+    },
     node_type: Symlink,
     name: "dir1.3.1.file.link",
     path: "/root/dir3",
@@ -548,69 +1031,179 @@ Node {
         "../dir1/dir1.3/dir1.3.1/dir1.3.1.file",
     ),
     size: 37,
-    created: 2024-01-29T23:02:01.602768831Z,
-    modified: 2023-12-21T18:46:46Z,
-    accessed: 2024-01-29T23:02:26.539413603Z,
+    created: Datetime(
+        2024-01-29T23:02:01.602768831Z,
+    ),
+    modified: Datetime(
+        2023-12-21T18:46:46Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:02:26.539413603Z,
+    ),
     sha256: Some(
         "ec2bcf3b4c305009698da1ac46b16b45bf7e645762595841e6e4e40b005d5f52",
     ),
-    parent_id: de47bfe5-da8e-41cc-8ea7-908724f7345a,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "kpwg9lwk6uh3l30jypar",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(86.36µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.302137521Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.602768831Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.535190440Z)), "id": Thing(Thing { tb: "nodes", id: String("pd07rwr1genc67i6gvfw") }), "modified": Datetime(Datetime(2023-12-21T18:35:28Z)), "name": Strand(Strand("dir3.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("kpwg9lwk6uh3l30jypar") }), "path": Strand(Strand("/root/dir3")), "published": Bool(false), "sha256": Strand(Strand("e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855")), "size": Number(Int(0))}))]))))})
 #30 path: root/dir3/dir3.file
-	name: dir3.file, path: /root/dir3, node_type: file, parent_id: de47bfe5-da8e-41cc-8ea7-908724f7345a
+	name: dir3.file, path: /root/dir3, node_type: file, parent_id: nodes:kpwg9lwk6uh3l30jypar
 
 Node {
-    uuid: 60e12968-b4ae-46a8-8305-091f1bb39f95,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "7lhydwl3o7rmqhs9r5d6",
+        ),
+    },
     node_type: File,
     name: "dir3.file",
     path: "/root/dir3",
     canonical_path: None,
     size: 0,
-    created: 2024-01-29T23:02:01.602768831Z,
-    modified: 2023-12-21T18:35:28Z,
-    accessed: 2024-01-29T23:04:25.302137521Z,
+    created: Datetime(
+        2024-01-29T23:02:01.602768831Z,
+    ),
+    modified: Datetime(
+        2023-12-21T18:35:28Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:04:25.302137521Z,
+    ),
     sha256: Some(
         "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     ),
-    parent_id: de47bfe5-da8e-41cc-8ea7-908724f7345a,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "kpwg9lwk6uh3l30jypar",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+node saved: Response({0: (Stats { execution_time: Some(86.93µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.302137521Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.602768831Z)), "created_at": Datetime(Datetime(2024-01-30T01:17:30.536781931Z)), "id": Thing(Thing { tb: "nodes", id: String("kcox4tlwgqx8d8z6h4wf") }), "modified": Datetime(Datetime(2023-12-22T00:50:19Z)), "name": Strand(Strand("root.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("usufovpuprtm6rzit4ex") }), "path": Strand(Strand("/root")), "published": Bool(false), "sha256": Strand(Strand("9abbd92033b49215e66f241b9a98e7e3a44aef509cea323bb9d8021e34d23ad5")), "size": Number(Int(1234))}))]))))})
 #31 path: root/root.file
-	name: root.file, path: /root, node_type: file, parent_id: 863478a6-749b-4d86-b158-bd3e501afb81
+	name: root.file, path: /root, node_type: file, parent_id: nodes:usufovpuprtm6rzit4ex
 
 Node {
-    uuid: 54012f2e-60e7-4eb6-91b2-16d0c86c66d6,
+    id: Thing {
+        tb: "nodes",
+        id: String(
+            "e3hs3vjn2xcc672gcnwx",
+        ),
+    },
     node_type: File,
     name: "root.file",
     path: "/root",
     canonical_path: None,
     size: 1234,
-    created: 2024-01-29T23:02:01.602768831Z,
-    modified: 2023-12-22T00:50:19Z,
-    accessed: 2024-01-29T23:04:25.302137521Z,
+    created: Datetime(
+        2024-01-29T23:02:01.602768831Z,
+    ),
+    modified: Datetime(
+        2023-12-22T00:50:19Z,
+    ),
+    accessed: Datetime(
+        2024-01-29T23:04:25.302137521Z,
+    ),
     sha256: Some(
         "9abbd92033b49215e66f241b9a98e7e3a44aef509cea323bb9d8021e34d23ad5",
     ),
-    parent_id: 863478a6-749b-4d86-b158-bd3e501afb81,
+    parent_id: Thing {
+        tb: "nodes",
+        id: String(
+            "usufovpuprtm6rzit4ex",
+        ),
+    },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 parent_path_hash_map: {
-    "root/dir1/dir1.3/dir1.3.2": de25aacf-f3d3-4a1c-a0a0-48abb5c3b3d5,
-    "root/dir1/dir1.3/dir1.3.1": 0fb64ed3-649a-448c-91c1-df859d28cfcb,
-    "root/dir2": 5f5cd041-9354-47bb-a3b7-72ecdac1ce81,
-    "root/dir1/dir1.2": 5a71463d-1256-489d-897f-bac71e5d710a,
-    "root/dir1/dir1.3/dir1.3.3": 3953a693-e05e-4863-8893-d03085441f7a,
-    "root/dir1": f7b2c30e-162e-4780-aea8-dbf7e3e6270e,
-    "root/dir1/dir1.3": 28910a99-852a-4dac-9fa3-ff2596d3668c,
-    "root/dir1/dir1.2/dir1.2.2": d4b8cc79-9d66-42ea-9ea1-e557ded4510b,
-    "root/dir3": de47bfe5-da8e-41cc-8ea7-908724f7345a,
-    "root/dir1/dir1.1": 3c3dcb6d-da04-4cf0-b466-6b2905af0ab4,
-    "root/dir1/dir1.1/dir1.1.1": 5b65276f-bf66-4fe4-826f-c816a5060c54,
-    "root/dir1/dir1.2/dir1.2.1": 7e644bb8-dcf5-4440-be05-824029b4cfb4,
-    "root": 863478a6-749b-4d86-b158-bd3e501afb81,
+    "root/dir1/dir1.1/dir1.1.1": Thing {
+        tb: "nodes",
+        id: String(
+            "8tozmvw75n30t9rb5rle",
+        ),
+    },
+    "root/dir2": Thing {
+        tb: "nodes",
+        id: String(
+            "fihhm7m2bb98ghgnrbbp",
+        ),
+    },
+    "root/dir1/dir1.3": Thing {
+        tb: "nodes",
+        id: String(
+            "fdjjo19qrqfbhlxqbtzh",
+        ),
+    },
+    "root/dir1/dir1.2/dir1.2.2": Thing {
+        tb: "nodes",
+        id: String(
+            "wm7ijzkyb7okgooruwks",
+        ),
+    },
+    "root/dir1": Thing {
+        tb: "nodes",
+        id: String(
+            "hfks6t5ol8o6a2opx11t",
+        ),
+    },
+    "root": Thing {
+        tb: "nodes",
+        id: String(
+            "usufovpuprtm6rzit4ex",
+        ),
+    },
+    "root/dir1/dir1.3/dir1.3.2": Thing {
+        tb: "nodes",
+        id: String(
+            "t8hdu4xtvsvo5mbkndqv",
+        ),
+    },
+    "root/dir1/dir1.3/dir1.3.3": Thing {
+        tb: "nodes",
+        id: String(
+            "e6c54qm9ruyvf7fny3qr",
+        ),
+    },
+    "root/dir3": Thing {
+        tb: "nodes",
+        id: String(
+            "kpwg9lwk6uh3l30jypar",
+        ),
+    },
+    "root/dir1/dir1.2/dir1.2.1": Thing {
+        tb: "nodes",
+        id: String(
+            "dw9bcab1bm2r56xczo8b",
+        ),
+    },
+    "root/dir1/dir1.3/dir1.3.1": Thing {
+        tb: "nodes",
+        id: String(
+            "8n4mk9o4nqotjnsu2myt",
+        ),
+    },
+    "root/dir1/dir1.2": Thing {
+        tb: "nodes",
+        id: String(
+            "unjrj3yra7385ubmhvws",
+        ),
+    },
+    "root/dir1/dir1.1": Thing {
+        tb: "nodes",
+        id: String(
+            "t9p5wtrwcrwu6lqq6ss5",
+        ),
+    },
 }
 
