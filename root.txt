@@ -1,13 +1,13 @@
-node saved: Response({0: (Stats { execution_time: Some(201.5µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.632999024Z)), "id": Thing(Thing { tb: "nodes", id: String("zuyewnxt9hbafqq78grl") }), "modified": Datetime(Datetime(2023-12-21T18:28:29Z)), "name": Strand(Strand("root")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("bctq527obimbjjdl1eh6") }), "path": Strand(Strand("/")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
-node saved: Response({0: (Stats { execution_time: Some(159.33µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.634964301Z)), "id": Thing(Thing { tb: "nodes", id: String("m9alnaqqvsfyfqpf8ld7") }), "modified": Datetime(Datetime(2023-12-21T18:28:59Z)), "name": Strand(Strand("dir1")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("qwwvx3qfbwutygeuzgm0") }), "path": Strand(Strand("/root")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
+node saved: ()
+node saved: ()
 #1 path: root/dir1
-	name: dir1, path: /root, node_type: dir, parent_id: nodes:qwwvx3qfbwutygeuzgm0
+	name: dir1, path: /root, node_type: dir, parent_id: nodes:mvvhdazt41eqy5opl7vo
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "67g7gat4h40ajvs19zbi",
+            "d9kiu1ma1gl086ljv9kw",
         ),
     },
     node_type: Dir,
@@ -28,21 +28,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "qwwvx3qfbwutygeuzgm0",
+            "mvvhdazt41eqy5opl7vo",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(125.759µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.636652949Z)), "id": Thing(Thing { tb: "nodes", id: String("yd4vyj2roosxx9hdt2t8") }), "modified": Datetime(Datetime(2023-12-21T18:29:39Z)), "name": Strand(Strand("dir1.1")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("p4z7vc1h5klufxszddnk") }), "path": Strand(Strand("/root/dir1")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
+node saved: ()
 #2 path: root/dir1/dir1.1
-	name: dir1.1, path: /root/dir1, node_type: dir, parent_id: nodes:p4z7vc1h5klufxszddnk
+	name: dir1.1, path: /root/dir1, node_type: dir, parent_id: nodes:yn8ux942bkvef1d0rn19
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "z948rt39v95yf1pk8ony",
+            "2ban67eyi300upb8zj5l",
         ),
     },
     node_type: Dir,
@@ -63,21 +63,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "p4z7vc1h5klufxszddnk",
+            "yn8ux942bkvef1d0rn19",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(90.659µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.638234537Z)), "id": Thing(Thing { tb: "nodes", id: String("adz87d7a0z96fss6hmi3") }), "modified": Datetime(Datetime(2023-12-21T22:07:26Z)), "name": Strand(Strand("dir1.1.1")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("2uocgechxy0ilcqc9pjl") }), "path": Strand(Strand("/root/dir1/dir1.1")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
+node saved: ()
 #3 path: root/dir1/dir1.1/dir1.1.1
-	name: dir1.1.1, path: /root/dir1/dir1.1, node_type: dir, parent_id: nodes:2uocgechxy0ilcqc9pjl
+	name: dir1.1.1, path: /root/dir1/dir1.1, node_type: dir, parent_id: nodes:wmvh90pu4yc7l66jqlmb
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "ev8yfg747bmt1kd0dscj",
+            "k7h3nbpdyiudzuil9hf4",
         ),
     },
     node_type: Dir,
@@ -98,21 +98,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "2uocgechxy0ilcqc9pjl",
+            "wmvh90pu4yc7l66jqlmb",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(97.77µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.278137024Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.639893184Z)), "id": Thing(Thing { tb: "nodes", id: String("ggspugtt9idflj13gdqx") }), "modified": Datetime(Datetime(2023-12-21T19:38:27Z)), "name": Strand(Strand("dir1.1.1-1.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("tzzz5gk1amw79e227lt5") }), "path": Strand(Strand("/root/dir1/dir1.1/dir1.1.1")), "published": Bool(false), "sha256": Strand(Strand("2d8755f1c04699ad432549bc98dc712ab3b30300f5c485ed0585c6ee3084567c")), "size": Number(Int(1470))}))]))))})
+node saved: ()
 #4 path: root/dir1/dir1.1/dir1.1.1/dir1.1.1-1.file
-	name: dir1.1.1-1.file, path: /root/dir1/dir1.1/dir1.1.1, node_type: file, parent_id: nodes:tzzz5gk1amw79e227lt5
+	name: dir1.1.1-1.file, path: /root/dir1/dir1.1/dir1.1.1, node_type: file, parent_id: nodes:o234avwuqboguqbf77um
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "t60f7x5wotvx4ht5pyp0",
+            "7z8fdlbza53z9u01wlno",
         ),
     },
     node_type: File,
@@ -135,21 +135,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "tzzz5gk1amw79e227lt5",
+            "o234avwuqboguqbf77um",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(83.54µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.282137107Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.641504982Z)), "id": Thing(Thing { tb: "nodes", id: String("79t109ab8n729ont4sdn") }), "modified": Datetime(Datetime(2023-12-21T22:06:44Z)), "name": Strand(Strand("dir1.1.1-2.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("tzzz5gk1amw79e227lt5") }), "path": Strand(Strand("/root/dir1/dir1.1/dir1.1.1")), "published": Bool(false), "sha256": Strand(Strand("2d8755f1c04699ad432549bc98dc712ab3b30300f5c485ed0585c6ee3084567c")), "size": Number(Int(1470))}))]))))})
+node saved: ()
 #5 path: root/dir1/dir1.1/dir1.1.1/dir1.1.1-2.file
-	name: dir1.1.1-2.file, path: /root/dir1/dir1.1/dir1.1.1, node_type: file, parent_id: nodes:tzzz5gk1amw79e227lt5
+	name: dir1.1.1-2.file, path: /root/dir1/dir1.1/dir1.1.1, node_type: file, parent_id: nodes:o234avwuqboguqbf77um
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "z0cidm1i87cwktc2uy8p",
+            "jnd2ykf7s4e70dj3316t",
         ),
     },
     node_type: File,
@@ -172,21 +172,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "tzzz5gk1amw79e227lt5",
+            "o234avwuqboguqbf77um",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(94.29µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.282137107Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.602768831Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.643144740Z)), "id": Thing(Thing { tb: "nodes", id: String("gxs7r63ta1byve40uk8f") }), "modified": Datetime(Datetime(2023-12-21T22:06:46Z)), "name": Strand(Strand("dir1.1.1-3.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("tzzz5gk1amw79e227lt5") }), "path": Strand(Strand("/root/dir1/dir1.1/dir1.1.1")), "published": Bool(false), "sha256": Strand(Strand("2d8755f1c04699ad432549bc98dc712ab3b30300f5c485ed0585c6ee3084567c")), "size": Number(Int(1470))}))]))))})
+node saved: ()
 #6 path: root/dir1/dir1.1/dir1.1.1/dir1.1.1-3.file
-	name: dir1.1.1-3.file, path: /root/dir1/dir1.1/dir1.1.1, node_type: file, parent_id: nodes:tzzz5gk1amw79e227lt5
+	name: dir1.1.1-3.file, path: /root/dir1/dir1.1/dir1.1.1, node_type: file, parent_id: nodes:o234avwuqboguqbf77um
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "i11vvj0javjbsukqc8cd",
+            "tv1ttqbz4b1nbflvlmou",
         ),
     },
     node_type: File,
@@ -209,21 +209,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "tzzz5gk1amw79e227lt5",
+            "o234avwuqboguqbf77um",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(101.459µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.282137107Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.602768831Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.644777508Z)), "id": Thing(Thing { tb: "nodes", id: String("4cjnwjlo9x8swxwyw80d") }), "modified": Datetime(Datetime(2023-12-21T22:06:45Z)), "name": Strand(Strand("dir1.1.1-4.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("tzzz5gk1amw79e227lt5") }), "path": Strand(Strand("/root/dir1/dir1.1/dir1.1.1")), "published": Bool(false), "sha256": Strand(Strand("2d8755f1c04699ad432549bc98dc712ab3b30300f5c485ed0585c6ee3084567c")), "size": Number(Int(1470))}))]))))})
+node saved: ()
 #7 path: root/dir1/dir1.1/dir1.1.1/dir1.1.1-4.file
-	name: dir1.1.1-4.file, path: /root/dir1/dir1.1/dir1.1.1, node_type: file, parent_id: nodes:tzzz5gk1amw79e227lt5
+	name: dir1.1.1-4.file, path: /root/dir1/dir1.1/dir1.1.1, node_type: file, parent_id: nodes:o234avwuqboguqbf77um
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "0nbuq2d55idk8z7y522w",
+            "9lcsog3xj865g0t41b8m",
         ),
     },
     node_type: File,
@@ -246,21 +246,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "tzzz5gk1amw79e227lt5",
+            "o234avwuqboguqbf77um",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(104.14µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.282137107Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.602768831Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.646504785Z)), "id": Thing(Thing { tb: "nodes", id: String("yna5vl16f8wi0h36rflq") }), "modified": Datetime(Datetime(2023-12-21T22:06:45Z)), "name": Strand(Strand("dir1.1.1-5.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("tzzz5gk1amw79e227lt5") }), "path": Strand(Strand("/root/dir1/dir1.1/dir1.1.1")), "published": Bool(false), "sha256": Strand(Strand("2d8755f1c04699ad432549bc98dc712ab3b30300f5c485ed0585c6ee3084567c")), "size": Number(Int(1470))}))]))))})
+node saved: ()
 #8 path: root/dir1/dir1.1/dir1.1.1/dir1.1.1-5.file
-	name: dir1.1.1-5.file, path: /root/dir1/dir1.1/dir1.1.1, node_type: file, parent_id: nodes:tzzz5gk1amw79e227lt5
+	name: dir1.1.1-5.file, path: /root/dir1/dir1.1/dir1.1.1, node_type: file, parent_id: nodes:o234avwuqboguqbf77um
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "yqgbbcqwddx88uy82ffc",
+            "2esl693vqyz0m33ufram",
         ),
     },
     node_type: File,
@@ -283,21 +283,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "tzzz5gk1amw79e227lt5",
+            "o234avwuqboguqbf77um",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(82.32µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.286137190Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.648204883Z)), "id": Thing(Thing { tb: "nodes", id: String("j8mokd01f5uskrmjyopn") }), "modified": Datetime(Datetime(2023-12-21T19:37:54Z)), "name": Strand(Strand("dir1.1.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("2uocgechxy0ilcqc9pjl") }), "path": Strand(Strand("/root/dir1/dir1.1")), "published": Bool(false), "sha256": Strand(Strand("aed5c8a89de1dbfdedb2621869ee7da9d0b5cdca7c94bfcf8521383866ab1d9e")), "size": Number(Int(1489))}))]))))})
+node saved: ()
 #9 path: root/dir1/dir1.1/dir1.1.file
-	name: dir1.1.file, path: /root/dir1/dir1.1, node_type: file, parent_id: nodes:2uocgechxy0ilcqc9pjl
+	name: dir1.1.file, path: /root/dir1/dir1.1, node_type: file, parent_id: nodes:wmvh90pu4yc7l66jqlmb
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "t6z83irpm4kes37zecuq",
+            "gbi1qlky7ds8yzrb8bmy",
         ),
     },
     node_type: File,
@@ -320,21 +320,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "2uocgechxy0ilcqc9pjl",
+            "wmvh90pu4yc7l66jqlmb",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(92.899µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.649841251Z)), "id": Thing(Thing { tb: "nodes", id: String("ufsdterjkib91819tghd") }), "modified": Datetime(Datetime(2023-12-21T19:39:55Z)), "name": Strand(Strand("dir1.2")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("p4z7vc1h5klufxszddnk") }), "path": Strand(Strand("/root/dir1")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
+node saved: ()
 #10 path: root/dir1/dir1.2
-	name: dir1.2, path: /root/dir1, node_type: dir, parent_id: nodes:p4z7vc1h5klufxszddnk
+	name: dir1.2, path: /root/dir1, node_type: dir, parent_id: nodes:yn8ux942bkvef1d0rn19
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "al4v47is2gvpvf9jxn37",
+            "7xmmqqfkfxt8zhmu3ssz",
         ),
     },
     node_type: Dir,
@@ -355,21 +355,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "p4z7vc1h5klufxszddnk",
+            "yn8ux942bkvef1d0rn19",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(91.99µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.651470258Z)), "id": Thing(Thing { tb: "nodes", id: String("v93w7fadd3nuioqxxmgx") }), "modified": Datetime(Datetime(2023-12-21T18:31:13Z)), "name": Strand(Strand("dir1.2.1")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("o3lm443m5qxtxhb5dowm") }), "path": Strand(Strand("/root/dir1/dir1.2")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
+node saved: ()
 #11 path: root/dir1/dir1.2/dir1.2.1
-	name: dir1.2.1, path: /root/dir1/dir1.2, node_type: dir, parent_id: nodes:o3lm443m5qxtxhb5dowm
+	name: dir1.2.1, path: /root/dir1/dir1.2, node_type: dir, parent_id: nodes:zi59k1034dpvbrkwu4rq
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "izmafbooweos527k54li",
+            "ppsc5ydb7gsjvtu61r9l",
         ),
     },
     node_type: Dir,
@@ -390,21 +390,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "o3lm443m5qxtxhb5dowm",
+            "zi59k1034dpvbrkwu4rq",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(73.74µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.286137190Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.653035886Z)), "id": Thing(Thing { tb: "nodes", id: String("qctkihaxez8hbh5njx2h") }), "modified": Datetime(Datetime(2023-12-21T19:38:10Z)), "name": Strand(Strand("dir1.2.1.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("zrcd06t21oxez3qies4w") }), "path": Strand(Strand("/root/dir1/dir1.2/dir1.2.1")), "published": Bool(false), "sha256": Strand(Strand("04e242774fa10304e57f040746f84a2cad9291707bf38241491f26a221562ed9")), "size": Number(Int(1012))}))]))))})
+node saved: ()
 #12 path: root/dir1/dir1.2/dir1.2.1/dir1.2.1.file
-	name: dir1.2.1.file, path: /root/dir1/dir1.2/dir1.2.1, node_type: file, parent_id: nodes:zrcd06t21oxez3qies4w
+	name: dir1.2.1.file, path: /root/dir1/dir1.2/dir1.2.1, node_type: file, parent_id: nodes:0sdxpgfv12pfr2dl89ry
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "shlf77duahgbnl1opp4b",
+            "4ybu6ekqvozh326621r3",
         ),
     },
     node_type: File,
@@ -427,21 +427,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "zrcd06t21oxez3qies4w",
+            "0sdxpgfv12pfr2dl89ry",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(124.81µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.655210153Z)), "id": Thing(Thing { tb: "nodes", id: String("b26ry84rdncktlkspicl") }), "modified": Datetime(Datetime(2023-12-21T19:39:21Z)), "name": Strand(Strand("dir1.2.2")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("o3lm443m5qxtxhb5dowm") }), "path": Strand(Strand("/root/dir1/dir1.2")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
+node saved: ()
 #13 path: root/dir1/dir1.2/dir1.2.2
-	name: dir1.2.2, path: /root/dir1/dir1.2, node_type: dir, parent_id: nodes:o3lm443m5qxtxhb5dowm
+	name: dir1.2.2, path: /root/dir1/dir1.2, node_type: dir, parent_id: nodes:zi59k1034dpvbrkwu4rq
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "hn2s3zfxf707ogepfp2w",
+            "52lxg37sh1damzmmghe5",
         ),
     },
     node_type: Dir,
@@ -462,21 +462,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "o3lm443m5qxtxhb5dowm",
+            "zi59k1034dpvbrkwu4rq",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(104.27µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.290137273Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.656908311Z)), "id": Thing(Thing { tb: "nodes", id: String("7bbd0kmu2wcwiuv9y9st") }), "modified": Datetime(Datetime(2023-12-21T19:39:10Z)), "name": Strand(Strand("dir1.2.2.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("q6q1rn0n1zukb9xxdjbz") }), "path": Strand(Strand("/root/dir1/dir1.2/dir1.2.2")), "published": Bool(false), "sha256": Strand(Strand("2d8755f1c04699ad432549bc98dc712ab3b30300f5c485ed0585c6ee3084567c")), "size": Number(Int(1470))}))]))))})
+node saved: ()
 #14 path: root/dir1/dir1.2/dir1.2.2/dir1.2.2.file
-	name: dir1.2.2.file, path: /root/dir1/dir1.2/dir1.2.2, node_type: file, parent_id: nodes:q6q1rn0n1zukb9xxdjbz
+	name: dir1.2.2.file, path: /root/dir1/dir1.2/dir1.2.2, node_type: file, parent_id: nodes:tzohml9kwx75rn3h7kma
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "tanammie1y34j1f3igii",
+            "ahrerllnc5a3tdhof5p7",
         ),
     },
     node_type: File,
@@ -499,21 +499,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "q6q1rn0n1zukb9xxdjbz",
+            "tzohml9kwx75rn3h7kma",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(86.33µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.290137273Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.658647908Z)), "id": Thing(Thing { tb: "nodes", id: String("4itj8bpoqejlsx6uzlyl") }), "modified": Datetime(Datetime(2023-12-21T19:38:17Z)), "name": Strand(Strand("dir1.2.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("o3lm443m5qxtxhb5dowm") }), "path": Strand(Strand("/root/dir1/dir1.2")), "published": Bool(false), "sha256": Strand(Strand("78f4ad2b5c121c8d603de873a096da90e3ea3b8631cfd16dc4a49635e282b43c")), "size": Number(Int(1382))}))]))))})
+node saved: ()
 #15 path: root/dir1/dir1.2/dir1.2.file
-	name: dir1.2.file, path: /root/dir1/dir1.2, node_type: file, parent_id: nodes:o3lm443m5qxtxhb5dowm
+	name: dir1.2.file, path: /root/dir1/dir1.2, node_type: file, parent_id: nodes:zi59k1034dpvbrkwu4rq
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "lbun9cawvb9mz3qlo8qb",
+            "mfp70epgp7222eo11q3p",
         ),
     },
     node_type: File,
@@ -536,21 +536,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "o3lm443m5qxtxhb5dowm",
+            "zi59k1034dpvbrkwu4rq",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(81.2µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.660252816Z)), "id": Thing(Thing { tb: "nodes", id: String("s3z9tzd3ql9jgnrbigbb") }), "modified": Datetime(Datetime(2023-12-21T18:29:58Z)), "name": Strand(Strand("dir1.3")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("p4z7vc1h5klufxszddnk") }), "path": Strand(Strand("/root/dir1")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
+node saved: ()
 #16 path: root/dir1/dir1.3
-	name: dir1.3, path: /root/dir1, node_type: dir, parent_id: nodes:p4z7vc1h5klufxszddnk
+	name: dir1.3, path: /root/dir1, node_type: dir, parent_id: nodes:yn8ux942bkvef1d0rn19
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "uxon8q801buibwneud4e",
+            "0d4gt5827kfy2mpnb9nu",
         ),
     },
     node_type: Dir,
@@ -571,21 +571,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "p4z7vc1h5klufxszddnk",
+            "yn8ux942bkvef1d0rn19",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(79.97µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.661800724Z)), "id": Thing(Thing { tb: "nodes", id: String("t722o93h8vnnwvsrl41k") }), "modified": Datetime(Datetime(2023-12-21T18:31:19Z)), "name": Strand(Strand("dir1.3.1")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("m1xn723g3ukax47zikje") }), "path": Strand(Strand("/root/dir1/dir1.3")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
+node saved: ()
 #17 path: root/dir1/dir1.3/dir1.3.1
-	name: dir1.3.1, path: /root/dir1/dir1.3, node_type: dir, parent_id: nodes:m1xn723g3ukax47zikje
+	name: dir1.3.1, path: /root/dir1/dir1.3, node_type: dir, parent_id: nodes:80u4amu9zr8f5mdko582
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "pgq2zd7zo97q1cglsz4c",
+            "ih9ohmh28bwow46rb2ea",
         ),
     },
     node_type: Dir,
@@ -606,21 +606,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "m1xn723g3ukax47zikje",
+            "80u4amu9zr8f5mdko582",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(81.84µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.290137273Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.663390542Z)), "id": Thing(Thing { tb: "nodes", id: String("1raqwpi6w9vrafedisp2") }), "modified": Datetime(Datetime(2023-12-21T19:40:17Z)), "name": Strand(Strand("dir1.3.1.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("fav8bvdofnx4oqmofjk6") }), "path": Strand(Strand("/root/dir1/dir1.3/dir1.3.1")), "published": Bool(false), "sha256": Strand(Strand("ec2bcf3b4c305009698da1ac46b16b45bf7e645762595841e6e4e40b005d5f52")), "size": Number(Int(1229))}))]))))})
+node saved: ()
 #18 path: root/dir1/dir1.3/dir1.3.1/dir1.3.1.file
-	name: dir1.3.1.file, path: /root/dir1/dir1.3/dir1.3.1, node_type: file, parent_id: nodes:fav8bvdofnx4oqmofjk6
+	name: dir1.3.1.file, path: /root/dir1/dir1.3/dir1.3.1, node_type: file, parent_id: nodes:owjse3gh1c7ict43pue5
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "gma0pr5caff6j60i0jyc",
+            "w8nznvdjbsyy9i5sp8nb",
         ),
     },
     node_type: File,
@@ -643,21 +643,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "fav8bvdofnx4oqmofjk6",
+            "owjse3gh1c7ict43pue5",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(81.87µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.665002520Z)), "id": Thing(Thing { tb: "nodes", id: String("mdagib2bghhr6zo7xgl2") }), "modified": Datetime(Datetime(2023-12-21T18:31:38Z)), "name": Strand(Strand("dir1.3.2")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("m1xn723g3ukax47zikje") }), "path": Strand(Strand("/root/dir1/dir1.3")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
+node saved: ()
 #19 path: root/dir1/dir1.3/dir1.3.2
-	name: dir1.3.2, path: /root/dir1/dir1.3, node_type: dir, parent_id: nodes:m1xn723g3ukax47zikje
+	name: dir1.3.2, path: /root/dir1/dir1.3, node_type: dir, parent_id: nodes:80u4amu9zr8f5mdko582
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "43wuksgxb2yw08m8uf6v",
+            "d4i5e4y38sofujxtjps7",
         ),
     },
     node_type: Dir,
@@ -678,21 +678,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "m1xn723g3ukax47zikje",
+            "80u4amu9zr8f5mdko582",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(78.849µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.294137356Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.666603078Z)), "id": Thing(Thing { tb: "nodes", id: String("zq6ty4q7362a5xwvxfq7") }), "modified": Datetime(Datetime(2023-12-21T19:40:25Z)), "name": Strand(Strand("dir1.3.2.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("p30lmqehi5713mzm3s8n") }), "path": Strand(Strand("/root/dir1/dir1.3/dir1.3.2")), "published": Bool(false), "sha256": Strand(Strand("d908e1a15b8dfa070987e58ecaa0755ae21fb62569a88647e29786ed291ee185")), "size": Number(Int(1189))}))]))))})
+node saved: ()
 #20 path: root/dir1/dir1.3/dir1.3.2/dir1.3.2.file
-	name: dir1.3.2.file, path: /root/dir1/dir1.3/dir1.3.2, node_type: file, parent_id: nodes:p30lmqehi5713mzm3s8n
+	name: dir1.3.2.file, path: /root/dir1/dir1.3/dir1.3.2, node_type: file, parent_id: nodes:dspfqx7xn3dpvbnoc9hj
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "je9r95qkdaibz1o7hpa9",
+            "hosxpsuc3qwpvq1ek9i3",
         ),
     },
     node_type: File,
@@ -715,21 +715,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "p30lmqehi5713mzm3s8n",
+            "dspfqx7xn3dpvbnoc9hj",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(79.509µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.668153426Z)), "id": Thing(Thing { tb: "nodes", id: String("fvvzho6fcee761aypyas") }), "modified": Datetime(Datetime(2023-12-21T18:31:43Z)), "name": Strand(Strand("dir1.3.3")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("m1xn723g3ukax47zikje") }), "path": Strand(Strand("/root/dir1/dir1.3")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
+node saved: ()
 #21 path: root/dir1/dir1.3/dir1.3.3
-	name: dir1.3.3, path: /root/dir1/dir1.3, node_type: dir, parent_id: nodes:m1xn723g3ukax47zikje
+	name: dir1.3.3, path: /root/dir1/dir1.3, node_type: dir, parent_id: nodes:80u4amu9zr8f5mdko582
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "bz832ec8t1r1r6jzp8q5",
+            "zyz8j1848ial80tjjbf6",
         ),
     },
     node_type: Dir,
@@ -750,21 +750,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "m1xn723g3ukax47zikje",
+            "80u4amu9zr8f5mdko582",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(80.409µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.294137356Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.669728314Z)), "id": Thing(Thing { tb: "nodes", id: String("7a9yrdk5b9hq8kzfdu09") }), "modified": Datetime(Datetime(2023-12-21T19:40:30Z)), "name": Strand(Strand("dir1.3.3.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("sn1cy9huwn3vy4nco55i") }), "path": Strand(Strand("/root/dir1/dir1.3/dir1.3.3")), "published": Bool(false), "sha256": Strand(Strand("2a1d86b1f6592605fd68db71559155ba007394afda4879d36991a830b4843d48")), "size": Number(Int(1094))}))]))))})
+node saved: ()
 #22 path: root/dir1/dir1.3/dir1.3.3/dir1.3.3.file
-	name: dir1.3.3.file, path: /root/dir1/dir1.3/dir1.3.3, node_type: file, parent_id: nodes:sn1cy9huwn3vy4nco55i
+	name: dir1.3.3.file, path: /root/dir1/dir1.3/dir1.3.3, node_type: file, parent_id: nodes:juadike4hr54pl00w5kk
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "krewnao2j82m9a0rq0pa",
+            "brug2xf9cjwo510098qg",
         ),
     },
     node_type: File,
@@ -787,21 +787,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "sn1cy9huwn3vy4nco55i",
+            "juadike4hr54pl00w5kk",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(77.52µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.294137356Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.671360871Z)), "id": Thing(Thing { tb: "nodes", id: String("em3jovv00zx2h6ti57db") }), "modified": Datetime(Datetime(2023-12-21T19:40:38Z)), "name": Strand(Strand("dir1.3.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("m1xn723g3ukax47zikje") }), "path": Strand(Strand("/root/dir1/dir1.3")), "published": Bool(false), "sha256": Strand(Strand("d8048958ceb19152cbe3aff5119c5ea1b449d6a2926f1ed7b55e3f7502d3113b")), "size": Number(Int(1018))}))]))))})
+node saved: ()
 #23 path: root/dir1/dir1.3/dir1.3.file
-	name: dir1.3.file, path: /root/dir1/dir1.3, node_type: file, parent_id: nodes:m1xn723g3ukax47zikje
+	name: dir1.3.file, path: /root/dir1/dir1.3, node_type: file, parent_id: nodes:80u4amu9zr8f5mdko582
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "tlvm3bo14j9gitfr0c5p",
+            "lt1adusyqglgopl6fgdn",
         ),
     },
     node_type: File,
@@ -824,21 +824,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "m1xn723g3ukax47zikje",
+            "80u4amu9zr8f5mdko582",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(78.28µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.298137439Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.598768726Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.672966049Z)), "id": Thing(Thing { tb: "nodes", id: String("55ah4hhhagt4wu6avxid") }), "modified": Datetime(Datetime(2023-12-21T19:41:51Z)), "name": Strand(Strand("dir1.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("p4z7vc1h5klufxszddnk") }), "path": Strand(Strand("/root/dir1")), "published": Bool(false), "sha256": Strand(Strand("d984ba6fa08df01433836ab44abce31ddcba5aafe9ff2c4585e6d87885c95351")), "size": Number(Int(1031))}))]))))})
+node saved: ()
 #24 path: root/dir1/dir1.file
-	name: dir1.file, path: /root/dir1, node_type: file, parent_id: nodes:p4z7vc1h5klufxszddnk
+	name: dir1.file, path: /root/dir1, node_type: file, parent_id: nodes:yn8ux942bkvef1d0rn19
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "mnqrmhu1ikyg6efj4j9e",
+            "tzoi0y57bf1eyhafoas5",
         ),
     },
     node_type: File,
@@ -861,21 +861,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "p4z7vc1h5klufxszddnk",
+            "yn8ux942bkvef1d0rn19",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(77.06µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.602768831Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.674521707Z)), "id": Thing(Thing { tb: "nodes", id: String("oz03vsv2um5ncoxwbtrz") }), "modified": Datetime(Datetime(2023-12-22T00:47:46Z)), "name": Strand(Strand("dir2")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("qwwvx3qfbwutygeuzgm0") }), "path": Strand(Strand("/root")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
+node saved: ()
 #25 path: root/dir2
-	name: dir2, path: /root, node_type: dir, parent_id: nodes:qwwvx3qfbwutygeuzgm0
+	name: dir2, path: /root, node_type: dir, parent_id: nodes:mvvhdazt41eqy5opl7vo
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "aw0cwpjgym6noorcjlfu",
+            "c02kw2zsfuper9elseu5",
         ),
     },
     node_type: Dir,
@@ -896,21 +896,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "qwwvx3qfbwutygeuzgm0",
+            "mvvhdazt41eqy5opl7vo",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(80.28µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.539413603Z)), "canonical_path": Strand(Strand("../dir1/dir1.2/dir1.2.1/dir1.2.1.file")), "created": Datetime(Datetime(2024-01-29T23:02:01.602768831Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.676125595Z)), "id": Thing(Thing { tb: "nodes", id: String("teqe1sfqncpcjgg4indb") }), "modified": Datetime(Datetime(2023-12-21T18:46:18Z)), "name": Strand(Strand("dir1.2.1.file.link")), "node_type": Strand(Strand("Symlink")), "parent_id": Thing(Thing { tb: "nodes", id: String("3vhf59q5ez9p70a6jmkm") }), "path": Strand(Strand("/root/dir2")), "published": Bool(false), "sha256": Strand(Strand("04e242774fa10304e57f040746f84a2cad9291707bf38241491f26a221562ed9")), "size": Number(Int(37))}))]))))})
+node saved: ()
 #26 path: root/dir2/dir1.2.1.file.link
-	name: dir1.2.1.file.link, path: /root/dir2, node_type: symlink, parent_id: nodes:3vhf59q5ez9p70a6jmkm
+	name: dir1.2.1.file.link, path: /root/dir2, node_type: symlink, parent_id: nodes:g9314tgee82nm39ussc3
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "1w0nmhsiv470wxgnlviq",
+            "s1b1dzdp3lkj6cum7n7z",
         ),
     },
     node_type: Symlink,
@@ -935,21 +935,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "3vhf59q5ez9p70a6jmkm",
+            "g9314tgee82nm39ussc3",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(78.58µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.298137439Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.602768831Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.677660362Z)), "id": Thing(Thing { tb: "nodes", id: String("efjh9vdesepyabz9z9rm") }), "modified": Datetime(Datetime(2023-12-21T18:35:22Z)), "name": Strand(Strand("dir2.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("3vhf59q5ez9p70a6jmkm") }), "path": Strand(Strand("/root/dir2")), "published": Bool(false), "sha256": Strand(Strand("e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855")), "size": Number(Int(0))}))]))))})
+node saved: ()
 #27 path: root/dir2/dir2.file
-	name: dir2.file, path: /root/dir2, node_type: file, parent_id: nodes:3vhf59q5ez9p70a6jmkm
+	name: dir2.file, path: /root/dir2, node_type: file, parent_id: nodes:g9314tgee82nm39ussc3
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "s6ps3da94107ietrpiq7",
+            "i3kwctctanb24dxsjlx6",
         ),
     },
     node_type: File,
@@ -972,21 +972,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "3vhf59q5ez9p70a6jmkm",
+            "g9314tgee82nm39ussc3",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(105.25µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.079401960Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.602768831Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.679246930Z)), "id": Thing(Thing { tb: "nodes", id: String("6yyp563gxvapapfdmwr5") }), "modified": Datetime(Datetime(2023-12-22T00:47:50Z)), "name": Strand(Strand("dir3")), "node_type": Strand(Strand("Dir")), "parent_id": Thing(Thing { tb: "nodes", id: String("qwwvx3qfbwutygeuzgm0") }), "path": Strand(Strand("/root")), "published": Bool(false), "size": Number(Int(4096))}))]))))})
+node saved: ()
 #28 path: root/dir3
-	name: dir3, path: /root, node_type: dir, parent_id: nodes:qwwvx3qfbwutygeuzgm0
+	name: dir3, path: /root, node_type: dir, parent_id: nodes:mvvhdazt41eqy5opl7vo
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "axogv0o6u4zbswbglvi1",
+            "y9tok6k3fuhu1yicx1uc",
         ),
     },
     node_type: Dir,
@@ -1007,21 +1007,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "qwwvx3qfbwutygeuzgm0",
+            "mvvhdazt41eqy5opl7vo",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(116.861µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:02:26.539413603Z)), "canonical_path": Strand(Strand("../dir1/dir1.3/dir1.3.1/dir1.3.1.file")), "created": Datetime(Datetime(2024-01-29T23:02:01.602768831Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.681204898Z)), "id": Thing(Thing { tb: "nodes", id: String("ojupr211sqhpyjnrqbqt") }), "modified": Datetime(Datetime(2023-12-21T18:46:46Z)), "name": Strand(Strand("dir1.3.1.file.link")), "node_type": Strand(Strand("Symlink")), "parent_id": Thing(Thing { tb: "nodes", id: String("ss6kcf7f7acd84eh14tu") }), "path": Strand(Strand("/root/dir3")), "published": Bool(false), "sha256": Strand(Strand("ec2bcf3b4c305009698da1ac46b16b45bf7e645762595841e6e4e40b005d5f52")), "size": Number(Int(37))}))]))))})
+node saved: ()
 #29 path: root/dir3/dir1.3.1.file.link
-	name: dir1.3.1.file.link, path: /root/dir3, node_type: symlink, parent_id: nodes:ss6kcf7f7acd84eh14tu
+	name: dir1.3.1.file.link, path: /root/dir3, node_type: symlink, parent_id: nodes:mufyae6ytmhp6oi9aksa
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "hityx3wib97lrckpbyw0",
+            "amermv6tzpjj4wvf8joa",
         ),
     },
     node_type: Symlink,
@@ -1046,21 +1046,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "ss6kcf7f7acd84eh14tu",
+            "mufyae6ytmhp6oi9aksa",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(102.92µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.302137521Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.602768831Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.682803295Z)), "id": Thing(Thing { tb: "nodes", id: String("1hhfx7i2o6ly4xnpp06q") }), "modified": Datetime(Datetime(2023-12-21T18:35:28Z)), "name": Strand(Strand("dir3.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("ss6kcf7f7acd84eh14tu") }), "path": Strand(Strand("/root/dir3")), "published": Bool(false), "sha256": Strand(Strand("e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855")), "size": Number(Int(0))}))]))))})
+node saved: ()
 #30 path: root/dir3/dir3.file
-	name: dir3.file, path: /root/dir3, node_type: file, parent_id: nodes:ss6kcf7f7acd84eh14tu
+	name: dir3.file, path: /root/dir3, node_type: file, parent_id: nodes:mufyae6ytmhp6oi9aksa
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "4ikmvgjgqokkhgnft1px",
+            "j3um4idtsej5r686zoip",
         ),
     },
     node_type: File,
@@ -1083,21 +1083,21 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "ss6kcf7f7acd84eh14tu",
+            "mufyae6ytmhp6oi9aksa",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-node saved: Response({0: (Stats { execution_time: Some(104.659µs) }, Ok(Array(Array([Object(Object({"accessed": Datetime(Datetime(2024-01-29T23:04:25.302137521Z)), "created": Datetime(Datetime(2024-01-29T23:02:01.602768831Z)), "created_at": Datetime(Datetime(2024-01-30T01:31:17.684454092Z)), "id": Thing(Thing { tb: "nodes", id: String("j6l6r4keplef6dkreirz") }), "modified": Datetime(Datetime(2023-12-22T00:50:19Z)), "name": Strand(Strand("root.file")), "node_type": Strand(Strand("File")), "parent_id": Thing(Thing { tb: "nodes", id: String("qwwvx3qfbwutygeuzgm0") }), "path": Strand(Strand("/root")), "published": Bool(false), "sha256": Strand(Strand("9abbd92033b49215e66f241b9a98e7e3a44aef509cea323bb9d8021e34d23ad5")), "size": Number(Int(1234))}))]))))})
+node saved: ()
 #31 path: root/root.file
-	name: root.file, path: /root, node_type: file, parent_id: nodes:qwwvx3qfbwutygeuzgm0
+	name: root.file, path: /root, node_type: file, parent_id: nodes:mvvhdazt41eqy5opl7vo
 
 Node {
     id: Thing {
         tb: "nodes",
         id: String(
-            "vrqt4xiv9ceys4fn7fm9",
+            "qkyfzalbbkqd5v4hfpis",
         ),
     },
     node_type: File,
@@ -1120,89 +1120,89 @@ Node {
     parent_id: Thing {
         tb: "nodes",
         id: String(
-            "qwwvx3qfbwutygeuzgm0",
+            "mvvhdazt41eqy5opl7vo",
         ),
     },
     notes: None,
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 parent_path_hash_map: {
-    "root/dir1/dir1.1": Thing {
+    "root/dir1/dir1.2/dir1.2.2": Thing {
         tb: "nodes",
         id: String(
-            "2uocgechxy0ilcqc9pjl",
-        ),
-    },
-    "root/dir1": Thing {
-        tb: "nodes",
-        id: String(
-            "p4z7vc1h5klufxszddnk",
-        ),
-    },
-    "root/dir1/dir1.3/dir1.3.2": Thing {
-        tb: "nodes",
-        id: String(
-            "p30lmqehi5713mzm3s8n",
-        ),
-    },
-    "root/dir1/dir1.2/dir1.2.1": Thing {
-        tb: "nodes",
-        id: String(
-            "zrcd06t21oxez3qies4w",
-        ),
-    },
-    "root/dir2": Thing {
-        tb: "nodes",
-        id: String(
-            "3vhf59q5ez9p70a6jmkm",
+            "tzohml9kwx75rn3h7kma",
         ),
     },
     "root/dir1/dir1.3": Thing {
         tb: "nodes",
         id: String(
-            "m1xn723g3ukax47zikje",
+            "80u4amu9zr8f5mdko582",
         ),
     },
     "root/dir1/dir1.3/dir1.3.1": Thing {
         tb: "nodes",
         id: String(
-            "fav8bvdofnx4oqmofjk6",
-        ),
-    },
-    "root/dir3": Thing {
-        tb: "nodes",
-        id: String(
-            "ss6kcf7f7acd84eh14tu",
-        ),
-    },
-    "root/dir1/dir1.1/dir1.1.1": Thing {
-        tb: "nodes",
-        id: String(
-            "tzzz5gk1amw79e227lt5",
-        ),
-    },
-    "root/dir1/dir1.3/dir1.3.3": Thing {
-        tb: "nodes",
-        id: String(
-            "sn1cy9huwn3vy4nco55i",
+            "owjse3gh1c7ict43pue5",
         ),
     },
     "root": Thing {
         tb: "nodes",
         id: String(
-            "qwwvx3qfbwutygeuzgm0",
+            "mvvhdazt41eqy5opl7vo",
+        ),
+    },
+    "root/dir1/dir1.1/dir1.1.1": Thing {
+        tb: "nodes",
+        id: String(
+            "o234avwuqboguqbf77um",
+        ),
+    },
+    "root/dir1/dir1.3/dir1.3.3": Thing {
+        tb: "nodes",
+        id: String(
+            "juadike4hr54pl00w5kk",
+        ),
+    },
+    "root/dir1": Thing {
+        tb: "nodes",
+        id: String(
+            "yn8ux942bkvef1d0rn19",
         ),
     },
     "root/dir1/dir1.2": Thing {
         tb: "nodes",
         id: String(
-            "o3lm443m5qxtxhb5dowm",
+            "zi59k1034dpvbrkwu4rq",
         ),
     },
-    "root/dir1/dir1.2/dir1.2.2": Thing {
+    "root/dir1/dir1.2/dir1.2.1": Thing {
         tb: "nodes",
         id: String(
-            "q6q1rn0n1zukb9xxdjbz",
+            "0sdxpgfv12pfr2dl89ry",
+        ),
+    },
+    "root/dir1/dir1.3/dir1.3.2": Thing {
+        tb: "nodes",
+        id: String(
+            "dspfqx7xn3dpvbnoc9hj",
+        ),
+    },
+    "root/dir1/dir1.1": Thing {
+        tb: "nodes",
+        id: String(
+            "wmvh90pu4yc7l66jqlmb",
+        ),
+    },
+    "root/dir2": Thing {
+        tb: "nodes",
+        id: String(
+            "g9314tgee82nm39ussc3",
+        ),
+    },
+    "root/dir3": Thing {
+        tb: "nodes",
+        id: String(
+            "mufyae6ytmhp6oi9aksa",
         ),
     },
 }

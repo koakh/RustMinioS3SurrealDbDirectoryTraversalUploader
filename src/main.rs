@@ -6,8 +6,8 @@ use surrealdb::Database;
 use walker::process_dirs;
 
 mod surrealdb;
+mod utils;
 mod walker;
-// mod sqlx;
 
 // declare a generic result tye
 pub type Result<T> = result::Result<T, Box<dyn Error>>;
