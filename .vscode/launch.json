@@ -14,7 +14,8 @@
         "-p",
         "root"
       ],
-      "cwd": "${workspaceFolder}"
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "rust: cargo build"
     }
   ]
 }

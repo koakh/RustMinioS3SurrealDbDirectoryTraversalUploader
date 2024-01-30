@@ -1,12 +1,15 @@
 use from_os_str::try_from_os_str;
 use serde::{Deserialize, Serialize};
 use sha256::try_digest;
-use surrealdb::{opt::Resource, sql::{Datetime as SdbDatetime, Thing}};
 use std::{
   collections::HashMap,
   fmt::Display,
   fs::{self, read_link, Metadata},
   path::Path,
+};
+use surrealdb::{
+  opt::Resource,
+  sql::{Datetime as SdbDatetime, Id as DdbId, Thing},
 };
 use walkdir::{DirEntry, WalkDir};
 
@@ -99,8 +102,7 @@ struct Node {
 
 impl Node {
   async fn save(&self, db: &Database) -> Result<()> {
-    db
-      .client
+    db.client
       .create(Resource::from("nodes"))
       .content(self)
       .await?;
@@ -130,9 +132,16 @@ pub async fn process_dirs(args: &Args, db: &Database) -> Result<()> {
     nodes += 1;
     match entry {
       Ok(v) => {
+        let node_id;
+        // if first node, use a fixed root id
+        if parent_path_hash_map.len() == 0 {
+          node_id = DdbId::String("root".into())
+        } else {
+          node_id = DdbId::rand();
+        }
         let id: Thing = Thing {
           tb: "nodes".into(),
-          id: surrealdb::sql::Id::rand(),
+          id: node_id.clone(),
         };
         let metadata = fs::symlink_metadata(v.path())?;
         let node_type: NodeType = metadata.clone().into();
@@ -153,14 +162,14 @@ pub async fn process_dirs(args: &Args, db: &Database) -> Result<()> {
           Err(_) => None,
         };
 
-        // first dir is always a dir, we assign it the first id
+        // first inter is always a dir, we assign it the first id
         match node_type {
           NodeType::Unknown => {}
           NodeType::Dir => {
             // insert a key only if it doesn't already exist
             parent_path_hash_map
               .entry(v.path().display().to_string())
-              .or_insert(id);
+              .or_insert(id.clone());
           }
           NodeType::File => {}
           NodeType::Symlink => canonical_path = Some(read_link(v.path()).unwrap().display().to_string()),
@@ -171,26 +180,28 @@ pub async fn process_dirs(args: &Args, db: &Database) -> Result<()> {
         // let mut current_parent_from_hash_id: Uuid = Uuid::default();
         let mut current_parent_from_hash_id: Thing = Thing {
           tb: "nodes".into(),
-          id: surrealdb::sql::Id::rand(),
+          id: DdbId::rand(),
         };
         // override defaults
         if let Some(v) = parent_path_hash_map.get_key_value(&input_path_parent) {
           current_parent_from_hash_path = (*v.0.clone()).to_string();
           current_parent_from_hash_id = v.1.clone();
         }
-        // if !current_parent_from_hash_path.starts_with("/") {
-        //   current_parent_from_hash_path = current_parent_from_hash_path.replace(&args.path, "/")
-        // }
-        let id: Thing = Thing {
-          tb: "nodes".into(),
-          id: surrealdb::sql::Id::rand(),
-        };
+        // remove root from final path, if is not root
+        if !current_parent_from_hash_path.eq(&args.path) {
+          let replace = format!("{}", &args.path);
+          // println!("replace: {}, current_parent_from_hash_path: {}", replace, current_parent_from_hash_path);
+          current_parent_from_hash_path = current_parent_from_hash_path.replace(&replace, "");
+        } else {
+          current_parent_from_hash_path = "/".into();
+        }
+
         let node = Node {
           id,
           node_type,
           name,
           canonical_path,
-          path: format!("/{current_parent_from_hash_path}"),
+          path: current_parent_from_hash_path,
           size: metadata.len(),
           created: st2sdt(&metadata.created().unwrap()),
           modified: st2sdt(&metadata.modified().unwrap()),
@@ -201,25 +212,25 @@ pub async fn process_dirs(args: &Args, db: &Database) -> Result<()> {
         };
 
         match node.save(&db).await {
-          Ok(n) => println!("node saved: {:?}", n),
+          Ok(_) => println!("node saved: node_id: {}, node.id: {}:{}", &node_id, &node.id.tb, &node.id.id),
           Err(e) => eprintln!("error saving node: {:#?}", e),
         };
 
-        // exclude root node
-        if nodes > 1 {
-          println!("#{} path: {}", nodes - 1, v.path().display());
-          println!("\tname: {}, path: {}, node_type: {}, parent_id: {}\n", node.name, node.path, node.node_type, node.parent_id);
-          println!(
-            "{:#?}\n---------------------------------------------------------------------------------------------------------------------------------------------------",
-            node
-          );
-        }
+        println!("#{} path: {}", nodes - 1, v.path().display());
+        println!(
+          "\tname: {}, path: {}, node_type: {}, id: {}:{}, parent_id: {}\n",
+          &node.name, &node.path, &node.node_type, &node.id.tb, &node.id.id, &node.parent_id
+        );
       }
       Err(e) => println!("Error: {}", e),
     }
   }
 
   // debug final parent_path_hash_map
-  println!("parent_path_hash_map: {:#?}\n", parent_path_hash_map);
+  // println!("parent_path_hash_map: {:#?}\n", parent_path_hash_map);
+  // parent_path_hash_map
+  //   .into_iter()
+  //   .for_each(|(k, v)| println!("k: {} -> v: {}", k, v));
+
   Ok(())
 }
