@@ -61,6 +61,7 @@ struct Node {
   path: String,
   // used to get real path from symlink
   canonical_path: Option<String>,
+  s3_url: String,
   size: u64,
   created: SdbDatetime,
   modified: SdbDatetime,
@@ -198,6 +199,17 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client) -> Res
           path = "/".into();
         }
 
+        let mut s3_url = String::from("");
+        if node_type == NodeType::File {
+          let upload_file = format!("{}/{}", &current_parent_from_hash_path, &name);
+          // key must be equal to file path in this case is upload_file ex 'root/root.file'
+          println!("start uploading: {}, key: {}", &upload_file, &upload_file);
+          // always remove base endpoint from
+          (_, s3_url) = s3_client
+            .put_object_from_file(&upload_file, &upload_file)
+            .await;
+        }
+
         let node = Node {
           id,
           node_type: node_type.clone(),
@@ -210,20 +222,16 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client) -> Res
           accessed: st2sdt(&metadata.accessed().unwrap()),
           sha256,
           parent_id: current_parent_from_hash_id,
+          s3_url: s3_url.clone(),
           notes: None,
         };
 
         match node.save(&db).await {
           Ok(_) => {
-            println!("node saved: node.type: {}, node_id: {}, node.id: {}:{}", &node.node_type, &node_id, &node.id.tb, &node.id.id);
-            if node_type == NodeType::File {
-              let upload_file = format!("{}/{}", &current_parent_from_hash_path, &name);
-              println!("start uploading: {}, key: {}", &upload_file, current_parent_from_hash_path.as_str());
-              let upload_result = s3_client
-                .put_object_from_file(&upload_file, current_parent_from_hash_path.as_str())
-                .await;
-              println!("node saved: node_id: {}, node.id: {}:{}, s3 url: {}", &node_id, &node.id.tb, &node.id.id, &upload_result);
-            }
+            println!(
+              "node saved: node.type: {}, node_id: {}, node.id: {}:{}, s3 url: {}",
+              &node.node_type, &node_id, &node.id.tb, &node.id.id, &s3_url
+            );
           }
           Err(e) => eprintln!("error saving node: {:#?}", e),
         };

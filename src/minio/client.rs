@@ -10,7 +10,7 @@ pub struct Client {
 impl Client {
   /// construct s3 client wrapper.
   pub fn new() -> Self {
-    let url = std::env::var("S3_HOST").unwrap();
+    let endpoint_url = std::env::var("S3_HOST").unwrap();
     let region = std::env::var("S3_REGION").unwrap();
     let key_id = std::env::var("S3_ACCESS_KEY_ID").unwrap();
     let secret_key = std::env::var("S3_SECRET_ACCESS_KEY").unwrap();
@@ -18,7 +18,7 @@ impl Client {
 
     let credentials = aws_sdk_s3::config::Credentials::new(key_id, secret_key, None, None, "loaded-from-custom-env");
     let s3_config = aws_sdk_s3::config::Builder::new()
-      .endpoint_url(url)
+      .endpoint_url(endpoint_url)
       .credentials_provider(credentials)
       .region(aws_sdk_s3::config::Region::new(region))
       // apply bucketName as path param instead of pre-domain
@@ -33,7 +33,7 @@ impl Client {
   }
 
   /// real upload of file to S3
-  pub async fn put_object_from_file(&self, local_path: &str, key: &str) -> String {
+  pub async fn put_object_from_file(&self, local_path: &str, key: &str) -> (String, String) {
     let mut file = tokio::fs::File::open(local_path).await.unwrap();
 
     let size_estimate = file
@@ -57,7 +57,14 @@ impl Client {
       .await
       .expect("Failed to put object");
 
-    self.url(key)
+    // full url, with enpoint, bucket name, and key 
+    // ex http://192.168.1.52:9000/default-bucket/root/root.file
+    let s3_url = self.url(format!("{}/{}", &self.bucket_name, key).as_str());
+    // s3 bucket name and key
+    // ex /default-bucket/root/root.file
+    let s3_bucket_name_key = format!("{}/{}", &self.bucket_name, key);
+
+    (s3_url, s3_bucket_name_key)
   }
 
   /// attempts to delete object from S3. Returns true if successful.
