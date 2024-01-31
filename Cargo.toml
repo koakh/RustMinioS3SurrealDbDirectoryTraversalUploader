@@ -16,3 +16,4 @@ serde = { version = "1.0.152", features = ["derive"] }
 dotenv = "0.15.0"
 tokio = { version = "1.35.0", features = ["macros", "rt-multi-thread"] }
 surrealdb = "1.1.1"
+aws-sdk-s3 = "0.26"

@@ -16,11 +16,11 @@ use walkdir::{DirEntry, WalkDir};
 use from_os_str::Wrap;
 use from_os_str::*;
 
-use crate::{surrealdb::Database, utils::st2sdt, Args, Result};
+use crate::{app::NODES_TABLE, minio::Client, surrealdb::Database, utils::st2sdt, Args, Result};
 
 type ParentPathHashMap = HashMap<String, Thing>;
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, PartialEq, Clone)]
 enum NodeType {
   Unknown,
   Dir,
@@ -120,7 +120,7 @@ fn is_hidden(entry: &DirEntry) -> bool {
 }
 
 /// init walker traverse directory
-pub async fn process_dirs(args: &Args, db: &Database) -> Result<()> {
+pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client) -> Result<()> {
   // println!("traverse paths {}", &args.path);
   let mut nodes = 0;
   let mut parent_path_hash_map = ParentPathHashMap::new();
@@ -140,7 +140,7 @@ pub async fn process_dirs(args: &Args, db: &Database) -> Result<()> {
           node_id = DdbId::rand();
         }
         let id: Thing = Thing {
-          tb: "nodes".into(),
+          tb: NODES_TABLE.into(),
           id: node_id.clone(),
         };
         let metadata = fs::symlink_metadata(v.path())?;
@@ -157,6 +157,7 @@ pub async fn process_dirs(args: &Args, db: &Database) -> Result<()> {
         // this will work with paths with a middle dir symlink ex `root/dir2/dir1.2.1.link/dir1.2.1.file`, else this path will be "/" and not "root/dir2/dir1.2.1.link"
         // let input_path_parent = input_path.parent().unwrap().display().to_string().replace(name.as_str(), "");
         let mut canonical_path: Option<String> = None;
+        // TODO: only if is a File
         let sha256 = match try_digest(input_path) {
           Ok(v) => Some(v),
           Err(_) => None,
@@ -179,7 +180,7 @@ pub async fn process_dirs(args: &Args, db: &Database) -> Result<()> {
         let mut current_parent_from_hash_path: String = String::default();
         // let mut current_parent_from_hash_id: Uuid = Uuid::default();
         let mut current_parent_from_hash_id: Thing = Thing {
-          tb: "nodes".into(),
+          tb: NODES_TABLE.into(),
           id: DdbId::rand(),
         };
         // override defaults
@@ -187,21 +188,22 @@ pub async fn process_dirs(args: &Args, db: &Database) -> Result<()> {
           current_parent_from_hash_path = (*v.0.clone()).to_string();
           current_parent_from_hash_id = v.1.clone();
         }
-        // remove root from final path, if is not root
+        // remove root (source path) from final path, and assign / to it
+        let path;
         if !current_parent_from_hash_path.eq(&args.path) {
           let replace = format!("{}", &args.path);
           // println!("replace: {}, current_parent_from_hash_path: {}", replace, current_parent_from_hash_path);
-          current_parent_from_hash_path = current_parent_from_hash_path.replace(&replace, "");
+          path = current_parent_from_hash_path.replace(&replace, "");
         } else {
-          current_parent_from_hash_path = "/".into();
+          path = "/".into();
         }
 
         let node = Node {
           id,
-          node_type,
-          name,
+          node_type: node_type.clone(),
+          name: name.clone(),
           canonical_path,
-          path: current_parent_from_hash_path,
+          path: path.clone(),
           size: metadata.len(),
           created: st2sdt(&metadata.created().unwrap()),
           modified: st2sdt(&metadata.modified().unwrap()),
@@ -212,7 +214,17 @@ pub async fn process_dirs(args: &Args, db: &Database) -> Result<()> {
         };
 
         match node.save(&db).await {
-          Ok(_) => println!("node saved: node_id: {}, node.id: {}:{}", &node_id, &node.id.tb, &node.id.id),
+          Ok(_) => {
+            println!("node saved: node.type: {}, node_id: {}, node.id: {}:{}", &node.node_type, &node_id, &node.id.tb, &node.id.id);
+            if node_type == NodeType::File {
+              let upload_file = format!("{}/{}", &current_parent_from_hash_path, &name);
+              println!("start uploading: {}, key: {}", &upload_file, current_parent_from_hash_path.as_str());
+              let upload_result = s3_client
+                .put_object_from_file(&upload_file, current_parent_from_hash_path.as_str())
+                .await;
+              println!("node saved: node_id: {}, node.id: {}:{}, s3 url: {}", &node_id, &node.id.tb, &node.id.id, &upload_result);
+            }
+          }
           Err(e) => eprintln!("error saving node: {:#?}", e),
         };
 

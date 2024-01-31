@@ -1,10 +1,13 @@
 use clap::Parser;
 use dotenv::dotenv;
+use minio::Client;
 use std::error::Error;
 use std::result;
 use surrealdb::Database;
 use walker::process_dirs;
 
+mod app;
+mod minio;
 mod surrealdb;
 mod utils;
 mod walker;
@@ -35,8 +38,11 @@ async fn main() -> std::io::Result<()> {
     .await
     .expect("error connecting to database");
 
+  // init s3 client
+  let s3_client = Client::new();
+
   // process directories
-  match process_dirs(&args, &db).await {
+  match process_dirs(&args, &db, &s3_client).await {
     Ok(_) => Ok(()),
     Err(e) => {
       eprint!("Error: {}", e);
