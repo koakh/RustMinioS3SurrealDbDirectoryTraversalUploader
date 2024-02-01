@@ -1,5 +1,5 @@
 [package]
-name = "rust-directory-traversal-rust-cookbook"
+name = "rust-minio-s3-surreal-db-directory-traversal-uploader"
 version = "0.1.0"
 edition = "2021"
 
