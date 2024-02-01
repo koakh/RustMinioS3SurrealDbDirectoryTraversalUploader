@@ -14,7 +14,7 @@
 
 - [Struct std::fs::Metadata](https://doc.rust-lang.org/std/fs/struct.Metadata.html)
 
-### SqlX
+### SqlX: Deprecated, leave it here it is the source for past starter
 
 - [Raw SQL in Rust with SQLx](https://www.shuttle.rs/blog/2023/10/04/sql-in-rust)
 - [sqlx/sqlx-cli/README.md at main · launchbadge/sqlx](https://github.com/launchbadge/sqlx/blob/main/sqlx-cli/README.md)
@@ -22,3 +22,8 @@
 ```shell
 $ cargo install sqlx-cli
 ```
+
+### Project Deployed on
+
+- `koakh-server:/mnt/4tbdisk1/srv/docker/koakh/@RustActixWebAndSvelteKitAuthenticationDevToTutorial`
+
