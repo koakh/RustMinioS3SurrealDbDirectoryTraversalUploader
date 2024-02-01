@@ -61,7 +61,7 @@ struct Node {
   path: String,
   // used to get real path from symlink
   canonical_path: Option<String>,
-  s3_url: String,
+  s3_url: Option<String>,
   size: u64,
   created: SdbDatetime,
   modified: SdbDatetime,
@@ -199,15 +199,17 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client) -> Res
           path = "/".into();
         }
 
-        let mut s3_url = String::from("");
+        let mut s3_url: Option<String> = None;
         if node_type == NodeType::File {
           let upload_file = format!("{}/{}", &current_parent_from_hash_path, &name);
-          // key must be equal to file path in this case is upload_file ex 'root/root.file'
-          println!("start uploading: {}, key: {}", &upload_file, &upload_file);
+          // always remove root args path from key, and start slash
+          let key = &upload_file.replace(&args.path, "")[1..];
+          // key must be equal to file path without root path in this case is upload_file ex '/root.file'
+          println!("start uploading: {}, key: {}", &upload_file, &key);
           // always remove base endpoint from
-          (_, s3_url) = s3_client
-            .put_object_from_file(&upload_file, &upload_file)
-            .await;
+          let (_, s3_bucket_name_key) = s3_client.put_object_from_file(&upload_file, &key).await;
+          // override default
+          s3_url = Some(s3_bucket_name_key);
         }
 
         let node = Node {
@@ -228,10 +230,7 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client) -> Res
 
         match node.save(&db).await {
           Ok(_) => {
-            println!(
-              "node saved: node.type: {}, node_id: {}, node.id: {}:{}, s3 url: {}",
-              &node.node_type, &node_id, &node.id.tb, &node.id.id, &s3_url
-            );
+            println!("node saved: node.type: {}, node_id: {}, node.id: {}:{}", &node.node_type, &node_id, &node.id.tb, &node.id.id);
           }
           Err(e) => eprintln!("error saving node: {:#?}", e),
         };

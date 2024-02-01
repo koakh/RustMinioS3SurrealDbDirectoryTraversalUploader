@@ -58,7 +58,7 @@ impl Client {
       .expect("Failed to put object");
 
     // full url, with enpoint, bucket name, and key 
-    // ex http://192.168.1.52:9000/default-bucket/root/root.file
+    // ex http://192.168.1.52:9000/default-bucket/root.file
     let s3_url = self.url(format!("{}/{}", &self.bucket_name, key).as_str());
     // s3 bucket name and key
     // ex /default-bucket/root/root.file
