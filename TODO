@@ -1,3 +1,4 @@
 Todo:
+  ☐ new name for nodes is StorageItem
   ☐ check if content exists by hash in db and skip it
   ☐ create a mono repo 

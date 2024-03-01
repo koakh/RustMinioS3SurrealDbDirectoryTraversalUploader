@@ -1,5 +1,9 @@
 # NOTES
 
+## Project Deployed on
+
+- `koakh-server:/mnt/4tbdisk1/srv/docker/koakh/@RustActixWebAndSvelteKitAuthenticationDevToTutorial`
+
 ## Links
 
 ### Filesystem
@@ -22,8 +26,3 @@
 ```shell
 $ cargo install sqlx-cli
 ```
-
-### Project Deployed on
-
-- `koakh-server:/mnt/4tbdisk1/srv/docker/koakh/@RustActixWebAndSvelteKitAuthenticationDevToTutorial`
-
