@@ -178,34 +178,28 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client) -> Res
                     Err(_) => None,
                 };
 
-                // try get ancestors from input_path_parent hash map
-                let mut parent_ancestors = Vec::<Thing>::new();
-                // try get hasmap ancestors
-                if let Some(v) = parent_path_hash_map.get_key_value(&input_path_parent) {
-                    parent_ancestors = v.1.ancestors.clone();
-                }
-
                 // defined defaults
                 // always get path from hashmap, to use it with same id and path
                 let mut current_parent_from_hash_path: String = String::default();
-                // let mut current_parent_from_hash_id: Uuid = Uuid::default();
-                let mut current_parent_from_hash_id: Thing = Thing {
+                // let mut current_parent_thing_from_hashmap_pathkey: Uuid = Uuid::default();
+                let mut current_parent_thing_from_hashmap_pathkey: Thing = Thing {
                     tb: STORAGE_NODE_TABLE.into(),
                     id: DdbId::rand(),
                 };
 
-                let mut current_ancestors = parent_ancestors.clone();
+                // default current_ancestors
+                let mut current_parent_ancestors_from_hashmap_pathkey = Vec::<Thing>::new();
                 // try get it from hasmap, if exists override defaults defined above
                 if let Some(v) = parent_path_hash_map.get_key_value(&input_path_parent) {
                     current_parent_from_hash_path = (*v.0.clone()).to_string();
-                    current_parent_from_hash_id = v.1.thing.clone();
+                    current_parent_thing_from_hashmap_pathkey = v.1.thing.clone();
                     // clone parent ancestors
-                    current_ancestors = v.1.ancestors.clone();
+                    current_parent_ancestors_from_hashmap_pathkey = v.1.ancestors.clone();
                     // now we push current parent into current_ancestors
-                    current_ancestors.push(current_parent_from_hash_id.clone());
+                    current_parent_ancestors_from_hashmap_pathkey.push(current_parent_thing_from_hashmap_pathkey.clone());
                 }
 
-                // must be after defining current parent node, to push it to ancestors
+                // must be after defining current_ancestors above, above is where we have the current_parent_thing_from_hashmap_pathkey
 
                 // first iter is always a dir, we assign it the first id
                 match node_type {
@@ -215,7 +209,7 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client) -> Res
                         let key = v.path().display().to_string();
                         parent_path_hash_map.entry(key).or_insert(ParentPathProp {
                             thing: id.clone(),
-                            ancestors: current_ancestors.clone(),
+                            ancestors: current_parent_ancestors_from_hashmap_pathkey.clone(),
                         });
                     }
                     NodeType::File => {}
@@ -259,8 +253,8 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client) -> Res
                     modified: st2sdt(&metadata.modified().unwrap()),
                     accessed: st2sdt(&metadata.accessed().unwrap()),
                     sha256,
-                    parent_id: current_parent_from_hash_id,
-                    ancestors: current_ancestors,
+                    parent_id: current_parent_thing_from_hashmap_pathkey,
+                    ancestors: current_parent_ancestors_from_hashmap_pathkey,
                     s3_url: s3_url.clone(),
                     notes: None,
                     published: false,
@@ -285,9 +279,9 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client) -> Res
 
     // debug final parent_path_hash_map
     // println!("parent_path_hash_map: {:#?}\n", parent_path_hash_map);
-    parent_path_hash_map
-      .into_iter()
-      .for_each(|(k, v)| println!("k: {} -> v: {}, ancestors: {:?}", k, v.thing, v.ancestors));
+    // parent_path_hash_map
+    //   .into_iter()
+    //   .for_each(|(k, v)| println!("k: {} -> v: {}, ancestors: {:?}", k, v.thing, v.ancestors));
 
     Ok(())
 }

@@ -2,7 +2,7 @@ path := upload
 local_production_path := production/
 remote_production_path := 192.168.1.1:/mnt/4tbdisk1/srv/docker/koakh/@RustActixWebAndSvelteKitAuthenticationDevToTutorial/
 release_file := target/release/rust-minio-s3-surreal-db-directory-traversal-uploader
-surrealdb_path := "file://database"
+surrealdb_path := file://database
 surrealdb_log_level := # --log trace
 
 stack-up:
