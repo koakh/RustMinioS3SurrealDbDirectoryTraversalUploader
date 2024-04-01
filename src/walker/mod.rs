@@ -64,6 +64,7 @@ struct StorageNode {
     id: Thing,
     node_type: NodeType,
     name: String,
+    file_name: String,
     path: String,
     // used to get real path from symlink
     canonical_path: Option<String>,
@@ -163,7 +164,7 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client) -> Res
                 let input_path = Path::new(v.path());
                 let os_str = v.file_name();
                 // filename or directory name
-                let name = try_from_os_str!(os_str as &Path)
+                let file_name = try_from_os_str!(os_str as &Path)
                     .unwrap()
                     .display()
                     .to_string();
@@ -230,7 +231,7 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client) -> Res
                 // define s3 url
                 let mut s3_url: Option<String> = None;
                 if node_type == NodeType::File {
-                    let upload_file = format!("{}/{}", &current_parent_from_hash_path, &name);
+                    let upload_file = format!("{}/{}", &current_parent_from_hash_path, &file_name);
                     // always remove root args path from key, and start slash
                     let key = &upload_file.replace(&args.path, "")[1..];
                     // key must be equal to file path without root path in this case is upload_file ex '/root.file'
@@ -241,11 +242,19 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client) -> Res
                     s3_url = Some(s3_bucket_name_key);
                 }
 
+                // clone name into filename before 
+                // let file_name = name.clone();
+                // // get name without extension
+                let name = match Path::new(&file_name).file_stem() {
+                    Some(v) => v.to_string_lossy().to_string(),
+                    None => file_name.clone(),
+                };
                 // create storageNode
                 let node = StorageNode {
                     id,
                     node_type: node_type.clone(),
-                    name: name.clone(),
+                    name,
+                    file_name, 
                     canonical_path,
                     path: path.clone(),
                     size: metadata.len(),
