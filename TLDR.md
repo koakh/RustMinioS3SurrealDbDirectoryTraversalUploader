@@ -2,9 +2,13 @@
 
 ## Start Dev Env
 
-stack-up
-surrealdb
-run
+```shell
+$ make stack-up
+```
 
+read `production/NOTES.md` to configure minio
 
-production/NOTES.md
+```shell
+$ make surrealdb
+$ make run
+```

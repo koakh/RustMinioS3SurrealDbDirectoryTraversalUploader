@@ -1,4 +1,7 @@
 /target
+database/
 .bak/*.tgz
 .env
 production/volumes/
+production/database/
+production/database-mar/

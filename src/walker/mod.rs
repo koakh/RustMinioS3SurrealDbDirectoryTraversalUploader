@@ -15,11 +15,12 @@ use walkdir::{DirEntry, WalkDir};
 use from_os_str::Wrap;
 use from_os_str::*;
 
-use crate::{app::STORAGE_NODES_TABLE, minio::Client, surrealdb::Database, utils::st2sdt, Args, Result};
+use crate::{app::STORAGE_NODE_TABLE, minio::Client, surrealdb::Database, utils::st2sdt, Args, Result};
 
+#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
 struct ParentPathProp {
     thing: Thing,
-    ancestors: Option<Vec<Thing>>,
+    ancestors: Vec<Thing>,
 }
 type ParentPathHashMap = HashMap<String, ParentPathProp>;
 
@@ -73,6 +74,7 @@ struct StorageNode {
     accessed: SdbDatetime,
     sha256: Option<String>,
     parent_id: Thing,
+    ancestors: Vec<Thing>,
     // tags: Option<Vec<T>>,
     // categories: Option<Vec<T>>,
     // mastery_levels: Option<Vec<T>>,
@@ -82,7 +84,7 @@ struct StorageNode {
     // created_at: Option<surrealdb::sql::Datetime>,
 }
 
-// // using raw query
+// using raw query
 // impl Node {
 //   async fn save(&self, db: &Database) -> Result<surrealdb::Response> {
 //     let sql = "CREATE type::table($table) CONTENT {
@@ -115,7 +117,7 @@ struct StorageNode {
 impl StorageNode {
     async fn save(&self, db: &Database) -> Result<()> {
         db.client
-            .create(Resource::from(STORAGE_NODES_TABLE))
+            .create(Resource::from(STORAGE_NODE_TABLE))
             .content(self)
             .await?;
         Ok(())
@@ -145,14 +147,15 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client) -> Res
         match entry {
             Ok(v) => {
                 let node_id;
-                // if first node, use a fixed root id
+                // if first node, use a fixed root id, will be storage_node:root
                 if parent_path_hash_map.len() == 0 {
                     node_id = DdbId::String("root".into())
                 } else {
                     node_id = DdbId::rand();
                 }
+                // set current storage node thing, based on node_id defined above
                 let id: Thing = Thing {
-                    tb: STORAGE_NODES_TABLE.into(),
+                    tb: STORAGE_NODE_TABLE.into(),
                     id: node_id.clone(),
                 };
                 let metadata = fs::symlink_metadata(v.path())?;
@@ -175,31 +178,51 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client) -> Res
                     Err(_) => None,
                 };
 
-                // first inter is always a dir, we assign it the first id
+                // try get ancestors from input_path_parent hash map
+                let mut parent_ancestors = Vec::<Thing>::new();
+                // try get hasmap ancestors
+                if let Some(v) = parent_path_hash_map.get_key_value(&input_path_parent) {
+                    parent_ancestors = v.1.ancestors.clone();
+                }
+
+                // defined defaults
+                // always get path from hashmap, to use it with same id and path
+                let mut current_parent_from_hash_path: String = String::default();
+                // let mut current_parent_from_hash_id: Uuid = Uuid::default();
+                let mut current_parent_from_hash_id: Thing = Thing {
+                    tb: STORAGE_NODE_TABLE.into(),
+                    id: DdbId::rand(),
+                };
+
+                let mut current_ancestors = parent_ancestors.clone();
+                // try get it from hasmap, if exists override defaults defined above
+                if let Some(v) = parent_path_hash_map.get_key_value(&input_path_parent) {
+                    current_parent_from_hash_path = (*v.0.clone()).to_string();
+                    current_parent_from_hash_id = v.1.thing.clone();
+                    // clone parent ancestors
+                    current_ancestors = v.1.ancestors.clone();
+                    // now we push current parent into current_ancestors
+                    current_ancestors.push(current_parent_from_hash_id.clone());
+                }
+
+                // must be after defining current parent node, to push it to ancestors
+
+                // first iter is always a dir, we assign it the first id
                 match node_type {
                     NodeType::Unknown => {}
                     NodeType::Dir => {
                         // insert a key only if it doesn't already exist
-                        parent_path_hash_map
-                            .entry(v.path().display().to_string())
-                            .or_insert(ParentPathProp { thing: id.clone(), ancestors: None });
+                        let key = v.path().display().to_string();
+                        parent_path_hash_map.entry(key).or_insert(ParentPathProp {
+                            thing: id.clone(),
+                            ancestors: current_ancestors.clone(),
+                        });
                     }
                     NodeType::File => {}
                     NodeType::Symlink => canonical_path = Some(read_link(v.path()).unwrap().display().to_string()),
                 }
 
-                // always get path from hashmap, to use it with same id and path
-                let mut current_parent_from_hash_path: String = String::default();
-                // let mut current_parent_from_hash_id: Uuid = Uuid::default();
-                let mut current_parent_from_hash_id: Thing = Thing {
-                    tb: STORAGE_NODES_TABLE.into(),
-                    id: DdbId::rand(),
-                };
-                // override defaults
-                if let Some(v) = parent_path_hash_map.get_key_value(&input_path_parent) {
-                    current_parent_from_hash_path = (*v.0.clone()).to_string();
-                    current_parent_from_hash_id = v.1.thing.clone();
-                }
+
                 // remove root (source path) from final path, and assign / to it
                 let path;
                 if !current_parent_from_hash_path.eq(&args.path) {
@@ -210,6 +233,7 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client) -> Res
                     path = "/".into();
                 }
 
+                // define s3 url
                 let mut s3_url: Option<String> = None;
                 if node_type == NodeType::File {
                     let upload_file = format!("{}/{}", &current_parent_from_hash_path, &name);
@@ -223,6 +247,7 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client) -> Res
                     s3_url = Some(s3_bucket_name_key);
                 }
 
+                // create storageNode
                 let node = StorageNode {
                     id,
                     node_type: node_type.clone(),
@@ -235,6 +260,7 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client) -> Res
                     accessed: st2sdt(&metadata.accessed().unwrap()),
                     sha256,
                     parent_id: current_parent_from_hash_id,
+                    ancestors: current_ancestors,
                     s3_url: s3_url.clone(),
                     notes: None,
                     published: false,
@@ -259,9 +285,9 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client) -> Res
 
     // debug final parent_path_hash_map
     // println!("parent_path_hash_map: {:#?}\n", parent_path_hash_map);
-    // parent_path_hash_map
-    //   .into_iter()
-    //   .for_each(|(k, v)| println!("k: {} -> v: {}", k, v));
+    parent_path_hash_map
+      .into_iter()
+      .for_each(|(k, v)| println!("k: {} -> v: {}, ancestors: {:?}", k, v.thing, v.ancestors));
 
     Ok(())
 }

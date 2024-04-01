@@ -9,10 +9,10 @@
       "type": "lldb",
       "request": "launch",
       "name": "Debug",
-      "program": "${workspaceFolder}/target/debug/rust-directory-traversal-rust-cookbook",
+      "program": "${workspaceFolder}/target/debug/rust-minio-s3-surreal-db-directory-traversal-uploader",
       "args": [
         "-p",
-        "root"
+        "upload"
       ],
       "cwd": "${workspaceFolder}",
       "preLaunchTask": "rust: cargo build"

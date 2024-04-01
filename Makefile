@@ -2,6 +2,8 @@ path := upload
 local_production_path := production/
 remote_production_path := 192.168.1.1:/mnt/4tbdisk1/srv/docker/koakh/@RustActixWebAndSvelteKitAuthenticationDevToTutorial/
 release_file := target/release/rust-minio-s3-surreal-db-directory-traversal-uploader
+surrealdb_path := "file://database"
+surrealdb_log_level := # --log trace
 
 stack-up:
 	@cd production && docker-compose up -d
@@ -10,10 +12,10 @@ stack-down:
 	@cd production && docker-compose down
 
 surrealdb:
-	@surreal start --auth --log trace --user root --pass root --bind 0.0.0.0:8000 file://database.db
+	@surreal start --auth --user root --pass root --bind 0.0.0.0:8000 ${surrealdb_path} ${surrealdb_log_level}
 
 surrealdb-mem:
-	@surreal start memory -A --auth --user root --pass root
+	@surreal start --auth --user root --pass root memory -A ${surrealdb_log_level}
 
 run:
 	@cargo run -- -p ${path}
