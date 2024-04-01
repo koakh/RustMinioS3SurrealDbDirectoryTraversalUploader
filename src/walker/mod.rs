@@ -17,7 +17,11 @@ use from_os_str::*;
 
 use crate::{app::STORAGE_NODES_TABLE, minio::Client, surrealdb::Database, utils::st2sdt, Args, Result};
 
-type ParentPathHashMap = HashMap<String, Thing>;
+struct ParentPathProp {
+    thing: Thing,
+    ancestors: Option<Vec<Thing>>,
+}
+type ParentPathHashMap = HashMap<String, ParentPathProp>;
 
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -178,7 +182,7 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client) -> Res
                         // insert a key only if it doesn't already exist
                         parent_path_hash_map
                             .entry(v.path().display().to_string())
-                            .or_insert(id.clone());
+                            .or_insert(ParentPathProp { thing: id.clone(), ancestors: None });
                     }
                     NodeType::File => {}
                     NodeType::Symlink => canonical_path = Some(read_link(v.path()).unwrap().display().to_string()),
@@ -194,7 +198,7 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client) -> Res
                 // override defaults
                 if let Some(v) = parent_path_hash_map.get_key_value(&input_path_parent) {
                     current_parent_from_hash_path = (*v.0.clone()).to_string();
-                    current_parent_from_hash_id = v.1.clone();
+                    current_parent_from_hash_id = v.1.thing.clone();
                 }
                 // remove root (source path) from final path, and assign / to it
                 let path;

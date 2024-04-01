@@ -3,6 +3,12 @@ local_production_path := production/
 remote_production_path := 192.168.1.1:/mnt/4tbdisk1/srv/docker/koakh/@RustActixWebAndSvelteKitAuthenticationDevToTutorial/
 release_file := target/release/rust-minio-s3-surreal-db-directory-traversal-uploader
 
+stack-up:
+	@cd production && docker-compose up -d
+
+stack-down:
+	@cd production && docker-compose down
+
 surrealdb:
 	@surreal start --auth --log trace --user root --pass root --bind 0.0.0.0:8000 file://database.db
 

@@ -1,7 +1,7 @@
 # NOTES
 
 1. start stack and create minio bucket 'default-bucket', enable Versioning
-2. create user 
+2. create user
    .env
      S3_ACCESS_KEY_ID=rust-auth
        with readwrite access and password
