@@ -2,4 +2,4 @@ Todo:
   ✔ new name for nodes is storage_node @done(24-03-22 21:39)
   ☐ check if content exists by sha256 hash in db and skip it, 
     but update its path etc
-  ☐ create a mono repo 
+  ☐ create a mono repo
