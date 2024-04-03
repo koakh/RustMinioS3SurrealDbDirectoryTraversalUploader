@@ -33,7 +33,7 @@ ORDER BY
 ;
 ```
 
-## Ancestors
+## Select by Ancestors
 
 ```shell
 #0 path: upload
@@ -126,4 +126,12 @@ SELECT name, nodeType, path FROM storage_node WHERE $parentId IN ancestors AND n
         "path": "/dir1/dir1.1/dir1.1.1"
     }
 ]
+```
+
+## Select Ancestors with Path String a lot Easier and Reddable
+
+wtf: we can use traversal searschs using just the path ex, like wildcards in a file system
+
+```sql
+$ SELECT id, name, fileName, nodeType, path FROM storage_node WHERE  string::startsWith(path, '/Adjuntos/Adjunto Aluano');
 ```
