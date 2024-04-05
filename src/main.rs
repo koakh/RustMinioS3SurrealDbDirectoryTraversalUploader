@@ -32,6 +32,7 @@ async fn main() -> std::io::Result<()> {
     let args = Args::parse();
     // read .env
     dotenv().ok();
+    let bucket_name = std::env::var("S3_BUCKET_NAME").unwrap();
 
     // init datastore
     let db = Database::init()
@@ -42,7 +43,7 @@ async fn main() -> std::io::Result<()> {
     let s3_client = Client::new();
 
     // process directories
-    match process_dirs(&args, &db, &s3_client).await {
+    match process_dirs(&args, &db, &s3_client, &bucket_name).await {
         Ok(_) => Ok(()),
         Err(e) => {
             eprint!("Error: {}", e);

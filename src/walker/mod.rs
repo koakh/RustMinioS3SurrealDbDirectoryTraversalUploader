@@ -1,4 +1,6 @@
 use from_os_str::try_from_os_str;
+use from_os_str::Wrap;
+use from_os_str::*;
 use serde::{Deserialize, Serialize};
 use sha256::try_digest;
 use std::{
@@ -12,10 +14,15 @@ use surrealdb::{
 };
 use walkdir::{DirEntry, WalkDir};
 
-use from_os_str::Wrap;
-use from_os_str::*;
-
-use crate::{app::STORAGE_NODE_TABLE, minio::Client, surrealdb::Database, utils::st2sdt, Args, Result};
+use crate::app::S3_BUCKET_DOWNLOAD_PATH;
+use crate::utils::thumbnail::FileType;
+use crate::{
+    app::{STATIC_FILES_IMAGES_MIME_TYPE_BASE_PATH, STATIC_FILES_IMAGES_MIME_TYPE_EXT, STORAGE_NODE_TABLE},
+    minio::Client,
+    surrealdb::Database,
+    utils::{datetime::st2sdt, thumbnail::get_file_type},
+    Args, Result,
+};
 
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
 struct ParentPathProp {
@@ -65,24 +72,20 @@ struct StorageNode {
     node_type: NodeType,
     name: String,
     file_name: String,
+    file_extension: String,
     path: String,
     // used to get real path from symlink
     canonical_path: Option<String>,
-    s3_url: Option<String>,
     size: u64,
     created: SdbDatetime,
     modified: SdbDatetime,
     accessed: SdbDatetime,
     sha256: Option<String>,
+    s3_url: Option<String>,
+    s3_thumbnail: Option<String>,
     parent_id: Thing,
     ancestors: Vec<Thing>,
-    // tags: Option<Vec<T>>,
-    // categories: Option<Vec<T>>,
-    // mastery_levels: Option<Vec<T>>,
     notes: Option<String>,
-    published: bool,
-    // updated_at: Option<surrealdb::sql::Datetime>,
-    // created_at: Option<surrealdb::sql::Datetime>,
 }
 
 // using raw query
@@ -135,7 +138,7 @@ fn is_hidden(entry: &DirEntry) -> bool {
 }
 
 /// init walker traverse directory
-pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client) -> Result<()> {
+pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket_name: &String) -> Result<()> {
     // println!("traverse paths {}", &args.path);
     let mut storage_nodes = 0;
     let mut parent_path_hash_map = ParentPathHashMap::new();
@@ -217,7 +220,6 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client) -> Res
                     NodeType::Symlink => canonical_path = Some(read_link(v.path()).unwrap().display().to_string()),
                 }
 
-
                 // remove root (source path) from final path, and assign / to it
                 let path;
                 if !current_parent_from_hash_path.eq(&args.path) {
@@ -233,7 +235,7 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client) -> Res
                 if node_type == NodeType::File {
                     let upload_file = format!("{}/{}", &current_parent_from_hash_path, &file_name);
                     // always remove root args path from key, and start slash
-                    let key = &upload_file.replace(&args.path, "")[1..];
+                    let key = format!("{}/{}", S3_BUCKET_DOWNLOAD_PATH, &upload_file.replace(&args.path, "")[1..]);
                     // key must be equal to file path without root path in this case is upload_file ex '/root.file'
                     println!("start uploading: {}, key: {}", &upload_file, &key);
                     // always remove base endpoint from
@@ -242,31 +244,51 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client) -> Res
                     s3_url = Some(s3_bucket_name_key);
                 }
 
-                // clone name into filename before 
-                // let file_name = name.clone();
-                // // get name without extension
+                // clone name into filename before
+                // get name without extension
                 let name = match Path::new(&file_name).file_stem() {
                     Some(v) => v.to_string_lossy().to_string(),
                     None => file_name.clone(),
                 };
+                // get file extension
+                let file_extension = match Path::new(&file_name).extension() {
+                    Some(v) => v.to_string_lossy().to_string(),
+                    None => ".unk".into(),
+                };
+                // get thumbnail
+                let mut s3_thumbnail: Option<FileType> = None;
+                if node_type == NodeType::File {
+                    s3_thumbnail = Some(get_file_type(
+                        &file_extension,
+                        bucket_name.as_str(),
+                        STATIC_FILES_IMAGES_MIME_TYPE_BASE_PATH,
+                        STATIC_FILES_IMAGES_MIME_TYPE_EXT,
+                    ));
+                }
+                let thumbnail = match s3_thumbnail {
+                    Some(v) => Some(v.thumbnail),
+                    None => None,
+                };
+
                 // create storageNode
                 let node = StorageNode {
                     id,
                     node_type: node_type.clone(),
                     name,
-                    file_name, 
-                    canonical_path,
+                    file_name,
+                    file_extension,
                     path: path.clone(),
+                    canonical_path,
                     size: metadata.len(),
                     created: st2sdt(&metadata.created().unwrap()),
                     modified: st2sdt(&metadata.modified().unwrap()),
                     accessed: st2sdt(&metadata.accessed().unwrap()),
                     sha256,
+                    s3_url: s3_url.clone(),
+                    s3_thumbnail: thumbnail,
                     parent_id: current_parent_thing_from_hashmap_pathkey,
                     ancestors: current_parent_ancestors_from_hashmap_pathkey,
-                    s3_url: s3_url.clone(),
                     notes: None,
-                    published: false,
                 };
 
                 match node.save(&db).await {

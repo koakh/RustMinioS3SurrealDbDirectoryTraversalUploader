@@ -1,3 +1,4 @@
 pub mod datetime;
+pub mod thumbnail;
 
-pub use datetime::*;
+// pub use datetime::*;
