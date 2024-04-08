@@ -4,7 +4,7 @@
 # https://chat.openai.com/c/0d9c1c71-f697-404b-9bbb-1cf18e754659
 
 # Define the directory to search
-directory="/path/to/directory"
+directory="/mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos"
 
 # Navigate to the directory
 cd "$directory" || exit
@@ -21,3 +21,4 @@ find . -type f -exec sh -c '
 		fi
 	done
 ' sh {} +
+

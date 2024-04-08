@@ -29,7 +29,7 @@ build-release:
 push-release-production:
 	@rsync -r -t -p -o -g -v --progress --delete -l -H -z -s  ${release_file} ${remote_production_path}
 
-bring-prod-files:
+bring-production-files:
 	@rsync -r -t -p -o -g -v --progress --delete -l -H -z -s \
 		--exclude volumes/minio \
 		--exclude volumes/minio-old \
