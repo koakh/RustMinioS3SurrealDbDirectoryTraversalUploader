@@ -298,7 +298,7 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
                                     THUMBNAIL_FORMAT.to_lowercase(),
                                     THUMBNAIL_TEMPORARY_PATH
                                 );
-                                println!("command: {}", command);
+                                // println!("command: {}", command);
                                 match execute_command_shortcut(&command) {
                                     Ok(_) => {
                                         // upload to s3 storage and remove tem file
