@@ -34,6 +34,10 @@ falta tif fileType and mimeType
   miss and not bore to add: cdr, rtf, wma,
   TODO: FIND ILLUSTRATOR FILE and add missing ICONS :)
 
+TODO: directories dont have file fileName, fileExtension, s3Url in db  
+  update storage_node SET fileExtension = none, s3Url = none WHERE nodeType = 'dir' && fileExtension = ".unk";
+
+
 
 cd "/mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Leis/Livros/3ª edição em imagens"
 mv '001 LEIS E CHAVES RITUALISTICAS 3ª ED.jpg' '001 - Leis E Chaves Ritualisticas 3ª Ed.Jpg'

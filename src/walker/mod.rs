@@ -260,7 +260,7 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
                 // get file extension
                 let file_extension = match Path::new(&file_name).extension() {
                     Some(v) => v.to_string_lossy().to_string(),
-                    None => ".unk".into(),
+                    None => "unk".into(),
                 };
                 // get thumbnail
                 let mut thumbnail;
@@ -290,7 +290,7 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
                                 // convert "$file" -resize 100x100^ -gravity center -extent 100x100 "${file%.*}_thumbnail.${file##*.}"
                                 // convert "$file" -resize 100x100^ -gravity center -extent 100x100 PNG:"${file%.*}_thumbnail.png"
                                 let command = format!(
-                                    "file={0} && cd {1} && convert \"$file\" -resize {2}^ -gravity center -extent {2} {3}:\"{5}/${{file%.*}}_{2}.{4}\"",
+                                    "file=\"{0}\" && cd \"{1}\" && convert \"$file\" -resize {2}^ -gravity center -extent {2} {3}:\"{5}/${{file%.*}}_{2}.{4}\"",
                                     file_name,
                                     format!("{}{}", &args.path, path),
                                     index,
@@ -298,6 +298,7 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
                                     THUMBNAIL_FORMAT.to_lowercase(),
                                     THUMBNAIL_TEMPORARY_PATH
                                 );
+                                println!("command: {}", command);
                                 match execute_command_shortcut(&command) {
                                     Ok(_) => {
                                         // upload to s3 storage and remove tem file
