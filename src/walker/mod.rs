@@ -13,15 +13,17 @@ use surrealdb::{
 };
 use walkdir::{DirEntry, WalkDir};
 
+use crate::app::ARGS_PROCCESS_S3_UPLOAD;
+use crate::app::ARGS_PROCCESS_THUMBNAILS;
 use crate::app::S3_BUCKET_DOWNLOADS_PATH;
 use crate::app::S3_BUCKET_THUMBNAIL_PATH;
 use crate::app::STATIC_FILES_DIRECTORY_ICON_PATH;
 use crate::app::THUMBNAIL_FORMAT;
 use crate::app::THUMBNAIL_SIZES;
 use crate::app::THUMBNAIL_TEMPORARY_PATH;
-use crate::utils::shell_command::execute_command_shortcut;
 use crate::utils::file_type::FileCategory;
 use crate::utils::file_type::FileType;
+use crate::utils::shell_command::execute_command_shortcut;
 use crate::{
     app::{STATIC_FILES_IMAGES_MIME_TYPE_BASE_PATH, STATIC_FILES_IMAGES_MIME_TYPE_EXT, STORAGE_NODE_TABLE},
     minio::Client,
@@ -78,7 +80,7 @@ struct StorageNode {
     node_type: NodeType,
     name: String,
     file_name: String,
-    file_extension: String,
+    file_extension: Option<String>,
     path: String,
     // used to get real path from symlink
     canonical_path: Option<String>,
@@ -237,99 +239,117 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
                     path = "/".into();
                 }
 
-                // define s3 url
-                let mut s3_url: Option<String> = None;
-                if node_type == NodeType::File {
-                    let upload_file = format!("{}/{}", &current_parent_from_hash_path, &file_name);
-                    // always remove root args path from key, and start slash
-                    let key = format!("{}/{}", S3_BUCKET_DOWNLOADS_PATH, &upload_file.replace(&args.path, "")[1..]);
-                    // key must be equal to file path without root path in this case is upload_file ex '/root.file'
-                    println!("uploading: {}, key: {}", &upload_file, &key);
-                    // always remove base endpoint from
-                    let (_, s3_bucket_name_key) = s3_client.put_object_from_file(&upload_file, &key).await;
-                    // override default
-                    s3_url = Some(s3_bucket_name_key);
-                }
-
                 // clone name into filename before
                 // get name without extension
                 let name = match Path::new(&file_name).file_stem() {
                     Some(v) => v.to_string_lossy().to_string(),
                     None => file_name.clone(),
                 };
-                // get file extension
-                let file_extension = match Path::new(&file_name).extension() {
-                    Some(v) => v.to_string_lossy().to_string(),
-                    None => "unk".into(),
-                };
-                // get thumbnail
-                let mut thumbnail;
-                let mut s3_thumbnail: Option<FileType> = None;
-                if node_type == NodeType::File {
-                    s3_thumbnail = Some(get_file_type(
-                        &file_extension,
-                        bucket_name.as_str(),
-                        STATIC_FILES_IMAGES_MIME_TYPE_BASE_PATH,
-                        STATIC_FILES_IMAGES_MIME_TYPE_EXT,
-                    ));
-                    thumbnail = match s3_thumbnail.clone() {
-                        Some(v) => Some(v.thumbnail),
-                        None => None,
-                    };
-                } else /*if node_type == NodeType::Dir*/ {
-                    thumbnail = Some(format!("{}/{}/{}.{}", bucket_name.as_str(), S3_BUCKET_THUMBNAIL_PATH, STATIC_FILES_DIRECTORY_ICON_PATH, STATIC_FILES_IMAGES_MIME_TYPE_EXT));
-                }
 
-                // generate thumbnails
-                match s3_thumbnail {
-                    Some(v) => match &v.file_category {
-                        FileCategory::Image => {
-                            // println!("generate thumbnail for {} - {}", v.file_category, input_path.display());
-                            for index in THUMBNAIL_SIZES {
-                                // base commands with and without implicit file format, in this case png
-                                // convert "$file" -resize 100x100^ -gravity center -extent 100x100 "${file%.*}_thumbnail.${file##*.}"
-                                // convert "$file" -resize 100x100^ -gravity center -extent 100x100 PNG:"${file%.*}_thumbnail.png"
-                                let command = format!(
-                                    "file=\"{0}\" && cd \"{1}\" && convert \"$file\" -resize {2}^ -gravity center -extent {2} {3}:\"{5}/${{file%.*}}_{2}.{4}\"",
-                                    file_name,
-                                    format!("{}{}", &args.path, path),
-                                    index,
-                                    THUMBNAIL_FORMAT,
-                                    THUMBNAIL_FORMAT.to_lowercase(),
-                                    THUMBNAIL_TEMPORARY_PATH
-                                );
-                                // println!("command: {}", command);
-                                match execute_command_shortcut(&command) {
-                                    Ok(_) => {
-                                        // upload to s3 storage and remove tem file
-                                        let upload_file_name = format!("{}_{}.{}", name, index, THUMBNAIL_FORMAT.to_lowercase());
-                                        let upload_file_path = format!("{}/{}", THUMBNAIL_TEMPORARY_PATH, upload_file_name);
-                                        // always remove root args path from key, and start slash
-                                        let key = format!("{}/{}/{}", S3_BUCKET_THUMBNAIL_PATH, &path.replace(&args.path, "")[1..], upload_file_name);
-                                        // key must be equal to file path without root path in this case is upload_file ex '/root.file'
-                                        println!("uploading thumbnail: {}, key: {}", &upload_file_path, &key);
-                                        // always remove base endpoint from
-                                        let (_, s3_bucket_name_key) = s3_client
-                                            .put_object_from_file(&upload_file_path, &key)
-                                            .await;
-                                        // override default mimeType generated thumbnail, with image thumbnail
-                                        thumbnail = Some(s3_bucket_name_key);
-                                        // remove temp file
-                                        fs::remove_file(upload_file_path).expect("File delete failed");
-                                    }
-                                    Err(e) => {
-                                        eprintln!("error: {e}");
+                let mut file_extension = None;
+                let mut thumbnail = None;
+
+                // define s3 url
+                let mut s3_url: Option<String> = None;
+                if node_type == NodeType::File {
+                    if ARGS_PROCCESS_S3_UPLOAD {
+                        let upload_file = format!("{}/{}", &current_parent_from_hash_path, &file_name);
+                        // always remove root args path from key, and start slash
+                        let key = format!("{}/{}", S3_BUCKET_DOWNLOADS_PATH, &upload_file.replace(&args.path, "")[1..]);
+                        // key must be equal to file path without root path in this case is upload_file ex '/root.file'
+                        println!("  uploading: {}, key: {}", &upload_file, &key);
+                        // always remove base endpoint from
+                        let (_, s3_bucket_name_key) = s3_client.put_object_from_file(&upload_file, &key).await;
+                        // override default
+                        s3_url = Some(s3_bucket_name_key);
+                    } // if ARGS_PROCCESS_S3_UPLOAD {
+
+                    // override None file extension
+                    file_extension = match Path::new(&file_name).extension() {
+                        Some(v) => Some(v.to_string_lossy().to_string()),
+                        None => Some("unk".into()),
+                    };
+
+                    if ARGS_PROCCESS_THUMBNAILS {
+                        // get thumbnail
+                        let mut s3_thumbnail: Option<FileType> = None;
+                        if node_type == NodeType::File {
+                            s3_thumbnail = Some(get_file_type(
+                                // we can use unwrap here, above we assure that is allways a extension in anyy case
+                                &file_extension.clone().unwrap(),
+                                bucket_name.as_str(),
+                                STATIC_FILES_IMAGES_MIME_TYPE_BASE_PATH,
+                                STATIC_FILES_IMAGES_MIME_TYPE_EXT,
+                            ));
+                            thumbnail = match s3_thumbnail.clone() {
+                                Some(v) => Some(v.thumbnail),
+                                None => None,
+                            };
+                        } else
+                        /*if node_type == NodeType::Dir*/
+                        {
+                            thumbnail = Some(format!(
+                                "{}/{}/{}.{}",
+                                bucket_name.as_str(),
+                                S3_BUCKET_THUMBNAIL_PATH,
+                                STATIC_FILES_DIRECTORY_ICON_PATH,
+                                STATIC_FILES_IMAGES_MIME_TYPE_EXT
+                            ));
+                        }
+
+                        // generate thumbnails
+                        match s3_thumbnail {
+                            Some(v) => match &v.file_category {
+                                FileCategory::Image => {
+                                    // println!("generate thumbnail for {} - {}", v.file_category, input_path.display());
+                                    for index in THUMBNAIL_SIZES {
+                                        // base commands with and without implicit file format, in this case png
+                                        // convert "$file" -resize 100x100^ -gravity center -extent 100x100 "${file%.*}_thumbnail.${file##*.}"
+                                        // convert "$file" -resize 100x100^ -gravity center -extent 100x100 PNG:"${file%.*}_thumbnail.png"
+                                        let command = format!(
+                                            "file=\"{0}\" && cd \"{1}\" && convert \"$file\" -resize {2}^ -gravity center -extent {2} {3}:\"{5}/${{file%.*}}_{2}.{4}\"",
+                                            file_name,
+                                            format!("{}{}", &args.path, path),
+                                            index,
+                                            THUMBNAIL_FORMAT,
+                                            THUMBNAIL_FORMAT.to_lowercase(),
+                                            THUMBNAIL_TEMPORARY_PATH
+                                        );
+                                        // println!("command: {}", command);
+                                        match execute_command_shortcut(&command) {
+                                            Ok(_) => {
+                                                // upload to s3 storage and remove tem file
+                                                let upload_file_name = format!("{}_{}.{}", name, index, THUMBNAIL_FORMAT.to_lowercase());
+                                                let upload_file_path = format!("{}/{}", THUMBNAIL_TEMPORARY_PATH, upload_file_name);
+                                                // always remove root args path from key, and start slash
+                                                // note: don' add fisrt slash after thumbnail ("{}{}/{}") else it will broke s3 upload with invalid // chaacter in filnema
+                                                let key = format!("{}{}/{}", S3_BUCKET_THUMBNAIL_PATH, &path.replace(&args.path, "")[1..], upload_file_name);
+                                                // key must be equal to file path without root path in this case is upload_file ex '/root.file'
+                                                println!("  uploading thumbnail: {}, key: {}", &upload_file_path, &key);
+                                                // always remove base endpoint from
+                                                let (_, s3_bucket_name_key) = s3_client
+                                                    .put_object_from_file(&upload_file_path, &key)
+                                                    .await;
+                                                // override default mimeType generated thumbnail, with image thumbnail
+                                                thumbnail = Some(s3_bucket_name_key);
+                                                // remove temp file
+                                                fs::remove_file(upload_file_path).expect("File delete failed");
+                                            }
+                                            Err(e) => {
+                                                eprintln!("error: {e}");
+                                            }
+                                        }
                                     }
                                 }
-                            }
-                        }
-                        FileCategory::Video => {
-                            // println!("generate thumbnail for {} - {}", v.file_category, input_path.display());
-                        }
-                        _ => {}
-                    },
-                    None => {}
-                };
+                                FileCategory::Video => {
+                                    // println!("generate thumbnail for {} - {}", v.file_category, input_path.display());
+                                }
+                                _ => {}
+                            },
+                            None => {}
+                        };
+                    } // if ARGS_PROCCESS_THUMBNAILS {
+                } // if node_type == NodeType::File {
 
                 // create storageNode
                 let node = StorageNode {
@@ -355,7 +375,10 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
                 // save storage_node
                 match node.save(&db).await {
                     Ok(_) => {
-                        println!("storage node saved: node.type: {}, node_id: {}, node.id:tb:node:id:id: {}:{}", &node.node_type, &node_id, &node.id.tb, &node.id.id);
+                        println!(
+                            "  storage node saved: node.type: {}, node_id: {}, node.id:tb:node:id:id: {}:{}",
+                            &node.node_type, &node_id, &node.id.tb, &node.id.id
+                        );
                     }
                     Err(e) => eprintln!("error saving node: {:#?}", e),
                 };

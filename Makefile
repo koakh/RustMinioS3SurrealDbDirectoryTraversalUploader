@@ -27,7 +27,8 @@ build-release:
 	@cargo build --release
 
 push-release-production:
-	@rsync -r -t -p -o -g -v --progress --delete -l -H -z -s  ${release_file} ${remote_production_path}
+	@make build-release && \
+	rsync -r -t -p -o -g -v --progress --delete -l -H -z -s  ${release_file} ${remote_production_path}
 
 bring-production-files:
 	@rsync -r -t -p -o -g -v --progress --delete -l -H -z -s \

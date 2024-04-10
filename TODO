@@ -15,6 +15,12 @@ pub s3_url: Option<String>,
     pub s3_thumbnail: Option<String>,     
 
     pub authenticated: bool,              SQUEMA DEF false published to
+    error saving node: Api(
+      Query(
+          "There was a problem with the database: Found NONE for field `authenticated`, with record `storage_node:root`, but expected a bool",
+      ),
+  )
+  
 
 
 use rust to generate thumbnails in images

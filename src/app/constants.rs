@@ -7,3 +7,6 @@ pub const STATIC_FILES_IMAGES_MIME_TYPE_EXT: &str = "svg";
 pub const THUMBNAIL_TEMPORARY_PATH: &str = "/tmp";
 pub const THUMBNAIL_SIZES: [&str; 2] = ["200x200", "400x400"];
 pub const THUMBNAIL_FORMAT: &str = "PNG";
+// remove or use in args
+pub const ARGS_PROCCESS_THUMBNAILS: bool = true;
+pub const ARGS_PROCCESS_S3_UPLOAD: bool = true;
