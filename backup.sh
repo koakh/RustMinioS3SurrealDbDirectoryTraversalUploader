@@ -10,4 +10,5 @@ touch target/${FILE_EXCLUDE}
 
 tar -zcvf ${FILE} \
 	--exclude-tag-all=${FILE_EXCLUDE} \
+	--exclude="./upload/thumbnails/Cachoeira do Jaguar (13782 x 18898).jpg" \
 	.
