@@ -76,6 +76,7 @@ struct StorageNode {
     name: String,
     file_name: Option<String>,
     file_extension: Option<String>,
+    file_duplicated: Option<bool>,
     path: String,
     full_path: String,
     // used to get real path from symlink
@@ -185,7 +186,7 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
         let mut record_already_exists = false;
         match entry {
             Ok(v) => {
-                println!("#{} path: {}", storage_nodes - 1, v.path().display());
+                println!("#{} path: {}", storage_nodes, v.path().display());
                 let node_id;
                 // if first node, use a fixed root id, will be storage_node:root
                 if parent_path_hash_map.len() == 0 {
@@ -272,10 +273,6 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
                     path = "/".into();
                 }
 
-                // TODO: to be used in index
-                let full_path = format!("{}/{}", &current_parent_from_hash_path, &file_name).replace(&replace, "");
-                println!("  full_path: {}", full_path);
-
                 // clone name into filename before
                 // get name without extension
                 let name = match Path::new(&file_name).file_stem() {
@@ -283,21 +280,39 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
                     None => file_name.clone(),
                 };
 
+                let full_path = format!("{}/{}", &current_parent_from_hash_path, &file_name).replace(&replace, "");
+                println!("  full_path: {}", full_path);
                 let mut file_extension = None;
                 let mut thumbnail = None;
+                let mut file_duplicated = None;
 
                 // define s3 url
                 let mut s3_url: Option<String> = None;
                 if node_type == NodeType::File {
                     // check if file with sha256 already exists and skip it
                     if let Some(t) = &sha256 {
+                        // using sha256 exists filter
                         let exists_result = StorageNode::record_already_exists(&db, format!("sha256 = '{}';", &t)).await;
                         if let Ok(exists) = exists_result {
                             if exists {
-                                println!("  skip file '{}' with sha256: '{}' already exists", &file_name, &t);
+                                // this will be setted only in first traversal run, next runs the file fullPath alreasdy exists and even this will be setted to true here
+                                // the record will not be saved /persisted because of next record_already_exists will br true, seel bellow on next exist
+                                file_duplicated = Some(true);
+                            }
+                        }
+                        // using fullPath exists filter
+                        let exists_result = StorageNode::record_already_exists(&db, format!("fullPath = '{}';", &full_path)).await;
+                        if let Ok(exists) = exists_result {
+                            // using sha256 exists filter
+                            // if exists && SKIP_EXISTING_FILES_WITH_SAME_SHA256 {
+                            // using fullPath exists filter
+                            if exists {
+                                // using sha256 exists filter
+                                // println!("  skip file '{}' with sha256: '{}' already exists", &file_name, &t);
+                                // using fullPath exists filter
+                                println!("  skip file '{}' with fullPath: '{}' already exists", &file_name, &full_path);
                                 // override default from loop
                                 record_already_exists = true;
-                                // TODO: here change it to a link, or link to record
                             } else {
                                 if ARGS_PROCCESS_S3_UPLOAD {
                                     let upload_file = format!("{}/{}", &current_parent_from_hash_path, &file_name);
@@ -427,6 +442,7 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
                     name,
                     file_name: file_name_option,
                     file_extension,
+                    file_duplicated,
                     path: path.clone(),
                     full_path: full_path.clone(),
                     canonical_path,

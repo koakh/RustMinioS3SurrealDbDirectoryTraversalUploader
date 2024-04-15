@@ -10,3 +10,7 @@ pub const THUMBNAIL_FORMAT: &str = "PNG";
 // remove or use in args
 pub const ARGS_PROCCESS_THUMBNAILS: bool = true;
 pub const ARGS_PROCCESS_S3_UPLOAD: bool = true;
+
+// curremtly we permit to have duplicated files, else we need to manage sim links, and when delete linked file we must delete all its liked files and others logic things
+// this can be used in a near future, uncomment `// using sha256 exists filter` and comment `// using fullPath exists filter`
+pub const _SKIP_EXISTING_FILES_WITH_SAME_SHA256: bool = false;

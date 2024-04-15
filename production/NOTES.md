@@ -1,14 +1,52 @@
 # NOTES
 
-1. start stack and create minio bucket `default-bucket`, enable Versioning, add "Add Anonymous Access Rule" name : anonymous to bucket (in bucket anonymous side tab)
+1. start stack and create minio bucket `default-bucket`, enable Versioning
 2. create user `rust-auth`
    <http://192.168.1.1:9001/identity/users/add-user>
    `.env`
      `S3_ACCESS_KEY_ID=rust-auth`
        with `readwrite access` and password
      `S3_SECRET_ACCESS_KEY=NTZjZGQwNzg3MDg1MzI4MWUxYTJiZTFk`
-3. run traversal-uploader
-4. imported summary
+3. add custom policy to `default-bucket`
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "Action": [
+        "s3:GetBucketLocation"
+      ],
+      "Resource": [
+        "arn:aws:s3:::default-bucket"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::default-bucket/*"
+      ]
+    }
+  ]
+}
+```
+
+4. run traversal-uploader
+5. imported summary
 
 ## Final Import
 
