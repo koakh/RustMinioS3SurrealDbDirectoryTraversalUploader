@@ -297,6 +297,7 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
                                 println!("  skip file '{}' with sha256: '{}' already exists", &file_name, &t);
                                 // override default from loop
                                 record_already_exists = true;
+                                // TODO: here change it to a link, or link to record
                             } else {
                                 if ARGS_PROCCESS_S3_UPLOAD {
                                     let upload_file = format!("{}/{}", &current_parent_from_hash_path, &file_name);
