@@ -38,18 +38,9 @@ http {
     }
 
     server {
-        # http
-        # listen       9000;
-        # listen  [::]:9000;
-        # server_name  localhost;
-
-        # https:tls
-        # https://serverfault.com/questions/1101406/configure-minio-in-docker-to-use-https
-        listen       9000 ssl;
-        listen  [::]:9000 ssl;
-        server_name minio.koakh.com;
-        ssl_certificate /etc/letsencrypt/live/koakh.com/fullchain.pem;
-        ssl_certificate_key /etc/letsencrypt/live/koakh.com/privkey.pem;
+        listen       9000;
+        listen  [::]:9000;
+        server_name  localhost;
 
         # To allow special characters in headers
         ignore_invalid_headers off;
@@ -77,18 +68,9 @@ http {
     }
 
     server {
-        # htpp
-        # listen       9001;
-        # listen  [::]:9001;
-        # server_name  localhost;
-
-        # https:tls
-        # https://serverfault.com/questions/1101406/configure-minio-in-docker-to-use-https
-        listen       9001 ssl;
-        listen  [::]:9001 ssl;
-        server_name minio.koakh.com;
-        ssl_certificate /etc/letsencrypt/live/koakh.com/fullchain.pem;
-        ssl_certificate_key /etc/letsencrypt/live/koakh.com/privkey.pem;
+        listen       9001;
+        listen  [::]:9001;
+        server_name  localhost;
 
         # To allow special characters in headers
         ignore_invalid_headers off;

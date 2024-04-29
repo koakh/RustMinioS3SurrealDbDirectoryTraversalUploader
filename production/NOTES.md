@@ -64,3 +64,4 @@ node saved: node.type: file, node_id: bm9wsk982rsx6bdd0g1o, node.id: storage_nod
 #7225 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Vídeos/Vale do Amanhecer - Entrevista com o Adj Alufã - Mestre Barro.mp4
         name: Vale do Amanhecer - Entrevista com o Adj Alufã - Mestre Barro, path: /Vídeos, node_type: file, id: storage_node:bm9wsk982rsx6bdd0g1o, parent_id: storage_node:5zem0e35fkd2z77lhl9w
 ```
+

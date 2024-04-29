@@ -13,7 +13,9 @@ surrealdb:
 	@surreal start --auth --user root --pass root --bind 0.0.0.0:8000 ${surrealdb_path} ${surrealdb_log_level}
 
 start-traversal:
-	time ./${bin} -p ${path} > start-traversal.log
+	# stdout and stderr outputs to terminal and file
+	# https://unix.stackexchange.com/a/639748
+	time ./${bin} -p ${path} 2>&1 | tee start-traversal.log
 
 count-all:
 	find ${path} | wc -l
