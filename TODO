@@ -22,6 +22,15 @@ pub s3_url: Option<String>,
   )
   
 
+add summary
+
+createdFiles
+skippedFiles
+suplicatedFiles
+createdDirs
+skuppedDirs
+
+
 
 use rust to generate thumbnails in images
 folder icon

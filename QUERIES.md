@@ -135,3 +135,11 @@ wtf: we can use traversal searschs using just the path ex, like wildcards in a f
 ```sql
 $ SELECT id, name, fileName, nodeType, path FROM storage_node WHERE  string::startsWith(path, '/Adjuntos/Adjunto Aluano');
 ```
+
+## Check id all S3Url have a minio url, ex urls without NONE
+
+```sql
+select id, name, fileName, s3Url, fullPath, fileSize from storage_node where nodeType = 'file' and s3Url = none;
+-- count
+select count() as count, s3Url from storage_node where nodeType = 'file' and s3Url = none group by s3Url;
+```
