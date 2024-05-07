@@ -18,8 +18,8 @@ use crate::utils::file_type::FileType;
 use crate::utils::shell_command::execute_command_shortcut;
 use crate::{
     app::{
-        ARGS_PROCCESS_S3_UPLOAD, ARGS_PROCCESS_THUMBNAILS, S3_BUCKET_DOWNLOADS_PATH, S3_BUCKET_THUMBNAIL_PATH, STATIC_FILES_DIRECTORY_ICON_PATH, STATIC_FILES_IMAGES_MIME_TYPE_BASE_PATH,
-        STATIC_FILES_IMAGES_MIME_TYPE_EXT, STORAGE_NODE_TABLE, THUMBNAIL_FORMAT, THUMBNAIL_SIZES, THUMBNAIL_TEMPORARY_PATH,
+        ARGS_PROCCESS_S3_UPLOAD, ARGS_PROCCESS_SHA256, ARGS_PROCCESS_THUMBNAILS, S3_BUCKET_DOWNLOADS_PATH, S3_BUCKET_THUMBNAIL_PATH, STATIC_FILES_DIRECTORY_ICON_PATH,
+        STATIC_FILES_IMAGES_MIME_TYPE_BASE_PATH, STATIC_FILES_IMAGES_MIME_TYPE_EXT, STORAGE_NODE_TABLE, THUMBNAIL_FORMAT, THUMBNAIL_SIZES, THUMBNAIL_TEMPORARY_PATH,
     },
     minio::Client,
     surrealdb::Database,
@@ -187,6 +187,7 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
         match entry {
             Ok(v) => {
                 println!("#{} path: {}", storage_nodes, v.path().display());
+
                 let node_id;
                 // if first node, use a fixed root id, will be storage_node:root
                 if parent_path_hash_map.len() == 0 {
@@ -205,7 +206,7 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
                 let os_str = v.file_name();
                 // set filename, ot none for dir
                 let mut file_name_option: Option<String> = None;
-                // always havea working file_name to work on loop
+                // always have a working file_name to work on loop
                 let file_name = try_from_os_str!(os_str as &Path)
                     .unwrap()
                     .display()
@@ -219,15 +220,20 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
                 // this will work with paths with a middle dir symlink ex `root/dir2/dir1.2.1.link/dir1.2.1.file`, else this path will be "/" and not "root/dir2/dir1.2.1.link"
                 // let input_path_parent = input_path.parent().unwrap().display().to_string().replace(name.as_str(), "");
                 let mut canonical_path: Option<String> = None;
-                // TODO: only if is a File
-                let sha256 = match try_digest(input_path) {
-                    Ok(v) => Some(v),
-                    Err(_) => None,
-                };
+
+                // sha256
+                let mut sha256 = None;
+                if node_type == NodeType::File && ARGS_PROCCESS_SHA256 {
+                    sha256 = match try_digest(input_path) {
+                        Ok(v) => Some(v),
+                        Err(_) => None,
+                    };
+                }
 
                 // defined defaults
                 // always get path from hashmap, to use it with same id and path
                 let mut current_parent_from_hash_path: String = String::default();
+                // generate a new random thing
                 // let mut current_parent_thing_from_hashmap_pathkey: Uuid = Uuid::default();
                 let mut current_parent_thing_from_hashmap_pathkey: Thing = Thing {
                     tb: STORAGE_NODE_TABLE.into(),
@@ -249,6 +255,7 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
                 // must be after defining current_ancestors above, above is where we have the current_parent_thing_from_hashmap_pathkey
 
                 // first iter is always a dir, we assign it the first id
+                let mut name = String::default();
                 match node_type {
                     NodeType::Unknown => {}
                     NodeType::Dir => {
@@ -258,29 +265,44 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
                             thing: id.clone(),
                             ancestors: current_parent_ancestors_from_hashmap_pathkey.clone(),
                         });
+
+                        // get directory name
+                        let path = Path::new(&file_name);
+                        if let Some(last_component) = path.components().last() {
+                            if let Some(v) = last_component.as_os_str().to_str() {
+                                name = v.to_string();
+                            }
+                        }
                     }
-                    NodeType::File => {}
+                    NodeType::File => {
+                        // get name without extension
+                        name = match Path::new(&file_name).file_stem() {
+                            Some(v) => v.to_string_lossy().to_string(),
+                            None => file_name.clone(),
+                        };
+                    }
                     NodeType::Symlink => canonical_path = Some(read_link(v.path()).unwrap().display().to_string()),
                 }
 
                 // remove root (source path) from final path, and assign / to it
                 let path;
+                let full_path;
                 let replace = format!("{}", &args.path);
-                if !current_parent_from_hash_path.eq(&args.path) {
+
+                // must be compared to current file path, to prevent the annoying breadcrumb ancestors problem, with this we can have the Acervos/Acervos paths, because it will create it's full paths ancestors this way
+                // '/',
+                // '/Acervos',
+                // '/Acervos/Consagrações',
+                // '/Acervos/Consagrações/Centúria'
+                if !v.path().display().to_string().eq(&args.path) {
                     // println!("replace: {}, current_parent_from_hash_path: {}", replace, current_parent_from_hash_path);
                     path = current_parent_from_hash_path.replace(&replace, "");
+                    full_path = format!("{}/{}", &current_parent_from_hash_path, &file_name).replace(&replace, "");
                 } else {
                     path = "/".into();
+                    full_path = "/".into();
                 }
 
-                // clone name into filename before
-                // get name without extension
-                let name = match Path::new(&file_name).file_stem() {
-                    Some(v) => v.to_string_lossy().to_string(),
-                    None => file_name.clone(),
-                };
-
-                let full_path = format!("{}/{}", &current_parent_from_hash_path, &file_name).replace(&replace, "");
                 println!("  full_path: {}", full_path);
                 let mut file_extension = None;
                 let mut thumbnail = None;
@@ -424,6 +446,7 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
                     } // if sha256 exits
                 } // if node_type == NodeType::File {
 
+                // ROOT cause of error of ancestors breadcrumb, if we use Acervos/Acervos second
                 if node_type == NodeType::Dir {
                     let exists_result = StorageNode::record_already_exists(&db, format!("fullPath = '{}';", &full_path)).await;
                     if let Ok(exists) = exists_result {
@@ -439,7 +462,7 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
                 let node = StorageNode {
                     id,
                     node_type: node_type.clone(),
-                    name,
+                    name: name.to_string(),
                     file_name: file_name_option,
                     file_extension,
                     file_duplicated,
@@ -463,8 +486,8 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
                     match node.save(&db).await {
                         Ok(_) => {
                             println!(
-                                "  storage node saved: node.type: {}, node_id: {}, node.id:tb:node:id:id: {}:{}",
-                                &node.node_type, &node_id, &node.id.tb, &node.id.id
+                                "  storage node saved: type: {}, name: {}, id: {}, node.id:tb:node:id:id: {}:{}",
+                                &node.node_type, &node.name, &node_id, &node.id.tb, &node.id.id
                             );
                         }
                         Err(e) => eprintln!("error saving node: {:#?}", e),

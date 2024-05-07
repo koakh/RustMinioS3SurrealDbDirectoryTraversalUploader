@@ -13,6 +13,7 @@
       "args": [
         "-p",
         "upload"
+        // "/mnt/koakhserver/mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos"
       ],
       "cwd": "${workspaceFolder}",
       "preLaunchTask": "rust: cargo build"

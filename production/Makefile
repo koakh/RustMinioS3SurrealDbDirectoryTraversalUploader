@@ -1,4 +1,5 @@
 surrealdb_path := file://database
+# surrealdb_path := file://database-new
 surrealdb_log_level := # --log trace
 path := /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos
 bin := rust-minio-s3-surreal-db-directory-traversal-uploader

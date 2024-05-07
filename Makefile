@@ -1,4 +1,5 @@
-path := upload
+# path := upload
+path := /mnt/koakhserver/mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos
 local_production_path := production/
 remote_production_path := 192.168.1.1:/mnt/4tbdisk1/srv/docker/koakh/@RustActixWebAndSvelteKitAuthenticationDevToTutorial/
 release_file := target/release/rust-minio-s3-surreal-db-directory-traversal-uploader
