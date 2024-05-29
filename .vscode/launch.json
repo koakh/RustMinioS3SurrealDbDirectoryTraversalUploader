@@ -12,8 +12,11 @@
       "program": "${workspaceFolder}/target/debug/rust-minio-s3-surreal-db-directory-traversal-uploader",
       "args": [
         "-p",
-        "upload"
+        // "upload",
+        "upload-duplicated",
         // "/mnt/koakhserver/mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos"
+        // "/mnt/koakhserver/mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/AcervosImportFolder"
+        
       ],
       "cwd": "${workspaceFolder}",
       "preLaunchTask": "rust: cargo build"

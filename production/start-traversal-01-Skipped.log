@@ -1,0 +1,628 @@
+#4577 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Imagens/Vilela/Jesus/Jesus 16 (9659 x 21259).jpg
+  full_path: /Imagens/Vilela/Jesus/Jesus 16 (9659 x 21259).jpg
+  uploading: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Imagens/Vilela/Jesus/Jesus 16 (9659 x 21259).jpg, key: downloads/Imagens/Vilela/Jesus/Jesus 16 (9659 x 21259).jpg
+convert-im6.q16: width or height exceeds limit `Jesus 16 (9659 x 21259).jpg' @ error/cache.c/OpenPixelCache/3909.
+convert-im6.q16: no images defined `PNG:/tmp/Jesus 16 (9659 x 21259)_200x200.png' @ error/convert.c/ConvertImageCommand/3229.
+error_code: 1
+error: error code '1'
+convert-im6.q16: width or height exceeds limit `Jesus 16 (9659 x 21259).jpg' @ error/cache.c/OpenPixelCache/3909.
+convert-im6.q16: no images defined `PNG:/tmp/Jesus 16 (9659 x 21259)_400x400.png' @ error/convert.c/ConvertImageCommand/3229.
+error_code: 1
+error: error code '1'
+  storage node saved: node.type: file, node_id: puabu9ls28vh2bz13unu, node.id:tb:node:id:id: storage_node:puabu9ls28vh2bz13unu
+
+#4686 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Imagens/Vilela/Planos Espirituais/Cachoeira do Jaguar (13782 x 18898).jpg
+  full_path: /Imagens/Vilela/Planos Espirituais/Cachoeira do Jaguar (13782 x 18898).jpg
+  uploading: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Imagens/Vilela/Planos Espirituais/Cachoeira do Jaguar (13782 x 18898).jpg, key: downloads/Imagens/Vilela/Planos Espirituais/Cachoeira do Jaguar (13782 x 18898).jpg
+convert-im6.q16: width or height exceeds limit `Cachoeira do Jaguar (13782 x 18898).jpg' @ error/cache.c/OpenPixelCache/3909.
+convert-im6.q16: no images defined `PNG:/tmp/Cachoeira do Jaguar (13782 x 18898)_200x200.png' @ error/convert.c/ConvertImageCommand/3229.
+error_code: 1
+error: error code '1'
+convert-im6.q16: width or height exceeds limit `Cachoeira do Jaguar (13782 x 18898).jpg' @ error/cache.c/OpenPixelCache/3909.
+convert-im6.q16: no images defined `PNG:/tmp/Cachoeira do Jaguar (13782 x 18898)_400x400.png' @ error/convert.c/ConvertImageCommand/3229.
+error_code: 1
+error: error code '1'
+  storage node saved: node.type: file, node_id: elvja6kk4ge72j94zkpf, node.id:tb:node:id:id: storage_node:elvja6kk4ge72j94zkpf
+
+#5033 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Imagens/Vários/Pai Seta Branca.jpg
+  full_path: /Imagens/Vários/Pai Seta Branca.jpg
+  uploading: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Imagens/Vários/Pai Seta Branca.jpg, key: downloads/Imagens/Vários/Pai Seta Branca.jpg
+convert-im6.q16: width or height exceeds limit `Pai Seta Branca.jpg' @ error/cache.c/OpenPixelCache/3909.
+convert-im6.q16: no images defined `PNG:/tmp/Pai Seta Branca_200x200.png' @ error/convert.c/ConvertImageCommand/3229.
+error_code: 1
+error: error code '1'
+convert-im6.q16: width or height exceeds limit `Pai Seta Branca.jpg' @ error/cache.c/OpenPixelCache/3909.
+convert-im6.q16: no images defined `PNG:/tmp/Pai Seta Branca_400x400.png' @ error/convert.c/ConvertImageCommand/3229.
+error_code: 1
+error: error code '1'
+  storage node saved: node.type: file, node_id: 874yomj7du25npjynscn, node.id:tb:node:id:id: storage_node:874yomj7du25npjynscn
+
+
+#1 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Acervos
+  full_path: /Acervos
+  skip dir 'Acervos' already exists
+
+#90 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 01.mp3
+  full_path: /Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 01.mp3
+  skip file '01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 01.mp3' with sha256: '19cbe6bad393ff31aba23ef7d2baf0e4f54afe56299abc91e9f86210e1288fb9' already exists
+
+#91 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 01.pdf
+  full_path: /Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 01.pdf
+  skip file '01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 01.pdf' with sha256: '416b95993f8ad5a6b2fbdfe89693d3fbae7f932fb9801efe4868f0e9b8eafbc0' already exists
+
+#92 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 02.mp3
+  full_path: /Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 02.mp3
+  skip file '01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 02.mp3' with sha256: '6e2cf511dfd299848242099cc03e5ef7e50546cd65eb3d8aa3d32d536c128b86' already exists
+
+#93 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 02.pdf
+  full_path: /Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 02.pdf
+  skip file '01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 02.pdf' with sha256: '66b88e827c4c0f6b0bd1dabaabff3539626ea0091041721b83de2df8211abd5c' already exists
+
+#94 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 03.mp3
+  full_path: /Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 03.mp3
+  skip file '01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 03.mp3' with sha256: '352fbbe0321a3b4398709b8d6d981898eeab5b962841c0cf77b208e3a2aa77b2' already exists
+
+#95 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 03.pdf
+  full_path: /Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 03.pdf
+  skip file '01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 03.pdf' with sha256: '3407328ef0440b55ff52bfadd88eef61430e49d9b1124fdbd7d5ae1e9d136fe3' already exists
+
+#96 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 04.mp3
+  full_path: /Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 04.mp3
+  skip file '01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 04.mp3' with sha256: 'ed2c96ecddc5e53eea27a18565323ba47519fdab42de8a119f98d789b3888d2c' already exists
+
+#97 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 04.pdf
+  full_path: /Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 04.pdf
+  skip file '01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 04.pdf' with sha256: 'd8e84942c38eaf3e08333373af8d4946f8ce5a993e4e8a30f64afd849bfdebbe' already exists
+
+#98 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 05.mp3
+  full_path: /Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 05.mp3
+  skip file '01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 05.mp3' with sha256: 'dade7142f54e6f156ac91abdea3ce0269185635771fcb48c111656e64fd9e01d' already exists
+
+#99 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 05.pdf
+  full_path: /Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 05.pdf
+  skip file '01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 05.pdf' with sha256: '8dc535c32f1a1766329b6be24cb2d12594ea5a17bc971e050f94b0e137205a92' already exists
+
+#100 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 06.mp3
+  full_path: /Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 06.mp3
+  skip file '01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 06.mp3' with sha256: 'fc1e31952841ca1fadf8b623fd5cca1bbd3c804089b21e6bd5d1a38762a11439' already exists
+
+#101 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 06.pdf
+  full_path: /Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 06.pdf
+  skip file '01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 06.pdf' with sha256: '12db73d9a090589e022de8556dc7f1fb9239a02d2217c27eac5cefe46a81c443' already exists
+
+#102 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 07.mp3
+  full_path: /Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 07.mp3
+  skip file '01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 07.mp3' with sha256: 'e6861b36f774f7381b281296b370fce29461f00142b1466520b221df41edf758' already exists
+
+#103 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 07.pdf
+  full_path: /Acervos/Histórias/Pasta B/11 - O Amanhecer das Princesas na Cachoeira do Jaguar/01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 07.pdf
+  skip file '01 - Tia Neiva - O Amanhecer das Princesas na Cachoeira do Jaguar 07.pdf' with sha256: 'd456145fc1c3c675bef0e866cdd976fc032c52da78dc6b3b42f6d32536b3cfaa' already exists
+
+#179 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Acervos/Histórias/Tia Neiva - A História do Doutrinador.mp3
+  full_path: /Acervos/Histórias/Tia Neiva - A História do Doutrinador.mp3
+  skip file 'Tia Neiva - A História do Doutrinador.mp3' with sha256: '3c78ec6c934f9d7f09c9e2a6888d5e6bba8498bdef9754a52ae663b291ce5d5e' already exists
+
+#180 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Acervos/Histórias/Tia Neiva - Uma Rosa Vermelha (Mestre João Marques).mp3
+  full_path: /Acervos/Histórias/Tia Neiva - Uma Rosa Vermelha (Mestre João Marques).mp3
+  skip file 'Tia Neiva - Uma Rosa Vermelha (Mestre João Marques).mp3' with sha256: '95d5da2e8d873fcd840735ee0130aca3a1cf19a349586b7f5cd17b7385f8ce55' already exists
+
+#229 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Acervos/Outros/Lembranças de um passado perdido (Equitumãns).pdf
+  full_path: /Acervos/Outros/Lembranças de um passado perdido (Equitumãns).pdf
+  skip file 'Lembranças de um passado perdido (Equitumãns).pdf' with sha256: '5c46f4afd8c3ef8050046e64f9e647bc954d44a308e9b62643b1f0d80397ba58' already exists
+
+#243 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Acervos/Outros/Vale do Amanhecer e nova cosmologia.pdf
+  full_path: /Acervos/Outros/Vale do Amanhecer e nova cosmologia.pdf
+  skip file 'Vale do Amanhecer e nova cosmologia.pdf' with sha256: '7db60fbb9379f45751a990d34e590a80d75d8e2e3703085ab5fc3c3b736b1c2e' already exists
+
+#379 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Adelano/O Amanhecer de Tia Neiva - Adjunto Adelano.pdf
+  full_path: /Adjuntos/Adjunto Adelano/O Amanhecer de Tia Neiva - Adjunto Adelano.pdf
+  skip file 'O Amanhecer de Tia Neiva - Adjunto Adelano.pdf' with sha256: '3959f40d626b6851349c14eea90214b8fc2dfe42a0cd82d77df9c2d8905c999b' already exists
+
+#386 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Aluano/Angical 02.mp3
+  full_path: /Adjuntos/Adjunto Aluano/Angical 02.mp3
+  skip file 'Angical 02.mp3' with sha256: '0a9914d693464d4d461cc98633f2bc3a86ceca9d4f68685f7c8edef15b1bcc8b' already exists
+
+#571 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Aulas/Emissão/Adj Yumatã Caldeira - a emissão 06.mp3
+  full_path: /Adjuntos/Adjunto Yumatã/Aulas/Emissão/Adj Yumatã Caldeira - a emissão 06.mp3
+  skip file 'Adj Yumatã Caldeira - a emissão 06.mp3' with sha256: '6362126698d280e57c4a03a974b1dcb5decf7a7bd10c7e5fe1982a760e01e989' already exists
+
+#825 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã - Reunião do Adjunto Yumatã com seu Povo (1988).mp3
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã - Reunião do Adjunto Yumatã com seu Povo (1988).mp3
+  skip file 'Adjunto Yumatã - Reunião do Adjunto Yumatã com seu Povo (1988).mp3' with sha256: '8c4cc5e5c7ab0463a4e465d8225fb69554fac0c2db6d024724583352b5cc19a9' already exists
+
+#826 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã - Reunião do Adjunto Yumatã com seu Povo (1988).pdf
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã - Reunião do Adjunto Yumatã com seu Povo (1988).pdf
+  skip file 'Adjunto Yumatã - Reunião do Adjunto Yumatã com seu Povo (1988).pdf' with sha256: '26efee00da68ade5d46f1089f496239c4440a71d586f54b4a0f637f3bf2da77f' already exists
+
+#827 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã - Reunião do Adjunto Yumatã com seu Povo (1990).mp3
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã - Reunião do Adjunto Yumatã com seu Povo (1990).mp3
+  skip file 'Adjunto Yumatã - Reunião do Adjunto Yumatã com seu Povo (1990).mp3' with sha256: 'e4ced3ec27dc010abfbca519bbe2785e674b78e207ff256926265e5b937cf6f0' already exists
+
+#828 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã - Tia Neiva e Pai Seta Branca, mediunidade.pdf
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã - Tia Neiva e Pai Seta Branca, mediunidade.pdf
+  skip file 'Adjunto Yumatã - Tia Neiva e Pai Seta Branca, mediunidade.pdf' with sha256: '8551f81af084e2d608b75a38e20a3d92d50a8d66487d98c7a70f198424cbdc49' already exists
+
+#829 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - 7 Forças Astrais.mp3
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - 7 Forças Astrais.mp3
+  skip file 'Adjunto Yumatã Mestre Caldeira - 7 Forças Astrais.mp3' with sha256: 'b36e34d2645df536bdb5127da56b207d83a20e334e47cab3c7945557206b85e3' already exists
+
+#830 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Adjunto Yumatá com seu Povo (2007).mp3
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Adjunto Yumatá com seu Povo (2007).mp3
+  skip file 'Adjunto Yumatã Mestre Caldeira - Adjunto Yumatá com seu Povo (2007).mp3' with sha256: '0730368602d60371a9788774c3b2dd1d8e881b9f31d35b333e15da8a94bb97aa' already exists
+
+#831 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Angical (04-04-2003).mp3
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Angical (04-04-2003).mp3
+  skip file 'Adjunto Yumatã Mestre Caldeira - Angical (04-04-2003).mp3' with sha256: 'ad9134672c0d5c08c3721315b40e903b1fdc4d794e72d8cf85faf08de3ea78aa' already exists
+
+#832 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Angical (04-04-2003).pdf
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Angical (04-04-2003).pdf
+  skip file 'Adjunto Yumatã Mestre Caldeira - Angical (04-04-2003).pdf' with sha256: 'bfa8a4218e468d6a8e3c82ad61d2dd7b4b1cb9ac44a077d5bd6f8e2006eaf3d5' already exists
+
+#833 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Classificações (07-03-2003).mp3
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Classificações (07-03-2003).mp3
+  skip file 'Adjunto Yumatã Mestre Caldeira - Classificações (07-03-2003).mp3' with sha256: 'ee57a5e7e726679f0bdb29edc74a660b56d9d37a1cb04ed84e27dc26f0e094df' already exists
+
+#834 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Classificações (07-03-2003).pdf
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Classificações (07-03-2003).pdf
+  skip file 'Adjunto Yumatã Mestre Caldeira - Classificações (07-03-2003).pdf' with sha256: '02aae90a353cfc743f0c7d11c58044122aa78fe4e333a2c053c3e9504d59a4ad' already exists
+
+#835 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Classificações.mp3
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Classificações.mp3
+  skip file 'Adjunto Yumatã Mestre Caldeira - Classificações.mp3' with sha256: '4db7b752471e6abecdff0a487a43eb367b33175b0b3d0878cafb184bd7017b51' already exists
+
+#836 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Classificações.pdf
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Classificações.pdf
+  skip file 'Adjunto Yumatã Mestre Caldeira - Classificações.pdf' with sha256: 'd31932f5dd996c9e72188d9699ebfbc0309244a3c335b07cf891c4b5bea1b554' already exists
+
+#837 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Corrente Mestra.mp3
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Corrente Mestra.mp3
+  skip file 'Adjunto Yumatã Mestre Caldeira - Corrente Mestra.mp3' with sha256: '67a4bd2062aa7e5dc425d9bbb741bf324336454b6615e380e170e1c66198707d' already exists
+
+#838 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Corrente Mestra.pdf
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Corrente Mestra.pdf
+  skip file 'Adjunto Yumatã Mestre Caldeira - Corrente Mestra.pdf' with sha256: '6f9303d81d96aab423fcc905e9921facd5cde17ba54f1161e554872eb0c8035d' already exists
+
+#839 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Corrente Mestre, Mesa Evangélica, Trono Milenar.pdf
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Corrente Mestre, Mesa Evangélica, Trono Milenar.pdf
+  skip file 'Adjunto Yumatã Mestre Caldeira - Corrente Mestre, Mesa Evangélica, Trono Milenar.pdf' with sha256: '3eb812bf6aaeb337b2743405a52d242f2210520487cb7ae18cd0c58a90d3ab08' already exists
+
+#840 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Cruz do Caminho.mp3
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Cruz do Caminho.mp3
+  skip file 'Adjunto Yumatã Mestre Caldeira - Cruz do Caminho.mp3' with sha256: '02541b891b7c76e5252697a3f05ae1cb7be2a67d7c7cb534dd8f2536618f3345' already exists
+
+#841 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Cruz do Caminho.pdf
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Cruz do Caminho.pdf
+  skip file 'Adjunto Yumatã Mestre Caldeira - Cruz do Caminho.pdf' with sha256: '7eb0afba833739188625de729a4d8d342875240351857fe0dc8f6b094796b4bf' already exists
+
+#842 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Desenvolvimento, Mesa e Preparação.mp3
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Desenvolvimento, Mesa e Preparação.mp3
+  skip file 'Adjunto Yumatã Mestre Caldeira - Desenvolvimento, Mesa e Preparação.mp3' with sha256: '4c5d863b5c1b621b5992a978b29b5e244f25c8287dfee76101a0037a3fe536fe' already exists
+
+#843 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Desenvolvimento, Mesa e Preparação.pdf
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Desenvolvimento, Mesa e Preparação.pdf
+  skip file 'Adjunto Yumatã Mestre Caldeira - Desenvolvimento, Mesa e Preparação.pdf' with sha256: '182ee4dc6afcaed126d330cc6d7e4f42142a87350b107667097c93e1f4789bbe' already exists
+
+#844 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Emissões e Mesa Evangélica.mp3
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Emissões e Mesa Evangélica.mp3
+  skip file 'Adjunto Yumatã Mestre Caldeira - Emissões e Mesa Evangélica.mp3' with sha256: '8e8675a72a9f86b5be06f4dc5fb2df3c02968fd66c13f059450b0555f9642e4c' already exists
+
+#845 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Emissões e Mesa Evangélica.pdf
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Emissões e Mesa Evangélica.pdf
+  skip file 'Adjunto Yumatã Mestre Caldeira - Emissões e Mesa Evangélica.pdf' with sha256: 'b2c5013c2cef963569ac09e5b1fe5fa713687d7f4e3c70eaa7d3222f850a9937' already exists
+
+#846 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Est Sublimação, Linha de Passe e Emissões.mp3
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Est Sublimação, Linha de Passe e Emissões.mp3
+  skip file 'Adjunto Yumatã Mestre Caldeira - Est Sublimação, Linha de Passe e Emissões.mp3' with sha256: '582999b71a2812dbbafe23ebd48f59b422b58041858468bb451c2bf84dfd9f81' already exists
+
+#847 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Est Sublimação, Linha de Passe e Emissões.pdf
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Est Sublimação, Linha de Passe e Emissões.pdf
+  skip file 'Adjunto Yumatã Mestre Caldeira - Est Sublimação, Linha de Passe e Emissões.pdf' with sha256: '329efa729cd2fd7a855073452b0052956c296e94caa6c6852e1cb92284371fcb' already exists
+
+#848 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Estrela Candente.mp3
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Estrela Candente.mp3
+  skip file 'Adjunto Yumatã Mestre Caldeira - Estrela Candente.mp3' with sha256: '81aef28dfe8dadd05bea4df5081a20b60e5902fc2648335c196a9314168e17e0' already exists
+
+#849 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Estrela Sublimação.mp3
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Estrela Sublimação.mp3
+  skip file 'Adjunto Yumatã Mestre Caldeira - Estrela Sublimação.mp3' with sha256: '4c7c06cf61adbd02ee32255970e7123635759a6c91973d6510a75758b0ffeac2' already exists
+
+#850 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Estrela Sublimação.pdf
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Estrela Sublimação.pdf
+  skip file 'Adjunto Yumatã Mestre Caldeira - Estrela Sublimação.pdf' with sha256: 'd8eef2a65984e0e4a44685eda2ec027daa059ed52bbbebf86bcca2e36bbaa184' already exists
+
+#851 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Historia dos Devas e as Falanges.mp3
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Historia dos Devas e as Falanges.mp3
+  skip file 'Adjunto Yumatã Mestre Caldeira - Historia dos Devas e as Falanges.mp3' with sha256: '82937b072580260f87ca6aa05b86474822bc043ebd8e1667c110e92cf5c03878' already exists
+
+#852 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Iniciação.mp3
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Iniciação.mp3
+  skip file 'Adjunto Yumatã Mestre Caldeira - Iniciação.mp3' with sha256: '6b7bb9341e6f5a7b8219da14987b1e199dc713f78d5e7f8299a176f70d273713' already exists
+
+#853 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Leito Magnético 01.mp3
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Leito Magnético 01.mp3
+  skip file 'Adjunto Yumatã Mestre Caldeira - Leito Magnético 01.mp3' with sha256: 'e3561975d40daf278eb227a5ed12a62649d0a7266bf68fec0af82c22b2e20588' already exists
+
+#854 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Leito Magnético 02.mp3
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Leito Magnético 02.mp3
+  skip file 'Adjunto Yumatã Mestre Caldeira - Leito Magnético 02.mp3' with sha256: 'd0baee9bc8575e4da198595f8cc8a36e63eb304ff8158bc08769c9767089780e' already exists
+
+#855 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Leito Magnético e Indução.pdf
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Leito Magnético e Indução.pdf
+  skip file 'Adjunto Yumatã Mestre Caldeira - Leito Magnético e Indução.pdf' with sha256: 'd60ce0242716e05daef20bba9fde9c0fa7b24a0c441d01f0a48c68f3d0464490' already exists
+
+#856 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Mesa Evangélica e Cruz do Caminho.mp3
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Mesa Evangélica e Cruz do Caminho.mp3
+  skip file 'Adjunto Yumatã Mestre Caldeira - Mesa Evangélica e Cruz do Caminho.mp3' with sha256: '458b5e813aaf4d4e8f19d04c17cb27ea0253b4bd022a3324b513a7490185de29' already exists
+
+#857 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Mesa Evangélica e Cruz do Caminho.pdf
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Mesa Evangélica e Cruz do Caminho.pdf
+  skip file 'Adjunto Yumatã Mestre Caldeira - Mesa Evangélica e Cruz do Caminho.pdf' with sha256: 'ca5202fe1a3d5b69034b6bae97bd5755f25b5b49597ca3ed4fb80c634084c6cd' already exists
+
+#858 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Mesa Evangélica.pdf
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Mesa Evangélica.pdf
+  skip file 'Adjunto Yumatã Mestre Caldeira - Mesa Evangélica.pdf' with sha256: 'a8f9a39f17dc967f44247a0c5ba28b86bf315c89fea3bcd218112df6e276f808' already exists
+
+#859 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Palestra Adjunto Yumatã (04-04-2003).pdf
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Palestra Adjunto Yumatã (04-04-2003).pdf
+  skip file 'Adjunto Yumatã Mestre Caldeira - Palestra Adjunto Yumatã (04-04-2003).pdf' with sha256: '76d9301b1d4e1f43c2a7db5dfae935420414918c8c4220a562759a62b05bfa0f' already exists
+
+#860 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Tronos (10-08-2007).pdf
+  full_path: /Adjuntos/Adjunto Yumatã/Áudios/Adjunto Yumatã Mestre Caldeira - Tronos (10-08-2007).pdf
+  skip file 'Adjunto Yumatã Mestre Caldeira - Tronos (10-08-2007).pdf' with sha256: '5d1044ca2a088f21f4d368841bfee3fe63ef4b25c60679ebbf747d0bbf0d8e44' already exists
+
+#971 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Adjuntos Presidentes/Sobre a adequação das Leis pelos Adjuntos 01a.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Adjuntos Presidentes/Sobre a adequação das Leis pelos Adjuntos 01a.mp3
+  skip file 'Sobre a adequação das Leis pelos Adjuntos 01a.mp3' with sha256: '918fb649c5e071715c359c6420bcbd385f0401a9e2a1e6d4edc8d3686787e00b' already exists
+
+#972 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Adjuntos Presidentes/Sobre a adequação das Leis pelos Adjuntos 01b.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Adjuntos Presidentes/Sobre a adequação das Leis pelos Adjuntos 01b.mp3
+  skip file 'Sobre a adequação das Leis pelos Adjuntos 01b.mp3' with sha256: '53ca13c4bf21ebeeae8b489f8c0721a52eda0c385fdd2d4f2e682bf0a1663b8b' already exists
+
+#1578 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Defumação e Defumação Especial/Defumação Especial 02.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Defumação e Defumação Especial/Defumação Especial 02.mp3
+  skip file 'Defumação Especial 02.mp3' with sha256: 'e4a8f4d68f65cb9004e366b79480b8ec78815ab35217345a5613037e8e7d91a6' already exists
+
+#1642 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Desenvolvimento/Desenvolvimento e Palestras - dias e horários 01.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Desenvolvimento/Desenvolvimento e Palestras - dias e horários 01.mp3
+  skip file 'Desenvolvimento e Palestras - dias e horários 01.mp3' with sha256: 'f937d320045c4a13bed1fdbe0000d5115371ce4be5c202c4b3c486b49d076eb0' already exists
+
+#1643 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Desenvolvimento/Desenvolvimento e Palestras - dias e horários 02.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Desenvolvimento/Desenvolvimento e Palestras - dias e horários 02.mp3
+  skip file 'Desenvolvimento e Palestras - dias e horários 02.mp3' with sha256: 'c6092bd82a2ac2ac28455568000033e84c9e098a6643be7c7d1b14620a33579d' already exists
+
+#1717 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Doutrinadora/Classificações do Doutrinador.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Doutrinadora/Classificações do Doutrinador.mp3
+  skip file 'Classificações do Doutrinador.mp3' with sha256: 'e848e5b581bb3883dde1dcf49f9602871d185c4c397c90ef695a45c27cee3631' already exists
+
+#1735 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Doutrinadora/Sobre os sufixos anday, randay e randie do Doutrinador.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Doutrinadora/Sobre os sufixos anday, randay e randie do Doutrinador.mp3
+  skip file 'Sobre os sufixos anday, randay e randie do Doutrinador.mp3' with sha256: '2409b11ae1d762301484712bed5cc763a1decefb68d1c40496df03bc3fdd0946' already exists
+
+#1759 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Em casa/Crianças acompanhando nas preces.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Em casa/Crianças acompanhando nas preces.mp3
+  skip file 'Crianças acompanhando nas preces.mp3' with sha256: '00ad669fc30ffcd9fc3a448895e0c503121752f0e565532ddc3ae2ee3466098e' already exists
+
+#1774 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Emissão e Canto/A emissão dos abatás.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Emissão e Canto/A emissão dos abatás.mp3
+  skip file 'A emissão dos abatás.mp3' with sha256: '89c52aaec597f57bc1a468433a4fdc4cb8cd9924eac9994e57968ddd850aec16' already exists
+
+#1863 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Escalas de Trabalho/Reuniões de Escalas 03.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Escalas de Trabalho/Reuniões de Escalas 03.mp3
+  skip file 'Reuniões de Escalas 03.mp3' with sha256: '0371921e657c6c957c884d97e969a6d5bec0c379909f531baff943961c878711' already exists
+
+#1866 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Escalas de Trabalho/Reuniões de Escalas 06.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Escalas de Trabalho/Reuniões de Escalas 06.mp3
+  skip file 'Reuniões de Escalas 06.mp3' with sha256: 'b9bc872ea56a336142c1fe0977f5f981d65706ce1b8483b75a676cc7fa93411a' already exists
+
+#1867 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Escalas de Trabalho/Reuniões de Escalas 07.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Escalas de Trabalho/Reuniões de Escalas 07.mp3
+  skip file 'Reuniões de Escalas 07.mp3' with sha256: 'c939ea7107c5bcafc24d99859a04abed87e3e15b5216bf442e3127e7661b7c43' already exists
+
+#1888 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Espírito Obsessor/Espírito Obsessor 01i.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Espírito Obsessor/Espírito Obsessor 01i.mp3
+  skip file 'Espírito Obsessor 01i.mp3' with sha256: 'dbc461b79031ce17a2596d46b5a75f7affe027949a4ec0a36bb63a7b6d8f1f37' already exists
+
+#1969 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Expressões e Entidades da Doutrina/Expressões e Entidades da Doutrina 03.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Expressões e Entidades da Doutrina/Expressões e Entidades da Doutrina 03.mp3
+  skip file 'Expressões e Entidades da Doutrina 03.mp3' with sha256: 'ea6f3870254e3fa91a7f856351ea631a5baa1b313529c9687b88a661650616e3' already exists
+
+#2221 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Junção/A ordem de emissão na Junção e Indução.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Junção/A ordem de emissão na Junção e Indução.mp3
+  skip file 'A ordem de emissão na Junção e Indução.mp3' with sha256: 'e7072f5f7aa27803e0aaa25c3fb6cbac9ad6a3c925497cd6047d40258762f788' already exists
+
+#2222 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Junção/A penumbra nos trabalhos de Junção e Indução.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Junção/A penumbra nos trabalhos de Junção e Indução.mp3
+  skip file 'A penumbra nos trabalhos de Junção e Indução.mp3' with sha256: 'dfafa2fd1c6826b02d6a7416e2873f838a26689b3a61028470796733ebd884a6' already exists
+
+#2228 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Junção/Sobre Iniciado poder participar do trabalho.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Junção/Sobre Iniciado poder participar do trabalho.mp3
+  skip file 'Sobre Iniciado poder participar do trabalho.mp3' with sha256: 'e025ac8615174058123a9051bc04641296db7c00058c6309948163282c8d0680' already exists
+
+#2302 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Magos do Evangelho e Príncipes Mayas/Mago ou Príncipe em Abatá de Falange Missionária.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Magos do Evangelho e Príncipes Mayas/Mago ou Príncipe em Abatá de Falange Missionária.mp3
+  skip file 'Mago ou Príncipe em Abatá de Falange Missionária.mp3' with sha256: '11e56b91c7b902b958cdb718986a4c843ac71176c3626734e28f4338a9fd7782' already exists
+
+#2337 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Mantras, Hinos e Preces/Sobre cantar os mantras em casa 01.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Mantras, Hinos e Preces/Sobre cantar os mantras em casa 01.mp3
+  skip file 'Sobre cantar os mantras em casa 01.mp3' with sha256: '34c7c407f93f6d2a98c3b25afcc35a450599950bf276e2d81e39750e0725d050' already exists
+
+#2338 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Mantras, Hinos e Preces/Sobre cantar os mantras em casa 02.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Mantras, Hinos e Preces/Sobre cantar os mantras em casa 02.mp3
+  skip file 'Sobre cantar os mantras em casa 02.mp3' with sha256: '25c5397d67b700e450dc77124b213cc0c0b397de0c761d25d14c065c4d7235f1' already exists
+
+#2493 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Mestre Kazagrande Adjunto Anavo/A trajetória para a Bolívia/Mestre Kasagrande - A trajetória para a Bolívia 16.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Mestre Kazagrande Adjunto Anavo/A trajetória para a Bolívia/Mestre Kasagrande - A trajetória para a Bolívia 16.mp3
+  skip file 'Mestre Kasagrande - A trajetória para a Bolívia 16.mp3' with sha256: 'f98043aec3299b6219f7d6e27a71cb4bb8f36b6545aebcbdad8bf27ca174b395' already exists
+
+#2495 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Mestre Kazagrande Adjunto Anavo/A trajetória para a Bolívia/Mestre Kasagrande - A trajetória para a Bolívia 18.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Mestre Kazagrande Adjunto Anavo/A trajetória para a Bolívia/Mestre Kasagrande - A trajetória para a Bolívia 18.mp3
+  skip file 'Mestre Kasagrande - A trajetória para a Bolívia 18.mp3' with sha256: '7b047cbbd83c35491e0659d2ffc5f9be08f29024ca39db032280719ce76003a3' already exists
+
+#2627 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Orixás, Radar e Comandantes/Sobre mestre elevados não poderem comandar os trabalhos.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Orixás, Radar e Comandantes/Sobre mestre elevados não poderem comandar os trabalhos.mp3
+  skip file 'Sobre mestre elevados não poderem comandar os trabalhos.mp3' with sha256: '2f092ec94ecaae2fe7196bb23cb78082ca45fb50f68ce8521c1bcff71a0bddbf' already exists
+
+#2682 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Padrão Vibratório, Livre Arbítrio e Reajuste/Pensamentos Negativos 01.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Padrão Vibratório, Livre Arbítrio e Reajuste/Pensamentos Negativos 01.mp3
+  skip file 'Pensamentos Negativos 01.mp3' with sha256: '444496b4b71e086e3f244cdebd19a6b12f673d44715f057074796bc3e90b2fab' already exists
+
+#2683 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Padrão Vibratório, Livre Arbítrio e Reajuste/Pensamentos Negativos 02.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Padrão Vibratório, Livre Arbítrio e Reajuste/Pensamentos Negativos 02.mp3
+  skip file 'Pensamentos Negativos 02.mp3' with sha256: '83d3dc3646f3c7592d20b75e44f81d9bed90ceb14f4fcbb3239e461f2596bcfc' already exists
+
+#2742 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Pequeno Pajé/Linha de Passes da Vovó Marilu.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Pequeno Pajé/Linha de Passes da Vovó Marilu.mp3
+  skip file 'Linha de Passes da Vovó Marilu.mp3' with sha256: 'acb05693de50f5eb4f08f6d825ced535c8bc7ad87567102df180731179563c1b' already exists
+
+#2782 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Princesas/As sete Princesas.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Princesas/As sete Princesas.mp3
+  skip file 'As sete Princesas.mp3' with sha256: '3bfaea346ee2303a19964f39612f4fde4c6abf02def7f8a2f2ba3b1bf6c4327f' already exists
+
+#2786 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Prisão/A emissão do prisioneiro.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Prisão/A emissão do prisioneiro.mp3
+  skip file 'A emissão do prisioneiro.mp3' with sha256: '54dfd678d7e04230f84f09a73e75ff3bf7c0983370a1e4cad59206452c9dab5b' already exists
+
+#2915 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Puxada, Limpeza e Elevação/Para onde é que o espírito vai após a Entrega.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Puxada, Limpeza e Elevação/Para onde é que o espírito vai após a Entrega.mp3
+  skip file 'Para onde é que o espírito vai após a Entrega.mp3' with sha256: 'bf87135a4e2cba6d9c35b6a9c9408a1b6f989df4835f6fea3a610e983f45b167' already exists
+
+#2940 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Randy/Sobre até onde deve colocar o lençol no paciente.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Randy/Sobre até onde deve colocar o lençol no paciente.mp3
+  skip file 'Sobre até onde deve colocar o lençol no paciente.mp3' with sha256: 'ef4446c55f992a0774293bf507e735fb4bc570b9fb2eec37ece3091b55c52785' already exists
+
+#3024 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Sessão Branca/Necessidade de se fazer o Retiro.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Sessão Branca/Necessidade de se fazer o Retiro.mp3
+  skip file 'Necessidade de se fazer o Retiro.mp3' with sha256: '0b97e2f2483cf0f13d1e773c7acffaef32b583a3b44e25d34c393976aa4c672e' already exists
+
+#3028 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Sessão Branca/Sobre o dia de realização do trabalho.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Sessão Branca/Sobre o dia de realização do trabalho.mp3
+  skip file 'Sobre o dia de realização do trabalho.mp3' with sha256: '09857ea2ef30ced68365322f37efd63e2bea0c67935df8b79dd262776c42a445' already exists
+
+#3074 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Sofredor/Falcões 01.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Sofredor/Falcões 01.mp3
+  skip file 'Falcões 01.mp3' with sha256: 'd3165c47604cfd8733649a98cbe23ff4535db473a33278a0f429152f0c531d4f' already exists
+
+#3367 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Trajetória do Espírito/Trajeto de um espírito quando desencarna 01.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Trajetória do Espírito/Trajeto de um espírito quando desencarna 01.mp3
+  skip file 'Trajeto de um espírito quando desencarna 01.mp3' with sha256: '3fad0193e4a3636c091a105f5d692b269c5f5bad81a456a581221d96fd601de4' already exists
+
+#3368 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Trajetória do Espírito/Trajeto de um espírito quando desencarna 02.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Trajetória do Espírito/Trajeto de um espírito quando desencarna 02.mp3
+  skip file 'Trajeto de um espírito quando desencarna 02.mp3' with sha256: 'e51b2a43deb6c627cecc3d817400bd903b7e42c5e8c5925d9d90f80ca0dc2ef6' already exists
+
+#3369 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Trajetória do Espírito/Trajeto de um espírito quando desencarna 03.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Trajetória do Espírito/Trajeto de um espírito quando desencarna 03.mp3
+  skip file 'Trajeto de um espírito quando desencarna 03.mp3' with sha256: '16f2fd814c522fff9e31c5cb6bf31ab610c1d38d79bfcd7661617fd4f4f448a6' already exists
+
+#3407 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Tronos/As Velas - o que fazer sobre quando encerrar os trabalhos.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Tronos/As Velas - o que fazer sobre quando encerrar os trabalhos.mp3
+  skip file 'As Velas - o que fazer sobre quando encerrar os trabalhos.mp3' with sha256: '7bc09981ae4befdda685acdc70dde8b7a65b9502702d3d334ed2e19a429425ce' already exists
+
+#3435 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Tronos/Indicação dos Trabalhos Iniciáticos para pacientes 01a.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Tronos/Indicação dos Trabalhos Iniciáticos para pacientes 01a.mp3
+  skip file 'Indicação dos Trabalhos Iniciáticos para pacientes 01a.mp3' with sha256: 'f1ef37b97e615c5b34990f69a03e676c9ae8188045e6d5e9349de1b7920890fe' already exists
+
+#3437 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Tronos/Indicação dos Trabalhos Iniciáticos para pacientes 01c.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Tronos/Indicação dos Trabalhos Iniciáticos para pacientes 01c.mp3
+  skip file 'Indicação dos Trabalhos Iniciáticos para pacientes 01c.mp3' with sha256: '7eefe7f30a42ffbe7d1a17e0ae93da65301fa68b81e7ad33ae087b19d868919f' already exists
+
+#3438 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Tronos/Ionização nos Tronos.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Tronos/Ionização nos Tronos.mp3
+  skip file 'Ionização nos Tronos.mp3' with sha256: 'bace5a954ed8510b637b1b6495af8dfea1af95307023238eae017b895a960286' already exists
+
+#3485 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Tronos/Sobre mestre só trabalhar com ninfa.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Tronos/Sobre mestre só trabalhar com ninfa.mp3
+  skip file 'Sobre mestre só trabalhar com ninfa.mp3' with sha256: '6b7d98900e61d5e481886cb9ba5b389612566c7d1df98f3387fc8e699a7da17d' already exists
+
+#3579 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Uniformes, Indumentárias e Armas/O Uniforme do Doutrinador.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Uniformes, Indumentárias e Armas/O Uniforme do Doutrinador.mp3
+  skip file 'O Uniforme do Doutrinador.mp3' with sha256: 'd522113a1b498c0533e8c1cc215c2d0bcc5f49a0a9bd74e7ae573535caa064ee' already exists
+
+#3624 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Adjuntos/Kazagrande/Áudios/Água Fluidificada/Recomendações para a Água Fluidificada.mp3
+  full_path: /Adjuntos/Kazagrande/Áudios/Água Fluidificada/Recomendações para a Água Fluidificada.mp3
+  skip file 'Recomendações para a Água Fluidificada.mp3' with sha256: '4517088478e426fe25f7d7b8d1ddcad14c66cef0076bc81005b5cbbb4486b139' already exists
+
+#3839 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Falanges Missionárias/Mago/Manual dos Magos.pdf
+  full_path: /Falanges Missionárias/Mago/Manual dos Magos.pdf
+  skip file 'Manual dos Magos.pdf' with sha256: '23d8b0b442e5b0abf6d185c396d2ca6cb4945ce77beb2bcc6db4493a27369c7f' already exists
+
+#3874 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Falanges Missionárias/Príncipe Maya/Pasta dos Príncipes Maya.pdf
+  full_path: /Falanges Missionárias/Príncipe Maya/Pasta dos Príncipes Maya.pdf
+  skip file 'Pasta dos Príncipes Maya.pdf' with sha256: '8d34b528564b5f48f267e8404e51b995a15e96a90b63dd441cf184c67c6b8219' already exists
+
+#3954 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Imagens/Armas e Radares/Estrela Gertaes 2o Verbo.jpg
+  full_path: /Imagens/Armas e Radares/Estrela Gertaes 2o Verbo.jpg
+  skip file 'Estrela Gertaes 2o Verbo.jpg' with sha256: '1e24251d92615a731c5b191364ed9b9ead322958b2db39d32c29a8613621f6cb' already exists
+
+#4239 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Imagens/Ilustrações/Várias Imagens 01.cdr
+  full_path: /Imagens/Ilustrações/Várias Imagens 01.cdr
+  skip file 'Várias Imagens 01.cdr' with sha256: '958b349eb0d54610b57d772bce28a56c7eb01762b8c3634a0eeee852b0d387c5' already exists
+
+#4240 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Imagens/Ilustrações/Várias Imagens 02.cdr
+  full_path: /Imagens/Ilustrações/Várias Imagens 02.cdr
+  skip file 'Várias Imagens 02.cdr' with sha256: '45e5816053a926da553116187598f70c8586f48a6bbd7bd712ecbacd2e4456c2' already exists
+
+#4301 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Imagens/Plantas/Situaçãop902.dwg
+  full_path: /Imagens/Plantas/Situaçãop902.dwg
+  skip file 'Situaçãop902.dwg' with sha256: '4044faa36e79710259066b14abc094adfe7d5740c732e94003c94685b7ef217c' already exists
+
+#4313 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Imagens/Plantas/TemploInterm1.dwg
+  full_path: /Imagens/Plantas/TemploInterm1.dwg
+  skip file 'TemploInterm1.dwg' with sha256: 'e6dab5ae4f18a9701ef3cdb207f544338a55999d8c603aaa472fc0fc1a6d5531' already exists
+
+#4530 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Imagens/Vilela/Cavaleiros/Lança Vermelha.jpg
+  full_path: /Imagens/Vilela/Cavaleiros/Lança Vermelha.jpg
+  skip file 'Lança Vermelha.jpg' with sha256: 'fafc96d9d54a451a1d140be44eceff7e65086357caad69b4917e38c503e92111' already exists
+
+#4599 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Imagens/Vilela/Ministros/Ministro Amayã, Mestre Guilherme Henrique Stuckert.jpg
+  full_path: /Imagens/Vilela/Ministros/Ministro Amayã, Mestre Guilherme Henrique Stuckert.jpg
+  skip file 'Ministro Amayã, Mestre Guilherme Henrique Stuckert.jpg' with sha256: 'a16f796197ccee7d9355269389a2a2272f87805621ebed40f1599fd38e2ed241' already exists
+
+#4613 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Imagens/Vilela/Ministros/Ministro Japuacy, Mestre Valdemar Ferreira de Souza (3543 x 6496).jpg
+  full_path: /Imagens/Vilela/Ministros/Ministro Japuacy, Mestre Valdemar Ferreira de Souza (3543 x 6496).jpg
+  skip file 'Ministro Japuacy, Mestre Valdemar Ferreira de Souza (3543 x 6496).jpg' with sha256: '3665f2f0c95580d70f132d7af362134e02dbe6c30dc9fbf84fe8b15fe11c3b1a' already exists
+
+#4710 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Imagens/Vilela/Planos Espirituais/Vilela 20 (543 x 403).jpg
+  full_path: /Imagens/Vilela/Planos Espirituais/Vilela 20 (543 x 403).jpg
+  skip file 'Vilela 20 (543 x 403).jpg' with sha256: 'b5edad703607177e402a10e01f9352c09a933f0146def7bb0c54c3fb582dcab8' already exists
+
+#4998 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Imagens/Vilela/Principais/Rainha de Sabá 04 (736 x 1135).jpg
+  full_path: /Imagens/Vilela/Principais/Rainha de Sabá 04 (736 x 1135).jpg
+  skip file 'Rainha de Sabá 04 (736 x 1135).jpg' with sha256: 'e1c795699e5b9430e4186792f766e7729a19c8d587c55b67692a571385f66d91' already exists
+
+#5026 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Imagens/Vários/Cachoeira do Jaguar (3645 x 4999).jpg
+  full_path: /Imagens/Vários/Cachoeira do Jaguar (3645 x 4999).jpg
+  skip file 'Cachoeira do Jaguar (3645 x 4999).jpg' with sha256: 'f40dd19594c55870ac8a8aa9098bc47c5e5f4068156dc8221c43f6d2a22a69e4' already exists
+
+#5030 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Imagens/Vários/Mundinho(120x 105).jpg
+  full_path: /Imagens/Vários/Mundinho(120x 105).jpg
+  skip file 'Mundinho(120x 105).jpg' with sha256: '6d4b48aa63f111b5d59302be0a48f7a214d38c654d61e7ea7cd3be769005a6da' already exists
+
+#5271 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Mantras/Documentos/Livro de Mantras 01.pdf
+  full_path: /Mantras/Documentos/Livro de Mantras 01.pdf
+  skip file 'Livro de Mantras 01.pdf' with sha256: 'eb66596fc01b1cbdffdef11f1b52db7c470a31ad0eab47c6f75fc65704ccf465' already exists
+
+#5272 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Mantras/Documentos/Livro de Mantras 02.pdf
+  full_path: /Mantras/Documentos/Livro de Mantras 02.pdf
+  skip file 'Livro de Mantras 02.pdf' with sha256: '4cd9fdec07b5adc3972d8dcf3b83c21c4db257b8164b945703733eb07199763c' already exists
+
+#5307 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Mantras/Faixas/Hinos Mântricos Cantados/Mantra Alertai Adjuntos.mp3
+  full_path: /Mantras/Faixas/Hinos Mântricos Cantados/Mantra Alertai Adjuntos.mp3
+  skip file 'Mantra Alertai Adjuntos.mp3' with sha256: 'f9dc8797c8e2100abcaeacf36d3f06806feb3387c334ed36dbb8e2528798a1b2' already exists
+
+#5448 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Tia Neiva/Documentos/O Amanhecer de Tia Neiva - Adjunto Adelano.pdf
+  full_path: /Tia Neiva/Documentos/O Amanhecer de Tia Neiva - Adjunto Adelano.pdf
+  skip file 'O Amanhecer de Tia Neiva - Adjunto Adelano.pdf' with sha256: '3959f40d626b6851349c14eea90214b8fc2dfe42a0cd82d77df9c2d8905c999b' already exists
+
+#5452 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Tia Neiva/Documentos/Tia Neiva - Pequenas Histórias.pdf
+  full_path: /Tia Neiva/Documentos/Tia Neiva - Pequenas Histórias.pdf
+  skip file 'Tia Neiva - Pequenas Histórias.pdf' with sha256: '32f42ddcead9331182fe88fc72054d8e38bcf552bce2e7df222a74b87ae2823d' already exists
+
+#5453 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Tia Neiva/Documentos/Tia Neiva – A História de Aragana.pdf
+  full_path: /Tia Neiva/Documentos/Tia Neiva – A História de Aragana.pdf
+  skip file 'Tia Neiva – A História de Aragana.pdf' with sha256: 'f4fcfc757d3da2f8cb88581275859324c7a044735f3d294432944b673920bb09' already exists
+
+#5454 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Tia Neiva/Documentos/Tia Neiva – O Velho Lino.pdf
+  full_path: /Tia Neiva/Documentos/Tia Neiva – O Velho Lino.pdf
+  skip file 'Tia Neiva – O Velho Lino.pdf' with sha256: 'f0cbe4692ae768e230163dee3df878247805c2f774eb19458d953a779f457018' already exists
+
+#5546 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Tia Neiva/Imagens/Tia Neiva 167 (1189 x 748).jpg
+  full_path: /Tia Neiva/Imagens/Tia Neiva 167 (1189 x 748).jpg
+  skip file 'Tia Neiva 167 (1189 x 748).jpg' with sha256: 'd7f3694db619b9b558a8398b2588e81a3349eaaf15b5c2219c90b7c4040c14cf' already exists
+
+#5575 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Tia Neiva/Imagens/Tia Neiva 193 (800 x 601).jpg
+  full_path: /Tia Neiva/Imagens/Tia Neiva 193 (800 x 601).jpg
+  skip file 'Tia Neiva 193 (800 x 601).jpg' with sha256: '18270df44df4e5327b1f073e37753b1cdcc1bd198faf5ff6e89009658e0ab695' already exists
+
+#5605 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Tia Neiva/Imagens/Tia Neiva 221 (720 x 960).jpg
+  full_path: /Tia Neiva/Imagens/Tia Neiva 221 (720 x 960).jpg
+  skip file 'Tia Neiva 221 (720 x 960).jpg' with sha256: '6bd52d822166f6c3ef42aea7c3a44ec4b41e892ea2fe90dbd6df438e7f545fd2' already exists
+
+#5753 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Tia Neiva/Imagens/Tia Neiva e Mestre Nestor Sabatovicz.jpg
+  full_path: /Tia Neiva/Imagens/Tia Neiva e Mestre Nestor Sabatovicz.jpg
+  skip file 'Tia Neiva e Mestre Nestor Sabatovicz.jpg' with sha256: '6d7a5a711efd1a737c44cab8a3b319dff86409107bbfeca124700033452747fe' already exists
+
+#5760 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Tia Neiva/Livros/Acervo da Clarividente II.pdf
+  full_path: /Tia Neiva/Livros/Acervo da Clarividente II.pdf
+  skip file 'Acervo da Clarividente II.pdf' with sha256: '77cbc7821496954c94cd57f5120747199f73f0b902cc53a10ea60be6c56d5536' already exists
+
+#5804 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Tia Neiva/Áudios/Tia Neiva - Aula de Centúria II/Tia Neiva - Aula de Centúria II - 09 Trono Milenar.pdf
+  full_path: /Tia Neiva/Áudios/Tia Neiva - Aula de Centúria II/Tia Neiva - Aula de Centúria II - 09 Trono Milenar.pdf
+  skip file 'Tia Neiva - Aula de Centúria II - 09 Trono Milenar.pdf' with sha256: '11cc77e21f60a88400fd0811f69f87766ab1da638d7391eac4595b65b4ebfb1e' already exists
+
+#5870 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Tia Neiva/Áudios/Tia Neiva - Corrente Mestra/Tia Neiva - Corrente Mestra.pdf
+  full_path: /Tia Neiva/Áudios/Tia Neiva - Corrente Mestra/Tia Neiva - Corrente Mestra.pdf
+  skip file 'Tia Neiva - Corrente Mestra.pdf' with sha256: 'c807dc891c8ee52e07f738c003c8509c107f3a95f6b0397d4c21d1fdbf83d0b5' already exists
+
+#6315 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Tia Neiva/Áudios/Vários/Tia Neiva - História de Jesus.mp3
+  full_path: /Tia Neiva/Áudios/Vários/Tia Neiva - História de Jesus.mp3
+  skip file 'Tia Neiva - História de Jesus.mp3' with sha256: 'dc8b509fed76cd9ed4d54458ce417a552cb74ab4620a0ad8f6bcea532d7fdf18' already exists
+
+#6562 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 02 Track 05.mp3
+  full_path: /Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 02 Track 05.mp3
+  skip file 'CD 02 Track 05.mp3' with sha256: 'a304b36d4ee2be7488c3970decc08a60262e36ed46de0b3b628c79ef3313dcdf' already exists
+
+#6563 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 02 Track 06.mp3
+  full_path: /Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 02 Track 06.mp3
+  skip file 'CD 02 Track 06.mp3' with sha256: '44b91663bc01360fb900ce51b05b60f55ceb63d2fccb8dbc34ab97f127a1ff62' already exists
+
+#6564 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 04 Track 10.mp3
+  full_path: /Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 04 Track 10.mp3
+  skip file 'CD 04 Track 10.mp3' with sha256: 'bb3725efb42865789dddf95bad3a1277f935d37cd2bff77fbc82bdfd0cf1c1fb' already exists
+
+#6565 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 04 Track 11.mp3
+  full_path: /Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 04 Track 11.mp3
+  skip file 'CD 04 Track 11.mp3' with sha256: '4fe1c82649ba6796ad93a8edce28e5b1c5750b78c540fff3d70728f3c4bc0fc7' already exists
+
+#6566 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 04 Track 12.mp3
+  full_path: /Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 04 Track 12.mp3
+  skip file 'CD 04 Track 12.mp3' with sha256: 'd44804fa7b0d4897f8557eab84384f1f2f7db78bce23df51984f46f4695c1c44' already exists
+
+#6567 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 04 Track 13.mp3
+  full_path: /Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 04 Track 13.mp3
+  skip file 'CD 04 Track 13.mp3' with sha256: 'c055bc68e54817cf259951ee7b8eec6ebd579b443896cbcd309a8f5cbfcf42e4' already exists
+
+#6568 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 05 Track 14.mp3
+  full_path: /Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 05 Track 14.mp3
+  skip file 'CD 05 Track 14.mp3' with sha256: '5c0077db251ad128f0602d1b866df4466d95e0d790b5b58fdcc182e561bde30a' already exists
+
+#6569 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 05 Track 15.mp3
+  full_path: /Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 05 Track 15.mp3
+  skip file 'CD 05 Track 15.mp3' with sha256: 'f2c38307690e774c3c70c47fb6ab68a5793995fcef46fa4ef539d523b9fe93c4' already exists
+
+#6570 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 05 Track 16.mp3
+  full_path: /Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 05 Track 16.mp3
+  skip file 'CD 05 Track 16.mp3' with sha256: 'e2283781c6dc273ba4e5e77243492151aa29bfdca86efe4a6d65dc255b89ca44' already exists
+
+#6571 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 06 Track 17.mp3
+  full_path: /Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 06 Track 17.mp3
+  skip file 'CD 06 Track 17.mp3' with sha256: 'e8e443d12039605c4017c3bcf33eaf6965be37d311012ee8c0d697fd984622f5' already exists
+
+#6572 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 06 Track 18.mp3
+  full_path: /Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 06 Track 18.mp3
+  skip file 'CD 06 Track 18.mp3' with sha256: '6fb34ec15e9339520164631f85a2f87e2f92d3524e912a5fd7f991fac41d1aca' already exists
+
+#6573 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 06 Track 19.mp3
+  full_path: /Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 06 Track 19.mp3
+  skip file 'CD 06 Track 19.mp3' with sha256: '3ab07477400a029c10a535ea44047229ed0697744542e640a9749b5da39b8888' already exists
+
+#6574 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 06 Track 20.mp3
+  full_path: /Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 06 Track 20.mp3
+  skip file 'CD 06 Track 20.mp3' with sha256: '44d2f3579482bddf11dfd8d39f45ada91c2b45f156f37b9914974fd81b2d806c' already exists
+
+#6575 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 07 Track 21.mp3
+  full_path: /Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 07 Track 21.mp3
+  skip file 'CD 07 Track 21.mp3' with sha256: '0dc58f919f25209284df3a818a68d4e7931a81000735fd8ea06969a1efbf202d' already exists
+
+#6576 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 07 Track 22.mp3
+  full_path: /Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 07 Track 22.mp3
+  skip file 'CD 07 Track 22.mp3' with sha256: '604ca15b512d3b002b6e75a53fa3069691636ec6f07a1303da4a202504237b0b' already exists
+
+#6577 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 07 Track 23.mp3
+  full_path: /Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 07 Track 23.mp3
+  skip file 'CD 07 Track 23.mp3' with sha256: '582bcb0cefbcc2d809596460e880c327a00771a6d0488f0276e8ec9e26db557e' already exists
+
+#6578 path: /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 08 Track 24.mp3
+  full_path: /Trinos/Trino Arakém/Áudios/Curso Centúria - Trino Arakém (1987)/CD 08 Track 24.mp3
+  skip file 'CD 08 Track 24.mp3' with sha256: 'd639b0b3ee90b0308805c00bd1ffacc8853e04a70a2d2975b0fc6353692e5ca2' already exists
+

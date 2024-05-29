@@ -27,6 +27,12 @@ use crate::{
     Args, Result,
 };
 
+#[derive(Debug, serde::Serialize, serde::Deserialize)]
+struct RecordCount {
+    count: u32,
+    sha256: Option<String>,
+}
+
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
 struct ParentPathProp {
     thing: Thing,
@@ -143,9 +149,29 @@ impl StorageNode {
         }
     }
 
+    // // Update a record with a specific ID
+    // let person: Option<Person> = db.update(("person", "tobie"))
+    // .merge(User {
+    //     updated_at: OffsetDateTime::now_utc(),
+    //     settings: Settings {
+    //         active: true,
+    //     },
+    // })
+    // .await?;    
+    // async fn updateFileDuplicated(&self, db: &Database, id: Thing) -> Result<()> {
+    //     db.client
+    //         .update(id)
+    //         .merge(Self {
+    //             file_duplicated: Some(true),
+    //         })
+    //         .await?;
+    //     Ok(())
+    // }
+
     // associative method
     async fn record_already_exists(db: &Database, filter: String) -> Result<bool> {
-        let sql = format!("SELECT * FROM type::table($table) WHERE {}", filter);
+        // let sql = format!("SELECT * FROM type::table($table) WHERE {}", filter);
+        let sql = format!("SELECT sha256, count() as count FROM type::table($table) WHERE {}  group by sha256;", filter);
         let mut result = db
             .client
             .query(sql)
@@ -153,10 +179,10 @@ impl StorageNode {
             .await?
             // check if have errors
             .check()?;
-        // get the first result from the first query
-        let exists: Option<Self> = result.take(0)?;
+        // get the first result from the first query, with group this always work, because we always get only one record
+        let exists: Option<RecordCount> = result.take(0)?;
         match exists {
-            Some(_) => Ok(true),
+            Some(v) => Ok(v.count > 0),
             None => Ok(false),
         }
     }
@@ -225,7 +251,10 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
                 let mut sha256 = None;
                 if node_type == NodeType::File && ARGS_PROCCESS_SHA256 {
                     sha256 = match try_digest(input_path) {
-                        Ok(v) => Some(v),
+                        Ok(v) => {
+                            // println!("  sha256: {}", v);
+                            Some(v)
+                        }
                         Err(_) => None,
                     };
                 }
@@ -314,16 +343,21 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
                     // check if file with sha256 already exists and skip it
                     if let Some(t) = &sha256 {
                         // using sha256 exists filter
-                        let exists_result = StorageNode::record_already_exists(&db, format!("sha256 = '{}';", &t)).await;
+                        // if t.to_string() == String::from("0095af770df28bd4bd8d8ec12718c753b03d3ecdfe673c48a9b2d3023ed48bc8") {
+                        //     println!("  debug");
+                        // }
+                        let exists_result = StorageNode::record_already_exists(&db, format!("sha256 = '{}'", &t)).await;
                         if let Ok(exists) = exists_result {
                             if exists {
                                 // this will be setted only in first traversal run, next runs the file fullPath alreasdy exists and even this will be setted to true here
-                                // the record will not be saved /persisted because of next record_already_exists will br true, seel bellow on next exist
+                                // the record will not be saved /persisted because of next record_already_exists will br true, see bellow on next exist
+                                println!("  file with same sha256 '{}' already exists", &t);
                                 file_duplicated = Some(true);
                             }
                         }
-                        // using fullPath exists filter
-                        let exists_result = StorageNode::record_already_exists(&db, format!("fullPath = '{}';", &full_path)).await;
+
+                        // using fullPath exists filter, this is used to skip files, thumbnails, in s3, in db, etc, only if is the same fullPath
+                        let exists_result = StorageNode::record_already_exists(&db, format!("fullPath = '{}'", &full_path)).await;
                         if let Ok(exists) = exists_result {
                             // using sha256 exists filter
                             // if exists && SKIP_EXISTING_FILES_WITH_SAME_SHA256 {

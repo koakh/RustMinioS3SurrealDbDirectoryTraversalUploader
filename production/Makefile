@@ -1,7 +1,8 @@
 surrealdb_path := file://database
 # surrealdb_path := file://database-new
 surrealdb_log_level := # --log trace
-path := /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos
+# path := /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos
+path := /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/AcervosNew
 bin := rust-minio-s3-surreal-db-directory-traversal-uploader
 
 stack-up:
@@ -26,3 +27,7 @@ count-files:
 
 count-dirs:
 	find ${path} -type d | wc -l
+
+list-files:
+	find ${path} -type f > listfiles.txt
+#	find ${path} -name '*  *.*' -type f > listfiles.txt

@@ -3,6 +3,7 @@
 ## Project Deployed on
 
 - `koakh-server:/mnt/4tbdisk1/srv/docker/koakh/@RustActixWebAndSvelteKitAuthenticationDevToTutorial`
+  - [https://minio.koakh.com:9000/](https://minio.koakh.com:9000/)
 
 ## Links
 
