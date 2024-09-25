@@ -1,8 +1,13 @@
-surrealdb_path := file://database
+surrealdb_database := database
+# the database that have Acervos and AcervosNew records, to get non duplicated files from AcervosNew
+# surrealdb_database := database-both
+surrealdb_path := file://${surrealdb_database}
 # surrealdb_path := file://database-new
 surrealdb_log_level := # --log trace
 # path := /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos
-path := /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/AcervosNew
+# path := /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/AcervosNew
+# path := /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/AcervosImportFolder
+path := /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/AcervosNewCombinedFoldersFinal
 bin := rust-minio-s3-surreal-db-directory-traversal-uploader
 
 stack-up:
@@ -31,3 +36,8 @@ count-dirs:
 list-files:
 	find ${path} -type f > listfiles.txt
 #	find ${path} -name '*  *.*' -type f > listfiles.txt
+
+list-dirs:
+#        find ${path} -type f > listfiles.txt
+	find ${path} -name '*  *.*' -type d > listdirs.txt
+

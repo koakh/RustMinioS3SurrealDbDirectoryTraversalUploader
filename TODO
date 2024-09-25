@@ -5,6 +5,7 @@ Todo:
   ☐ create a mono repo
   ☐ @critical add extension, and mimeType to importer with mime type, get it from c3 project, lib to get mimeTypes from c3
     group by extension / mimeType to know what type of extensions we have
+  ☐ replace all `Arakén` words with `Arakém`
 
 
     Authenticated Content" has a nice ring to it! It implies that the content has been verified and confirmed to be genuine or approved. It sounds trustworthy and reliable.    

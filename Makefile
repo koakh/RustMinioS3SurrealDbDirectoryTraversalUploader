@@ -34,8 +34,8 @@ push-release-production:
 
 bring-production-files:
 	@rsync -r -t -p -o -g -v --progress --delete -l -H -z -s \
-		--exclude volumes/.bak \
-		--exclude volumes/.trash \
+		--exclude .bak \
+		--exclude .trash \
 		--exclude volumes/minio \
 		--exclude volumes/minio-old \
 		--exclude rust-minio-s3-surreal-db-directory-traversal-uploader \
