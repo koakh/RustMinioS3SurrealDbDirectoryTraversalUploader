@@ -1,7 +1,9 @@
 surrealdb_database := database
 # the database that have Acervos and AcervosNew records, to get non duplicated files from AcervosNew
 # surrealdb_database := database-both
-surrealdb_path := file://${surrealdb_database}
+# v1.5.4
+# surrealdb_path := file://${surrealdb_database}
+surrealdb_path := rocksdb://${surrealdb_database}
 # surrealdb_path := file://database-new
 surrealdb_log_level := # --log trace
 # path := /mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos
@@ -17,7 +19,12 @@ stack-down:
 	docker-compose down
 
 surrealdb:
-	@surreal start --auth --user root --pass root --bind 0.0.0.0:8000 ${surrealdb_path} ${surrealdb_log_level}
+# v1.5.4
+# @surreal start --auth --user root --pass root --bind 0.0.0.0:8000 ${surrealdb_path} ${surrealdb_log_level}
+	@surreal start --user root --pass root --bind 0.0.0.0:8000 ${surrealdb_path} ${surrealdb_log_level}
+
+surrealdb-update:
+	@curl -sSf https://install.surrealdb.com | sh && sudo cp /home/mario/.surrealdb/surreal /usr/local/bin/surreal && surreal version
 
 start-traversal:
 	# stdout and stderr outputs to terminal and file
@@ -41,3 +48,5 @@ list-dirs:
 #        find ${path} -type f > listfiles.txt
 	find ${path} -name '*  *.*' -type d > listdirs.txt
 
+update-certificates:
+	./update-certificates.sh && docker-compose down && docker-compose up -d
