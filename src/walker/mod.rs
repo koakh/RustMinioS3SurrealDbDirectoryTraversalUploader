@@ -9,7 +9,8 @@ use std::{
 };
 use surrealdb::{
     opt::Resource,
-    sql::{Datetime as SdbDatetime, Id as DdbId, Thing},
+    sql::{Datetime as SdbDatetime, Id as DdbId},
+    RecordId,
 };
 use walkdir::{DirEntry, WalkDir};
 
@@ -35,8 +36,8 @@ struct RecordCount {
 
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
 struct ParentPathProp {
-    thing: Thing,
-    ancestors: Vec<Thing>,
+    id: RecordId,
+    ancestors: Vec<RecordId>,
 }
 type ParentPathHashMap = HashMap<String, ParentPathProp>;
 
@@ -77,7 +78,7 @@ impl From<Metadata> for NodeType {
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
 struct StorageNode {
-    id: Thing,
+    id: RecordId,
     node_type: NodeType,
     name: String,
     file_name: Option<String>,
@@ -94,8 +95,8 @@ struct StorageNode {
     sha256: Option<String>,
     s3_url: Option<String>,
     s3_thumbnail: Option<String>,
-    parent_id: Thing,
-    ancestors: Vec<Thing>,
+    parent_id: RecordId,
+    ancestors: Vec<RecordId>,
     notes: Option<String>,
 }
 
@@ -133,7 +134,7 @@ impl StorageNode {
     async fn save(&self, db: &Database) -> Result<()> {
         db.client
             .create(Resource::from(STORAGE_NODE_TABLE))
-            .content(self)
+            .content(self.to_owned())
             .await?;
         Ok(())
     }
@@ -141,7 +142,7 @@ impl StorageNode {
     async fn _exist(&self, db: &Database) -> Result<bool> {
         let exists: Option<Self> = db
             .client
-            .select((STORAGE_NODE_TABLE, &self.id.id.to_string()))
+            .select((STORAGE_NODE_TABLE, &self.id.to_string()))
             .await?;
         match exists {
             Some(_) => Ok(true),
@@ -157,8 +158,8 @@ impl StorageNode {
     //         active: true,
     //     },
     // })
-    // .await?;    
-    // async fn updateFileDuplicated(&self, db: &Database, id: Thing) -> Result<()> {
+    // .await?;
+    // async fn updateFileDuplicated(&self, db: &Database, id: RecordId) -> Result<()> {
     //     db.client
     //         .update(id)
     //         .merge(Self {
@@ -221,11 +222,7 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
                 } else {
                     node_id = DdbId::rand();
                 }
-                // set current storage node thing, based on node_id defined above
-                let id: Thing = Thing {
-                    tb: STORAGE_NODE_TABLE.into(),
-                    id: node_id.clone(),
-                };
+                let id: RecordId = RecordId::from((STORAGE_NODE_TABLE, node_id.to_string()));
                 let metadata = fs::symlink_metadata(v.path())?;
                 let node_type: NodeType = metadata.clone().into();
                 let input_path = Path::new(v.path());
@@ -264,21 +261,18 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
                 let mut current_parent_from_hash_path: String = String::default();
                 // generate a new random thing
                 // let mut current_parent_thing_from_hashmap_pathkey: Uuid = Uuid::default();
-                let mut current_parent_thing_from_hashmap_pathkey: Thing = Thing {
-                    tb: STORAGE_NODE_TABLE.into(),
-                    id: DdbId::rand(),
-                };
+                let mut current_parent_record_id_from_hashmap_pathkey: RecordId = RecordId::from((STORAGE_NODE_TABLE, DdbId::rand().to_string()));
 
                 // default current_ancestors
-                let mut current_parent_ancestors_from_hashmap_pathkey = Vec::<Thing>::new();
+                let mut current_parent_ancestors_from_hashmap_pathkey = Vec::<RecordId>::new();
                 // try get it from hasmap, if exists override defaults defined above
                 if let Some(v) = parent_path_hash_map.get_key_value(&input_path_parent) {
                     current_parent_from_hash_path = (*v.0.clone()).to_string();
-                    current_parent_thing_from_hashmap_pathkey = v.1.thing.clone();
+                    current_parent_record_id_from_hashmap_pathkey = v.1.id.clone();
                     // clone parent ancestors
                     current_parent_ancestors_from_hashmap_pathkey = v.1.ancestors.clone();
                     // now we push current parent into current_ancestors
-                    current_parent_ancestors_from_hashmap_pathkey.push(current_parent_thing_from_hashmap_pathkey.clone());
+                    current_parent_ancestors_from_hashmap_pathkey.push(current_parent_record_id_from_hashmap_pathkey.clone());
                 }
 
                 // must be after defining current_ancestors above, above is where we have the current_parent_thing_from_hashmap_pathkey
@@ -291,7 +285,7 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
                         // insert a key only if it doesn't already exist
                         let key = v.path().display().to_string();
                         parent_path_hash_map.entry(key).or_insert(ParentPathProp {
-                            thing: id.clone(),
+                            id: id.clone(),
                             ancestors: current_parent_ancestors_from_hashmap_pathkey.clone(),
                         });
 
@@ -510,7 +504,7 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
                     sha256,
                     s3_url: s3_url.clone(),
                     s3_thumbnail: thumbnail,
-                    parent_id: current_parent_thing_from_hashmap_pathkey,
+                    parent_id: current_parent_record_id_from_hashmap_pathkey,
                     ancestors: current_parent_ancestors_from_hashmap_pathkey,
                     notes: None,
                 };
@@ -521,7 +515,11 @@ pub async fn process_dirs(args: &Args, db: &Database, s3_client: &Client, bucket
                         Ok(_) => {
                             println!(
                                 "  storage node saved: type: {}, name: {}, id: {}, node.id:tb:node:id:id: {}:{}",
-                                &node.node_type, &node.name, &node_id, &node.id.tb, &node.id.id
+                                &node.node_type,
+                                &node.name,
+                                &node_id,
+                                &node.id.table(),
+                                &node.id
                             );
                         }
                         Err(e) => eprintln!("error saving node: {:#?}", e),

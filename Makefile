@@ -1,4 +1,5 @@
-path := upload-duplicated
+path := upload
+# path := upload-duplicated
 # path := /mnt/koakhserver/mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos
 # path := /mnt/koakhserver/mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/AcervosImportFolder/
 local_production_path := production/
@@ -14,10 +15,13 @@ stack-down:
 	@cd production && docker-compose down
 
 surrealdb:
-	@surreal start --auth --user root --pass root --bind 0.0.0.0:8000 ${surrealdb_path} ${surrealdb_log_level}
+	@surreal start --user root --pass root --bind 0.0.0.0:8000 ${surrealdb_path} ${surrealdb_log_level}
 
 surrealdb-mem:
-	@surreal start --auth --user root --pass root memory -A ${surrealdb_log_level}
+	@surreal start --user root --pass root memory -A ${surrealdb_log_level}
+
+surrealdb-update:
+	@curl -sSf https://install.surrealdb.com | sh && sudo cp /home/mario/.surrealdb/surreal /usr/local/bin/surreal && surreal version
 
 run:
 	@cargo run -- -p ${path}

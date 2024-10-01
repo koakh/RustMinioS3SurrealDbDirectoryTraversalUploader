@@ -1,3 +1,4 @@
+use aws_sdk_s3::config::BehaviorVersion;
 use tokio::io::AsyncReadExt;
 
 /// s3 client wrapper to expose semantic upload operations
@@ -23,6 +24,9 @@ impl Client {
             .region(aws_sdk_s3::config::Region::new(region))
             // apply bucketName as path param instead of pre-domain
             .force_path_style(true)
+            // specify the behavior major version, required since 1.51.0 version, when upgrade from aws-sdk-s3 = "0.26" to aws-sdk-s3 = "1.51.0"
+            // https://chatgpt.com/c/66f5b720-2b2c-8004-99f4-1f8ac18e7913
+            .behavior_version(BehaviorVersion::latest())
             .build();
         let client = aws_sdk_s3::Client::from_conf(s3_config);
         Self { s3: client, bucket_name }

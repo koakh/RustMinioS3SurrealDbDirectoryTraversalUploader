@@ -13,18 +13,23 @@ pub fn strip_trailing_newline(input: &str) -> &str {
 // https://doc.rust-lang.org/std/process/struct.Output.html
 pub struct ExecuteCommandOutcome {
   /// The status (exit code) of the process.
+  #[allow(dead_code)]
   pub status: ExitStatus,
   /// The data that the process wrote to stdout.
+  #[allow(dead_code)]
   pub stdout: Vec<u8>,
   /// The data that the process wrote to stderr.
+  #[allow(dead_code)]
   pub stderr: Vec<u8>,
   /// success is defined as a zero exit status
+  #[allow(dead_code)]
   pub success: bool,
   /// error code
   pub error_code: i32,
   /// The data that the process wrote to stdout converted from bytes to string
   pub stdout_string: String,
   /// The data that the process wrote to stderr converted from bytes to string
+  #[allow(dead_code)]
   pub stderr_string: String,
 }
 

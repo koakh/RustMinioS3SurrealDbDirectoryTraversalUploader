@@ -5,7 +5,9 @@ use surrealdb::{Error, Surreal};
 #[derive(Clone)]
 pub struct Database {
     pub client: Surreal<Client>,
+    #[allow(dead_code)]
     pub name_space: String,
+    #[allow(dead_code)]
     pub db_name: String,
 }
 

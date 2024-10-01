@@ -22,5 +22,5 @@ pub fn st2cdt(st: &std::time::SystemTime) -> DateTime<Utc> {
 
 /// systemtime to surrealdb datetime
 pub fn st2sdt(st: &std::time::SystemTime) -> SdbDatetime {
-    SdbDatetime(st2cdt(&st))
+    SdbDatetime::from(st2cdt(&st))
 }
