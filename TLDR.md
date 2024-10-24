@@ -1,5 +1,11 @@
 # TLDR
 
+## Project Deployed on
+
+- `koakh-server:/mnt/4tbdisk1/srv/docker/koakh/@RustActixWebAndSvelteKitAuthenticationDevToTutorial`
+  - [https://minio.koakh.com:9000/](https://minio.koakh.com:9000/)
+- static acervos: `/mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/AcervosNewCombinedFoldersFinal`
+
 ## Start Dev Env
 
 ```shell
@@ -18,6 +24,7 @@ read `production/NOTES.md` to configure minio
 
 ```shell
 # use same path
+$ cd /mnt/4tbdisk1/srv/docker/koakh/@RustActixWebAndSvelteKitAuthenticationDevToTutorial
 $ make surrealdb
 $ make run
 ```

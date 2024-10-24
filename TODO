@@ -53,7 +53,8 @@ falta tif fileType and mimeType
 TODO: directories dont have file fileName, fileExtension, s3Url in db  
   update storage_node SET fileExtension = none, s3Url = none WHERE nodeType = 'dir' && fileExtension = ".unk";
 
-
+all rename test with
+find . -name "01? - Mesa Evangélica*.*"
 
 cd "/mnt/4tbdisk1/srv/docker/linuxserver/syncthing/volumes/syncthing/data1/Shared/Acervos/Leis/Livros/3ª edição em imagens"
 mv '001 LEIS E CHAVES RITUALISTICAS 3ª ED.jpg' '001 - Leis E Chaves Ritualisticas 3ª Ed.Jpg'
@@ -196,3 +197,35 @@ mv '136 CARTA AOS CAVALEIROS DOS TURNOS.jpg' '136 - Carta Aos Cavaleiros Dos Tur
 mv '137 CARTA AOS CAVALEIROS DOS TURNOS2.jpg' '137 - Carta Aos Cavaleiros Dos Turnos2.Jpg'
 mv '138 PRIMEIRO PASSO.jpg' '138 - Primeiro Passo.Jpg'
 mv '139 CONSIDERAÇÕES FINAIS.jpg' '139 - Considerações Finais.Jpg'
+
+- [X] move all minio with: Arakén, Araken, Arakèn, Arakem 
+  to Arakèm
+- [X] move all files with: Arakén, Araken, Arakèn, Arakem 
+  to Arakèm
+
+- [X] replace all db with Arakén, Araken, Arakèn, Arakem 
+  to Arakèm
+- [X] find and rename all paths with Arakén, Araken, Arakèn, Arakem 
+- [X] 2 folders still with Arakén
+- [X] clear all tags and run query to apply to all
+- [X] delete tag:5nlwzz08gsruplea5kln (Trino Arakén)  
+- [X] rename all name, fileName, fullPath, path, s3Url with: Arakén, Araken, Arakèn, Arakem to Arakèm
+
+TODO:
+  s3Url is a dynamic field 
+    bucket1/downloads + fullPath
+
+search site for Arakén, Araken, Arakèn, Arakem  AND TEST SOME s3Url links
+
+TODO:
+    breadCrump with links
+      NOTE: this appears in search results
+        frontend path split it by / and create links to 
+        path nodes from ancestors ex 
+        /Entidades/Trinos/Trino Arakém/Vídeos/Curso de Sétimo Raio
+          /Entidades -> link
+          /Trinos -> link
+          /Trino Arakém -> link
+          /Vídeos -> link
+          /Curso de Sétimo Raio -> link
+
